@@ -1,94 +1,108 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import Logo from "../assets/Logo.png";
-import { useNavigate } from "react-router-dom";
+import  { useState } from 'react';
+import { Menu, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-interface MenuItem {
-  label: string;
-  path: string;
-}
 
-const Navbar = () => {
-  const navigate = useNavigate();
-  const [menuOpen, setMenuOpen] = useState(false);
+export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate()
 
-  const menuItems: MenuItem[] = [
-    { label: "HOME", path: "/" },
-    { label: "ABOUT US", path: "/about" },
-    { label: "SERVICES", path: "/services" },
-    { label: "PHYSIOTHERAPY", path: "/physiotherapy" },
-    { label: "GALLERY", path: "/gallery" },
-    { label: "CONTACT US", path: "/contact" },
+ 
+
+  const navItems = [
+    { label: 'Home', path: '/' },
+    { label: 'About US', path: '/about' },
+    { label: 'Service', path: '/service' },
+    { label: 'Physiotheraphy', path: '/physiotheraphy' },
+    { label: 'Gallery', path: '/gallery' },
   ];
 
-  const handleNavigate = (path: string) => {
-    navigate(path);
-    setMenuOpen(false);
-  };
-
   return (
-    <nav className="bg-teal-900 text-teal-50 px-8 py-3 shadow-md relative">
-      <div className="flex items-center justify-between">
+    <nav className="bg-teal-900 px-6 py-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
-        <div
-          className="flex items-center space-x-2 cursor-pointer"
-          onClick={() => handleNavigate("/")}
-        >
-          <img src={Logo} alt="Logo" className="h-10 w-auto" />
-        </div>
+        <div className="flex items-center space-x-2">
+              <div className="bg-white p-2 rounded">
+                <svg className="w-7 h-7 text-[#1a4d4d]" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                </svg>
+              </div>
+              <div>
+                <h2 className="text-xl text-teal-50 font-bold">SIVASAKTHI</h2>
+                <p className="text-sm text-teal-50">PHYSIOTHERAPY</p>
+              </div>
+            </div>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center space-x-8 font-semibold text-sm tracking-wide">
-          {menuItems.map((item) => (
-            <li
-              key={item.label}
-              onClick={() => handleNavigate(item.path)}
-              className="hover:text-white cursor-pointer"
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => (
+            <button
+              key={item.path}
+              onClick={() => navigate(item.path)}
+              className="text-teal-50 hover:cursor-pointer transition-colors font-medium"
             >
               {item.label}
-            </li>
+            </button>
           ))}
-          <li
-            className="hover:text-white cursor-pointer"
-            onClick={() => handleNavigate("/tamil")}
-          >
-            தமிழ்
-          </li>
-        </ul>
+        </div>
 
-        {/* Mobile Hamburger Icon */}
+        <div className='flex gap-5'>
+          {/* CTA Button */}
         <button
-          className="md:hidden text-[#D8DBB3] focus:outline-none"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => navigate('/contact')}
+          className="hidden md:block bg-teal-50 hover:cursor-pointer text-teal-900 px-6 py-2.5 rounded-full hover:bg-teal-100 transition-colors font-medium"
         >
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          Contact
+        </button>
+        <button
+          onClick={() => navigate('/book-appointment')}
+          className="hidden md:block bg-teal-50 hover:cursor-pointer text-teal-900 px-6 py-2.5 rounded-full hover:bg-teal-100 transition-colors font-medium"
+        >
+          Book Appointment
+        </button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden p-2"
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? (
+            <X className="w-6 h-6 text-teal-50" />
+          ) : (
+            <Menu className="w-6 h-6 text-teal-50" />
+          )}
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="absolute top-full left-0 w-full bg-teal-900 text-center py-4 md:hidden z-50">
-          <ul className="flex flex-col space-y-4 font-semibold tracking-wide">
-            {menuItems.map((item) => (
-              <li
-                key={item.label}
-                onClick={() => handleNavigate(item.path)}
-                className="hover:text-white cursor-pointer"
-              >
-                {item.label}
-              </li>
-            ))}
-            <li
-              onClick={() => handleNavigate("/tamil")}
-              className="hover:text-white cursor-pointer"
+      {isMenuOpen && (
+        <div className="md:hidden mt-4 pb-4 space-y-4">
+          {navItems.map((item) => (
+            <button
+              key={item.path}
+              onClick={() => navigate(item.path)}
+              className="block w-full text-left text-teal-50 hover:text-gray-600 transition-colors font-medium py-2"
             >
-              தமிழ்
-            </li>
-          </ul>
+              {item.label}
+            </button>
+          ))}
+          <button
+            onClick={() => navigate('/contact')}
+            className="w-full bg-teal-50 hover:cursor-pointer text-teal-900 px-6 py-2.5 rounded-full hover:bg-gray-800 transition-colors font-medium"
+          >
+            Contact
+          </button>
+          <button
+            onClick={() => navigate('/book-appointment')}
+            className="w-full bg-teal-50 hover:cursor-pointer text-teal-900 px-6 py-2.5 rounded-full hover:bg-gray-800 transition-colors font-medium"
+          >
+            Book Appointment
+          </button>
+          
         </div>
       )}
     </nav>
   );
-};
-
-export default Navbar;
+}

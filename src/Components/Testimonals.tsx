@@ -101,7 +101,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="min-h-screen bg-teal-50 py-16 px-4 relative overflow-hidden">
+    <div className=" bg-teal-50 py-16 px-4 relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative">
         {/* Header */}
         <div className="text-center mb-12">

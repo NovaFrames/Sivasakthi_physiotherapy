@@ -14,8 +14,8 @@ const Footer = () => {
                 </svg>
               </div>
               <div>
-                <h2 className="text-2xl font-bold">CB | <span className="font-normal">PHYSIO</span></h2>
-                <p className="text-sm">THERAPY</p>
+                <h2 className="text-2xl font-bold">SIVASAKTHI</h2>
+                <p className="text-sm">PHYSIOTHERAPY</p>
               </div>
             </div>
             <p className="text-sm text-gray-300 leading-relaxed">
