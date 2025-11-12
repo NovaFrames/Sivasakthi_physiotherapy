@@ -2,7 +2,7 @@ import { Award } from "lucide-react";
 
 const ServiceHome = () => {
   return (
-    <div className="bg-gray-50 py-16 px-4">
+    <div className="bg-teal-50 py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Image */}
@@ -21,7 +21,7 @@ const ServiceHome = () => {
                 <Award className="w-8 h-8 text-teal-600" />
               </div>
               <div>
-                <div className="text-4xl font-bold text-gray-900">15+</div>
+                <div className="text-3xl md:text-4xl font-bold text-gray-900">15+</div>
                 <div className="text-sm text-gray-600 font-medium">Years Of Experience</div>
               </div>
             </div>
