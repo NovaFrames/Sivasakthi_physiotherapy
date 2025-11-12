@@ -1,4 +1,4 @@
-import { Box, Typography, Grid, Paper, Stack } from '@mui/material';
+import { Box, Typography, Grid, Stack } from '@mui/material';
 import GroupIcon from '@mui/icons-material/Group';
 import SpaIcon from '@mui/icons-material/Spa';
 import PhoneIcon from '@mui/icons-material/Phone';
