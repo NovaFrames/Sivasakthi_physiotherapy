@@ -9,12 +9,12 @@ const Home = () => {
  
 
     return (
-        <div className="min-h-screen">
+        <div>
             <Welcome />
             <ServiceHome/>
+            <Team/>
             <WhyChooseUs/>
             <Testimonials/>
-            <Team/>
             <Faq/>
         </div>
     );

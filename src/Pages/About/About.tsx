@@ -19,18 +19,6 @@ const PatientImage = () => (
   />
 );
 
-const DoctorAvatar = () => (
-  <Box
-    sx={{
-      width: 40,
-      height: 40,
-      borderRadius: '50%',
-      backgroundColor: '#333',
-      mr: 1,
-      // Placeholder for the small doctor image
-    }}
-  />
-);
 
 const About = () => {
   // Define the colors based on the image's palette
