@@ -101,6 +101,7 @@ const GaitSchool = () => {
       <Box sx={{ py: 10, backgroundColor: "#fff" }}>
         <Container maxWidth="lg">
           <Grid container spacing={8} alignItems="center">
+            {/* LEFT CONTENT */}
             <Grid size={{ xs: 12, lg: 6 }}>
               <Typography
                 variant="h4"
@@ -125,27 +126,39 @@ const GaitSchool = () => {
               </Typography>
 
               <Grid container spacing={2}>
-                {["Personalized Assessment", "Expert Guidance", "Proven Results", "Ongoing Support"].map(
-                  (item, i) => (
-                    <Grid size={{ xs: 12, lg: 6 }} key={i}>
-                      <Box sx={{ display: "flex", alignItems: "center" }}>
-                        <CheckCircle color="#0f766e" size={22} />
-                        <Typography ml={1}>{item}</Typography>
-                      </Box>
-                    </Grid>
-                  )
-                )}
+                {[
+                  "Personalized Assessment",
+                  "Expert Guidance",
+                  "Proven Results",
+                  "Ongoing Support",
+                ].map((item, i) => (
+                  <Grid size={{ xs: 12, lg: 6 }} key={i}>
+                    <Box sx={{ display: "flex", alignItems: "center" }}>
+                      <CheckCircle color="#0f766e" size={22} />
+                      <Typography ml={1}>{item}</Typography>
+                    </Box>
+                  </Grid>
+                ))}
               </Grid>
             </Grid>
 
-            <Grid size={{ xs: 12, lg: 4 }}>
-              <Box>
-                
-              </Box>
+            {/* RIGHT IMAGE */}
+            <Grid size={{ xs: 12, lg: 6 }}>
+              <Box
+                sx={{
+                  width: "100%",
+                  height: { xs: 300, sm: 400, md: 450 },
+                  borderRadius: 3,
+                  backgroundImage: `url('https://media.istockphoto.com/id/1302923059/photo/doctor-and-patient-are-discussing-at-clinic-showing-report-in-computer-stock-photo.webp?a=1&b=1&s=612x612&w=0&k=20&c=hbewUEfbDbj2OVK6NLkzuq3JMqMjGlkhH3QCW-FGyC8=')`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              />
             </Grid>
           </Grid>
         </Container>
       </Box>
+
 
       {/* PROGRAMS SECTION */}
       <Box sx={{ py: 10, backgroundColor: "rgba(0,150,136,0.05)" }}>
@@ -161,7 +174,7 @@ const GaitSchool = () => {
 
           <Grid container spacing={4}>
             {programs.map((program, index) => (
-              <Grid size={{ xs: 12, lg: 4  }} key={index}>
+              <Grid size={{ xs: 12, lg: 4 }} key={index}>
                 <Paper
                   elevation={3}
                   sx={{
@@ -174,13 +187,13 @@ const GaitSchool = () => {
                     sx={{
                       width: 70,
                       height: 70,
-                      backgroundColor: "primary.light",
+                      backgroundColor: "#134E4A",
                       borderRadius: 3,
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
                       mb: 3,
-                      color: "primary.dark",
+                      color: "white",
                     }}
                   >
                     {program.icon}

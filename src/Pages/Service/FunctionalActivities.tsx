@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Box,
   Container,
@@ -7,9 +6,7 @@ import {
   Card,
   CardMedia,
   CardContent,
-  Dialog,
-  DialogContent,
-  IconButton,
+
 } from "@mui/material";
 
 // MUI ICONS
@@ -18,7 +15,6 @@ import TrackChangesIcon from "@mui/icons-material/TrackChanges";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import BoltIcon from "@mui/icons-material/Bolt";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
-import CloseIcon from "@mui/icons-material/Close";
 
 interface ActivityType {
   id: number;
@@ -28,7 +24,6 @@ interface ActivityType {
 }
 
 const FunctionalActivities = () => {
-  const [selectedImage, setSelectedImage] = useState<ActivityType | null>(null);
 
   const activities: ActivityType[] = [
     {
@@ -197,7 +192,6 @@ const FunctionalActivities = () => {
           {activities.map((act) => (
             <Grid size={{ xs: 12, lg: 4 }}  key={act.id}>
               <Card
-                onClick={() => setSelectedImage(act)}
                 sx={{
                   cursor: "pointer",
                   borderRadius: 3,
@@ -228,49 +222,6 @@ const FunctionalActivities = () => {
           ))}
         </Grid>
       </Container>
-
-      {/* IMAGE MODAL */}
-      <Dialog
-        open={!!selectedImage}
-        onClose={() => setSelectedImage(null)}
-        maxWidth="md"
-        fullWidth
-      >
-        <DialogContent sx={{ position: "relative", p: 0 }}>
-          <IconButton
-            onClick={() => setSelectedImage(null)}
-            sx={{
-              position: "absolute",
-              top: 10,
-              right: 10,
-              bgcolor: "white",
-              "&:hover": { bgcolor: "grey.200" },
-              zIndex: 10,
-            }}
-          >
-            <CloseIcon />
-          </IconButton>
-
-          {selectedImage && (
-            <>
-              <Box
-                component="img"
-                src={selectedImage.image}
-                alt={selectedImage.title}
-                sx={{ width: "100%", height: 350, objectFit: "cover" }}
-              />
-              <Box sx={{ p: 3 }}>
-                <Typography variant="h5" fontWeight={700}>
-                  {selectedImage.title}
-                </Typography>
-                <Typography color="text.secondary">
-                  {selectedImage.description}
-                </Typography>
-              </Box>
-            </>
-          )}
-        </DialogContent>
-      </Dialog>
     </Box>
   );
 };

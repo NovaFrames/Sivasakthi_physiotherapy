@@ -7,6 +7,7 @@ import Footer from "./Components/Footer/Footer";
 import GaitSchool from "./Pages/Service/GaitSchool";
 import FunctionalActivities from "./Pages/Service/FunctionalActivities";
 import Walking from "./Pages/Service/Walking";
+import Instruments from "./Pages/Service/Instruments";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/service/gait-school" element={<GaitSchool />} />
         <Route path="/service/functional-activity" element={<FunctionalActivities />} />
         <Route path="/service/walking" element={<Walking />} />
+        <Route path="/service/instruments" element={<Instruments />} />
       </Routes>
       <Footer/>
     </>
