@@ -12,6 +12,7 @@ import {
 import HealingIcon from "@mui/icons-material/Healing";
 import HomeIcon from "@mui/icons-material/Home";
 import SpaIcon from "@mui/icons-material/Spa";
+import Header from "../Header/Header";
 
 const colors = {
   primary: "#1a4d4d",
@@ -23,40 +24,15 @@ const colors = {
 
 const AboutClinic: React.FC = () => {
   return (
-    <Box sx={{ backgroundColor: "#F4F7F3", py: { xs: 6, md: 10 } }}>
+    <Box sx={{ py: { xs: 6, md: 10 } }}>
       <Container maxWidth="lg">
         {/* Heading Section */}
-        <Grid container spacing={4} alignItems="flex-start" mb={5}>
-          <Grid size={{ xs: 12, md: 8 }}>
-            <Typography
-              variant="subtitle1"
-              sx={{ color: colors.secondary, fontWeight: 600, mb: 1 }}
-            >
-              ✤ What Makes Us Different
-            </Typography>
-            <Typography
-              variant="h4"
-              sx={{
-                fontWeight: 700,
-                color: "#111",
-                lineHeight: 1.3,
-                mb: 2,
-              }}
-            >
-              More than therapy - it’s about trust, warmth, and real recovery.
-            </Typography>
-          </Grid>
 
-          <Grid size={{ xs: 12, md: 4 }}>
-            <Typography
-              variant="body1"
-              sx={{ color: "text.secondary", lineHeight: 1.8 }}
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </Typography>
-          </Grid>
-        </Grid>
+        <Header
+          title="✤ What Makes Us Different"
+          subtitle=" More than therapy - it’s about trust, warmth, and real recovery."
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua." />
 
         {/* Main Content Section */}
         <Grid container spacing={4}>
@@ -122,7 +98,7 @@ const AboutClinic: React.FC = () => {
                     p: 3,
                     backgroundColor: colors.primary,
                     height: "100%",
-                    color:"white"
+                    color: "white"
                   }}
                 >
                   <CardContent>
@@ -140,7 +116,7 @@ const AboutClinic: React.FC = () => {
                         </Box>
                         <Typography
                           variant="h6"
-                          sx={{ fontWeight: 700}}
+                          sx={{ fontWeight: 700 }}
                         >
                           Personalized treatment
                         </Typography>

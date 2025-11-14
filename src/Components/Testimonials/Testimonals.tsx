@@ -98,7 +98,7 @@ const Testimonials = () => {
                   height: 120,
                   overflow: "hidden",
                   borderRadius: 2,
-                  ml: i === 1 ? 3 : 0,
+                  ml: i === 1 ? -10 : 0,
                   transition: "0.3s",
                   "&:hover": { transform: "scale(1.05)" },
                 }}
@@ -107,7 +107,7 @@ const Testimonials = () => {
                   component="img"
                   src={img}
                   alt="client"
-                  sx={{ width: "100%", height: "100%", objectFit: "cover",borderRadius: 5 }}
+                  sx={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 5 }}
                 />
               </Paper>
             ))}
@@ -121,7 +121,7 @@ const Testimonials = () => {
               maxWidth: 600,
               borderRadius: 4,
               p: { xs: 4, md: 6 },
-              bgcolor: (theme) => theme.palette.background.paper,
+              bgcolor: (theme) => theme.palette.background.default,
             }}
           >
             <Box sx={{ display: "flex", justifyContent: "center", mb: 4 }}>
@@ -209,10 +209,10 @@ const Testimonials = () => {
               display: { xs: "none", lg: "flex" },
               flexDirection: "column",
               gap: 3,
-              ml: 6,
+              mr: -6,
             }}
           >
-            {sideImages.slice(3).map((img, i) => (
+            {sideImages.slice(0, 3).map((img, i) => (
               <Paper
                 key={i}
                 sx={{
@@ -220,7 +220,7 @@ const Testimonials = () => {
                   height: 120,
                   overflow: "hidden",
                   borderRadius: 2,
-                  mr: i !== 1 ? 3 : 0,
+                  ml: i === 1 ? 10 : 0,
                   transition: "0.3s",
                   "&:hover": { transform: "scale(1.05)" },
                 }}
@@ -229,7 +229,7 @@ const Testimonials = () => {
                   component="img"
                   src={img}
                   alt="client"
-                  sx={{ width: "100%", height: "100%", objectFit: "cover",borderRadius: 5 }}
+                  sx={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 5 }}
                 />
               </Paper>
             ))}

@@ -1,61 +1,70 @@
-import { Box, Container, Grid, Typography, Card, CardContent, Button } from '@mui/material';
-import { ArrowForward } from '@mui/icons-material';
+import {
+  Box,
+  Container,
+  Grid,
+  Typography,
+  Card,
+  CardContent,
+} from "@mui/material";
+import TeamCard from "../Card/TeamCard";
+import Header from "../Header/Header";
 
-const colors = {
-  secondaryLight: '#E8F5E8',
-  primary: '#D9663D',
-  textLight: '#666',
-};
-
-const TeamMemberPhoto = () => (
-  <Box
-    sx={{
-      width: 120,
-      height: 120,
-      backgroundColor: '#ddd',
-      borderRadius: '50%',
-      backgroundImage: `url('https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg')`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-    }}
-  />
-);
+const therapists = [
+  {
+    name: "Jenny Wilson",
+    role: "Therapist A",
+    image:
+      "https://images.pexels.com/photos/8460046/pexels-photo-8460046.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
+  {
+    name: "Darrell Steward",
+    role: "Therapist C",
+    image:
+      "https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
+  {
+    name: "Cameron Williamson",
+    role: "Therapist C",
+    image:
+      "https://images.pexels.com/photos/5452203/pexels-photo-5452203.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
+  {
+    name: "Jacob Jones",
+    role: "Therapist B",
+    image:
+      "https://images.pexels.com/photos/8460040/pexels-photo-8460040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
+  {
+    name: "Savannah Nguyen",
+    role: "Therapist A",
+    image:
+      "https://images.pexels.com/photos/8460045/pexels-photo-8460045.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
+  {
+    name: "Robert Fox",
+    role: "Therapist B",
+    image:
+      "https://images.pexels.com/photos/6951672/pexels-photo-6951672.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
+];
 
 const TeamSection = () => {
   return (
-    <Box sx={{ backgroundColor: colors.secondaryLight, py: 8 }}>
+    <Box sx={{ py: 10 }}>
       <Container maxWidth="lg">
-          <Typography variant="h3" component="h2" sx={{ textAlign: 'center', mb: 6, fontWeight: 700 }}>
-            Meet Our Expert Team
-          </Typography>
-          <Grid container spacing={4}>
-            {[1, 2, 3, 4].map((item) => (
-              <Grid size={{xs:12,md:3,sm:6}} key={item}>
-                <Card sx={{ textAlign: 'center', p: 3 }}>
-                  <CardContent>
-                    <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
-                      <TeamMemberPhoto />
-                    </Box>
-                    <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                      Dr. Priya Sharma
-                    </Typography>
-                    <Typography variant="body2" color={colors.primary} sx={{ mb: 1 }}>
-                      BPT, MPT (Sports Medicine)
-                    </Typography>
-                    <Typography variant="body2" color={colors.textLight} sx={{ mb: 2 }}>
-                      8+ Years Experience
-                    </Typography>
-                    <Typography variant="body2" sx={{ mb: 2, fontStyle: 'italic' }}>
-                      "My passion is helping athletes return to their peak performance."
-                    </Typography>
-                    <Button variant="text" endIcon={<ArrowForward />}>
-                      View Profile
-                    </Button>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
+        {/* Header */}
+
+        <Header
+          title="✤ Our Professional Therapist"
+          subtitle="Meet Our Caring Therapists"
+          description=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna." />
+
+
+        {/* Therapist Cards */}
+        <Grid container spacing={4}>
+          <TeamCard therapists={therapists} />
+        </Grid>
       </Container>
     </Box>
   );

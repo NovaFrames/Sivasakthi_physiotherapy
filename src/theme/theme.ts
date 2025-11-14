@@ -31,7 +31,7 @@ export const theme = createTheme({
       main: "#dc2626",
     },
     background: {
-      default: "#ffffff",
+      default: "#f9fafb",
       paper: "#ffffff",
       navbar: "#134E4A",
       sidebar: "#134E4A",

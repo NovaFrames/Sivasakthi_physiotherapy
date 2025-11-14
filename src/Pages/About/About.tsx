@@ -11,20 +11,22 @@ import AchievementsSection from '../../Components/About/AchievementsSection';
 import JourneySection from '../../Components/About/JourneySection';
 import FounderSection from '../../Components/About/FounderSection';
 import GallerySection from '../../Components/About/GallerySection';
+import Testimonials from '../../Components/Testimonials/Testimonals';
 
 const PhysioClinicWebsite = () => {
   return (
-    <Box sx={{ backgroundColor: 'white' }}>
+    <Box sx={{ backgroundColor: "#f9fafb" }}>
       <HeroSection />
       <AboutClinic />
+      <FounderSection />
+      <TeamSection />
+      <FacilitiesSection />
+      <Testimonials />
       {/* <MissionVisionValues /> */}
-      {/* <TeamSection /> */}
       {/* <TreatmentApproach /> */}
       {/* <ConditionsSection /> */}
-      {/* <FacilitiesSection /> */}
       {/* <AchievementsSection /> */}
       {/* <JourneySection /> */}
-      {/* <FounderSection /> */}
       {/* <GallerySection /> */}
     </Box>
   );

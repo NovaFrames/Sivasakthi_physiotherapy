@@ -15,6 +15,7 @@ import TrackChangesIcon from "@mui/icons-material/TrackChanges";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import BoltIcon from "@mui/icons-material/Bolt";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import GalleryCard from "../../Components/Card/GalleryCard";
 
 interface ActivityType {
   id: number;
@@ -189,37 +190,7 @@ const FunctionalActivities = () => {
         </Typography>
 
         <Grid container spacing={4}>
-          {activities.map((act) => (
-            <Grid size={{ xs: 12, lg: 4 }}  key={act.id}>
-              <Card
-                sx={{
-                  cursor: "pointer",
-                  borderRadius: 3,
-                  transition: "0.3s",
-                }}
-                elevation={3}
-              >
-                <CardMedia
-                  component="img"
-                  height="220"
-                  image={act.image}
-                  alt={act.title}
-                  sx={{
-                    transition: "0.3s",
-                    "&:hover": { transform: "scale(1.04)" },
-                  }}
-                />
-                <CardContent>
-                  <Typography variant="h6" fontWeight={600}>
-                    {act.title}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {act.description}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
+          <GalleryCard activities={activities}/>
         </Grid>
       </Container>
     </Box>

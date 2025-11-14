@@ -6,14 +6,10 @@ import {
   Chip,
   Paper
 } from '@mui/material';
+import TeamCard from '../Card/TeamCard';
 
 const Team = () => {
   const teamMembers = [
-    {
-      name: 'N Saquib Lachoo',
-      role: 'Founder',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop'
-    },
     {
       name: 'Dr. Soumyendro',
       role: 'Clinical Advisor / Consultant',
@@ -33,7 +29,7 @@ const Team = () => {
 
   return (
     <Box sx={{ bgcolor: "background.section", py: 8, px: 2 }}>
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
 
         {/* Header */}
         <Box sx={{ textAlign: "center", mb: 8 }}>
@@ -67,57 +63,7 @@ const Team = () => {
 
         {/* Team Grid */}
         <Grid container spacing={3}>
-          {teamMembers.map((member, index) => (
-            <Grid key={index} size={{ xs: 12, lg: 3 }} >
-              <Paper
-                elevation={3}
-                sx={{
-                  borderRadius: 3,
-                  overflow: "hidden",
-                  transition: "box-shadow 0.3s",
-                  bgcolor: "background.paper",
-                }}
-              >
-                <Box sx={{ position: "relative", paddingTop: "100%" }}>
-                  <Box
-                    component="img"
-                    src={member.image}
-                    alt={member.name}
-                    sx={{
-                      position: "absolute",
-                      borderRadius: 5,
-                      top: 0,
-                      left: 0,
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
-                </Box>
-
-                <Box sx={{ textAlign: "center", p: 3 }}>
-                  <Typography
-                    variant="h6"
-                    component="h3"
-                    sx={{
-                      fontWeight: "bold",
-                      color: "text.primary",
-                      mb: 1,
-                    }}
-                  >
-                    {member.name}
-                  </Typography>
-
-                  <Typography
-                    variant="body2"
-                    sx={{ color: "text.secondary" }}
-                  >
-                    {member.role}
-                  </Typography>
-                </Box>
-              </Paper>
-            </Grid>
-          ))}
+          <TeamCard therapists={teamMembers}/>
         </Grid>
 
       </Container>

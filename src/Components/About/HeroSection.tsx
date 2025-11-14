@@ -14,13 +14,13 @@ import TrackChangesIcon from "@mui/icons-material/TrackChanges";
 
 const colors = {
   primary: "#1a4d4d", // deep green
-  cardLight: "#E9F4EA",
+  cardLight: "#FFFFFF",
   white: "#FFFFFF",
 };
 
 const HeroSection = () => {
   return (
-    <Box sx={{ backgroundColor: colors.white, py: { xs: 6, md: 10 } }}>
+    <Box sx={{ py: { xs: 6, md: 10 } }}>
       <Container maxWidth="lg">
         <Grid container spacing={6} alignItems="center">
           {/* Left Content */}
@@ -163,7 +163,7 @@ const HeroSection = () => {
                   position: "absolute",
                   bottom: -16,
                   left: 30,
-                  backgroundColor: "#F3DCCB",
+                  backgroundColor: "#f9fafb",
                   px: 2.5,
                   py: 1,
                   borderRadius: "30px",
