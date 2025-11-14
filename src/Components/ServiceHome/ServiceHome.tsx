@@ -1,7 +1,7 @@
 import { Box, Container, Grid, Typography, Paper, Avatar } from '@mui/material';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 
-const ServiceHome = () => {
+const  ServiceHome = () => {
   return (
     <Box sx={{ bgcolor: "background.section", py: 8, px: 2 }}>
       <Container maxWidth="lg">
