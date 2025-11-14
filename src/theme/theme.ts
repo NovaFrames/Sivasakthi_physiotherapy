@@ -49,9 +49,6 @@ export const theme = createTheme({
     fontFamily: '"Darker Grotesque", sans-serif',
   },
 
-  // ----------------------------------------------------
-  // COMPONENT OVERRIDES
-  // ----------------------------------------------------
   components: {
     // CUSTOM BUTTON VARIANTS
     MuiButton: {

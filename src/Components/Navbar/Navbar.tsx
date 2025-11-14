@@ -50,8 +50,10 @@ export default function Navbar() {
   return (
     <>
       <AppBar
+      position="sticky"
         sx={{
           bgcolor: "background.navbar",
+          borderRadius: 0,
           px: 3,
           py: 1,
         }}
@@ -98,15 +100,25 @@ export default function Navbar() {
           <Box sx={{ display: { xs: "none", md: "flex" }, ml: "auto", gap: 3 }}>
             {navItems.map((item) =>
               item.submenu ? (
-                <Box key={item.label}>
-                  <Button
-                    endIcon={<ChevronDown size={16} />}
+                <Box key={item.label} sx={{ position: "relative" }}>
+                  {/* Nav Parent Item */}
+                  <Box
                     onClick={(e) => setAnchorEl(e.currentTarget)}
-                    sx={{ color: "primary.navText", fontWeight: 500 }}
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 0.5,
+                      cursor: "pointer",
+                      color: "primary.navText",
+                      fontWeight: 500,
+                      "&:hover": { color: "primary.lightText" },
+                    }}
                   >
-                    {item.label}
-                  </Button>
+                    <Typography>{item.label}</Typography>
+                    <ChevronDown size={16} />
+                  </Box>
 
+                  {/* Dropdown Menu */}
                   <Menu
                     anchorEl={anchorEl}
                     open={Boolean(anchorEl)}
@@ -126,19 +138,25 @@ export default function Navbar() {
                   </Menu>
                 </Box>
               ) : (
-                <Button
+                <Box
                   key={item.path}
                   onClick={() => navigate(item.path)}
-                  sx={{ color: "primary.navText", fontWeight: 500 }}
+                  sx={{
+                    cursor: "pointer",
+                    color: "primary.navText",
+                    fontWeight: 500,
+                    "&:hover": { color: "primary.lightText" },
+                  }}
                 >
-                  {item.label}
-                </Button>
+                  <Typography>{item.label}</Typography>
+                </Box>
               )
             )}
           </Box>
 
+
           {/* Desktop Buttons */}
-          <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2, ml: 3 }}>
+          <Box sx={{ display: { xs: "none", md: "flex" }, gap: 1, ml: 5 }}>
             <Button variant="primary" onClick={() => navigate("/contact")}>
               Contact
             </Button>

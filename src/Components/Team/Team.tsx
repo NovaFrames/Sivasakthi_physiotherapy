@@ -38,7 +38,7 @@ const Team = () => {
         {/* Header */}
         <Box sx={{ textAlign: "center", mb: 8 }}>
           <Chip
-            label="CB Physiotherapy Team"
+            label="Our Team"
             sx={{
               bgcolor: "primary.main",
               color: "#ffffff",

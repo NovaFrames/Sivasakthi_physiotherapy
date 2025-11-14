@@ -1,202 +1,278 @@
 import {
-    Footprints,
-    Target,
-    Award,
-    Clock,
-    Calendar,
-    CheckCircle,
-} from 'lucide-react';
+  Footprints,
+  Target,
+  Award,
+  Clock,
+  Calendar,
+  CheckCircle,
+} from "lucide-react";
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  Paper,
+  Button,
+  Card,
+  CardMedia,
+} from "@mui/material";
 
 const GaitSchool = () => {
-    const programs = [
-        {
-            icon: <Footprints className="w-8 h-8" />,
-            title: "Basic Gait Analysis",
-            description: "Comprehensive assessment of your walking pattern and identification of abnormalities",
-            duration: "4 weeks",
-            sessions: "8 sessions"
-        },
-        {
-            icon: <Target className="w-8 h-8" />,
-            title: "Advanced Gait Correction",
-            description: "Targeted interventions to correct specific gait deviations and improve efficiency",
-            duration: "6 weeks",
-            sessions: "12 sessions"
-        },
-        {
-            icon: <Award className="w-8 h-8" />,
-            title: "Sports Performance Gait",
-            description: "Optimize your running and athletic performance through gait enhancement",
-            duration: "8 weeks",
-            sessions: "16 sessions"
-        }
-    ];
+  const programs = [
+    {
+      icon: <Footprints size={34} />,
+      title: "Basic Gait Analysis",
+      description:
+        "Comprehensive assessment of your walking pattern and identification of abnormalities",
+      duration: "4 weeks",
+      sessions: "8 sessions",
+    },
+    {
+      icon: <Target size={34} />,
+      title: "Advanced Gait Correction",
+      description:
+        "Targeted interventions to correct specific gait deviations and improve efficiency",
+      duration: "6 weeks",
+      sessions: "12 sessions",
+    },
+    {
+      icon: <Award size={34} />,
+      title: "Sports Performance Gait",
+      description:
+        "Optimize your running and athletic performance through gait enhancement",
+      duration: "8 weeks",
+      sessions: "16 sessions",
+    },
+  ];
 
-    const benefits = [
-        "Improved walking efficiency",
-        "Reduced risk of injuries",
-        "Enhanced athletic performance",
-        "Better posture and balance",
-        "Reduced joint pain",
-        "Increased mobility and confidence"
-    ];
+  const benefits = [
+    "Improved walking efficiency",
+    "Reduced risk of injuries",
+    "Enhanced athletic performance",
+    "Better posture and balance",
+    "Reduced joint pain",
+    "Increased mobility and confidence",
+  ];
 
+  return (
+    <Box>
 
-    return (
-        <div>
-            {/* Hero Section */}
-            <section className="relative text-teal-900 py-40 flex items-center">
-                {/* Background image with overlay */}
-                <div className="absolute inset-0 z-0">
-                    <img
-                        src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920&q=80"
-                        alt="Physiotherapy background"
-                        className="w-full h-full object-cover"
-                    />
-                    {/* Overlay for better text readability */}
-                    <div className="absolute inset-0 bg-black/50"></div>
-                </div>
+      {/* HERO SECTION */}
+      <Box
+        sx={{
+          position: "relative",
+          py: 20,
+          color: "#fff",
+          textAlign: "center",
+        }}
+      >
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920&q=80')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            zIndex: -2,
+          }}
+        />
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor: "rgba(0,0,0,0.55)",
+            zIndex: -1,
+          }}
+        />
 
-                <div className="container mx-auto px-6 text-center relative z-10">
-                    <div className="max-w-4xl mx-auto">
-                        <h1 className="text-5xl md:text-6xl text-white font-bold mb-6">
-                            Gait School
-                        </h1>
-                        <p className="text-xl md:text-2xl mb-8 text-white">
-                            Master the art of walking. Transform your mobility, reduce pain, and enhance your movement quality.
-                        </p>
-                    </div>
-                </div>
-            </section>
+        <Container maxWidth="md">
+          <Typography variant="h2" fontWeight="bold" mb={3}>
+            Gait School
+          </Typography>
+          <Typography variant="h5">
+            Master the art of walking. Transform your mobility, reduce pain, and
+            enhance your movement quality.
+          </Typography>
+        </Container>
+      </Box>
 
-            {/* Introduction Section */}
-            <section className="py-16 px-30 bg-white">
-                <div className="container mx-auto px-6">
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h2 className="text-4xl font-bold text-teal-900 mb-6">
-                                What is Gait School?
-                            </h2>
-                            <p className="text-lg text-gray-600 mb-6">
-                                Our Gait School is a specialized program designed to analyze, correct, and optimize
-                                your walking pattern. Using state-of-the-art technology and evidence-based techniques,
-                                we help you achieve efficient, pain-free movement.
-                            </p>
-                            <p className="text-lg text-gray-600 mb-8">
-                                Whether you're recovering from an injury, looking to improve athletic performance,
-                                or simply want to walk with better form, our expert physiotherapists will guide you
-                                every step of the way.
-                            </p>
-                            <div className="grid grid-cols-2 gap-4">
-                                <div className="flex items-center">
-                                    <CheckCircle className="w-6 h-6 text-teal-700 mr-2" />
-                                    <span className="text-gray-700">Personalized Assessment</span>
-                                </div>
-                                <div className="flex items-center">
-                                    <CheckCircle className="w-6 h-6 text-teal-700 mr-2" />
-                                    <span className="text-gray-700">Expert Guidance</span>
-                                </div>
-                                <div className="flex items-center">
-                                    <CheckCircle className="w-6 h-6 text-teal-700 mr-2" />
-                                    <span className="text-gray-700">Proven Results</span>
-                                </div>
-                                <div className="flex items-center">
-                                    <CheckCircle className="w-6 h-6 text-teal-700 mr-2" />
-                                    <span className="text-gray-700">Ongoing Support</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="relative">
-                            <img
-                                src="https://media.istockphoto.com/id/622810048/photo/female-physical-therapist-helping-young-girl-walk-up-an-incline.webp?a=1&b=1&s=612x612&w=0&k=20&c=aHCM3PEKeqagmep5R9Zgk-pBByiFSkCQTVk9FUf5yug="
-                                alt="Gait Analysis in progress"
-                                className="rounded-2xl shadow-lg"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </section>
+      {/* INTRO SECTION */}
+      <Box sx={{ py: 10, backgroundColor: "#fff" }}>
+        <Container maxWidth="lg">
+          <Grid container spacing={8} alignItems="center">
+            <Grid size={{ xs: 12, lg: 6 }}>
+              <Typography
+                variant="h4"
+                fontWeight="bold"
+                color="primary.main"
+                mb={3}
+              >
+                What is Gait School?
+              </Typography>
 
-            {/* Programs Section */}
-            <section className="py-16 bg-teal-50">
-                <div className="container mx-auto px-6">
-                    <div className="text-center mb-12">
-                        <h2 className="text-4xl font-bold text-gray-800 mb-4">
-                            Our Gait Programs
-                        </h2>
-                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                            Choose from our specialized programs designed to meet your specific needs and goals
-                        </p>
-                    </div>
+              <Typography color="text.secondary" mb={3}>
+                Our Gait School is a specialized program designed to analyze,
+                correct, and optimize your walking pattern. Using state-of-the-art
+                technology and evidence-based techniques, we help you achieve
+                efficient, pain-free movement.
+              </Typography>
 
-                    <div className="grid md:grid-cols-3 gap-8 px-30">
-                        {programs.map((program, index) => (
-                            <div key={index} className="bg-white rounded-2xl transition duration-300 overflow-hidden">
-                                <div className="p-8">
-                                    <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-teal-600 mb-6">
-                                        {program.icon}
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                                        {program.title}
-                                    </h3>
-                                    <p className="text-gray-600 mb-6">
-                                        {program.description}
-                                    </p>
-                                    <div className="space-y-3 mb-6">
-                                        <div className="flex items-center text-gray-600">
-                                            <Clock className="w-5 h-5 mr-3 text-teal-700" />
-                                            <span>Duration: {program.duration}</span>
-                                        </div>
-                                        <div className="flex items-center text-gray-600">
-                                            <Calendar className="w-5 h-5 mr-3 text-teal-700" />
-                                            <span>{program.sessions}</span>
-                                        </div>
-                                    </div>
-                                    <button className="w-full bg-teal-800 text-white py-3 rounded-xl font-semibold hover:bg-teal-900 transition duration-300">
-                                        Learn More
-                                    </button>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+              <Typography color="text.secondary" mb={4}>
+                Whether you're recovering from an injury, looking to improve
+                athletic performance, or simply want to walk with better form, our
+                expert physiotherapists will guide you every step of the way.
+              </Typography>
 
-            {/* Benefits Section */}
-            <section className="py-16 bg-white px-30">
-                <div className="container mx-auto px-6">
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h2 className="text-4xl font-bold text-gray-800 mb-6">
-                                Benefits of Gait Training
-                            </h2>
-                            <div className="grid gap-4">
-                                {benefits.map((benefit, index) => (
-                                    <div key={index} className="flex items-center p-2 rounded-xl">
-                                        <CheckCircle className="w-6 h-6 text-green-500 mr-4" />
-                                        <span className="text-lg text-gray-700">{benefit}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                        <div className="relative">
-                            <img
-                                src="https://plus.unsplash.com/premium_photo-1710467003443-4dcf21bf58fe?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHBoeXNpb3RoZXJhcHklMjBzY2hvb2x8ZW58MHx8MHx8fDA%3D"
-                                alt="Gait Analysis in progress"
-                                className="rounded-2xl shadow-lg"
-                            />
-                            <div className="absolute -bottom-6 -left-6 bg-teal-900 text-white p-6 rounded-2xl shadow-xl">
-                                <div className="text-center">
-                                    <div className="text-3xl font-bold">95%</div>
-                                    <div className="text-blue-100">Success Rate</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    );
+              <Grid container spacing={2}>
+                {["Personalized Assessment", "Expert Guidance", "Proven Results", "Ongoing Support"].map(
+                  (item, i) => (
+                    <Grid size={{ xs: 12, lg: 6 }} key={i}>
+                      <Box sx={{ display: "flex", alignItems: "center" }}>
+                        <CheckCircle color="#0f766e" size={22} />
+                        <Typography ml={1}>{item}</Typography>
+                      </Box>
+                    </Grid>
+                  )
+                )}
+              </Grid>
+            </Grid>
+
+            <Grid size={{ xs: 12, lg: 4 }}>
+              <Box>
+                
+              </Box>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+
+      {/* PROGRAMS SECTION */}
+      <Box sx={{ py: 10, backgroundColor: "rgba(0,150,136,0.05)" }}>
+        <Container maxWidth="lg">
+          <Box textAlign="center" mb={8}>
+            <Typography variant="h4" fontWeight="bold" mb={2}>
+              Our Gait Programs
+            </Typography>
+            <Typography color="text.secondary" variant="h6">
+              Choose from our specialized programs designed to meet your goals.
+            </Typography>
+          </Box>
+
+          <Grid container spacing={4}>
+            {programs.map((program, index) => (
+              <Grid size={{ xs: 12, lg: 4  }} key={index}>
+                <Paper
+                  elevation={3}
+                  sx={{
+                    p: 4,
+                    borderRadius: 4,
+                    height: "100%",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 70,
+                      height: 70,
+                      backgroundColor: "primary.light",
+                      borderRadius: 3,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      mb: 3,
+                      color: "primary.dark",
+                    }}
+                  >
+                    {program.icon}
+                  </Box>
+
+                  <Typography variant="h6" fontWeight="bold" mb={2}>
+                    {program.title}
+                  </Typography>
+
+                  <Typography color="text.secondary" mb={3}>
+                    {program.description}
+                  </Typography>
+
+                  <Box mb={3}>
+                    <Box display="flex" alignItems="center" mb={1}>
+                      <Clock size={20} />
+                      <Typography ml={1}>
+                        Duration: {program.duration}
+                      </Typography>
+                    </Box>
+
+                    <Box display="flex" alignItems="center">
+                      <Calendar size={20} />
+                      <Typography ml={1}>{program.sessions}</Typography>
+                    </Box>
+                  </Box>
+
+                  <Button
+                    fullWidth
+                    variant="contained"
+                    sx={{ py: 1.5, borderRadius: 2 }}
+                  >
+                    Learn More
+                  </Button>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+
+      {/* BENEFITS SECTION */}
+      <Box sx={{ py: 10, backgroundColor: "#fff" }}>
+        <Container maxWidth="lg">
+          <Grid container spacing={8} alignItems="center">
+            <Grid size={{ xs: 12, lg: 6 }}>
+              <Typography variant="h4" fontWeight="bold" mb={3}>
+                Benefits of Gait Training
+              </Typography>
+
+              {benefits.map((b, i) => (
+                <Box key={i} display="flex" alignItems="center" mb={2}>
+                  <CheckCircle color="green" size={24} />
+                  <Typography ml={2} color="text.primary">
+                    {b}
+                  </Typography>
+                </Box>
+              ))}
+            </Grid>
+
+            <Grid size={{ xs: 12, lg: 6 }} sx={{ position: "relative" }}>
+              <Card sx={{ borderRadius: 4, }}>
+                <CardMedia
+                  component="img"
+                  image="https://plus.unsplash.com/premium_photo-1710467003443-4dcf21bf58fe?w=600&auto=format"
+                  alt="Gait Benefits"
+                />
+              </Card>
+
+              <Box
+                sx={{
+                  position: "absolute",
+                  bottom: -20,
+                  left: -20,
+                  backgroundColor: "primary.main",
+                  color: "#fff",
+                  p: 3,
+                  borderRadius: 3,
+                  textAlign: "center",
+                }}
+              >
+                <Typography variant="h4" fontWeight="bold">
+                  95%
+                </Typography>
+                <Typography>Success Rate</Typography>
+              </Box>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+    </Box>
+  );
 };
 
 export default GaitSchool;

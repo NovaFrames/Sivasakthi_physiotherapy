@@ -1,181 +1,278 @@
-import { useState } from 'react';
-import { Activity, Target, Heart, Zap, Award, X } from 'lucide-react';
+import { useState } from "react";
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardMedia,
+  CardContent,
+  Dialog,
+  DialogContent,
+  IconButton,
+} from "@mui/material";
+
+// MUI ICONS
+import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
+import TrackChangesIcon from "@mui/icons-material/TrackChanges";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import BoltIcon from "@mui/icons-material/Bolt";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import CloseIcon from "@mui/icons-material/Close";
 
 interface ActivityType {
-    id: number;
-    title: string;
-    description: string;
-    image: string;
+  id: number;
+  title: string;
+  description: string;
+  image: string;
 }
 
 const FunctionalActivities = () => {
-    const [selectedImage, setSelectedImage] = useState<ActivityType | null>(null);
+  const [selectedImage, setSelectedImage] = useState<ActivityType | null>(null);
 
-    const activities: ActivityType[] = [
-        {
-            id: 1,
-            title: "Balance Training",
-            description: "Improve stability and prevent falls through targeted exercises",
-            image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop"
-        },
-        {
-            id: 2,
-            title: "Strength Building",
-            description: "Progressive resistance training for functional movement",
-            image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop"
-        },
-        {
-            id: 3,
-            title: "Mobility Exercises",
-            description: "Enhance range of motion and flexibility for daily activities",
-            image: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&h=600&fit=crop"
-        },
-        {
-            id: 4,
-            title: "Gait Training",
-            description: "Restore normal walking patterns and improve coordination",
-            image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&h=600&fit=crop"
-        },
-        {
-            id: 5,
-            title: "Core Stabilization",
-            description: "Strengthen your core for better posture and movement control",
-            image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=600&fit=crop"
-        },
-        {
-            id: 6,
-            title: "Sport-Specific Training",
-            description: "Return to your favorite activities with confidence",
-            image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&h=600&fit=crop"
-        }
-    ];
+  const activities: ActivityType[] = [
+    {
+      id: 1,
+      title: "Balance Training",
+      description: "Improve stability and prevent falls through targeted exercises",
+      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop",
+    },
+    {
+      id: 2,
+      title: "Strength Building",
+      description: "Progressive resistance training for functional movement",
+      image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop",
+    },
+    {
+      id: 3,
+      title: "Mobility Exercises",
+      description: "Enhance range of motion and flexibility for daily activities",
+      image: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&h=600&fit=crop",
+    },
+    {
+      id: 4,
+      title: "Gait Training",
+      description: "Restore normal walking patterns and improve coordination",
+      image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&h=600&fit=crop",
+    },
+    {
+      id: 5,
+      title: "Core Stabilization",
+      description: "Strengthen your core for better posture and movement control",
+      image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=600&fit=crop",
+    },
+    {
+      id: 6,
+      title: "Sport-Specific Training",
+      description: "Return to your favorite activities with confidence",
+      image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&h=600&fit=crop",
+    },
+  ];
 
-    const benefits = [
-        {
-            icon: <Target className="w-6 h-6" />,
-            title: "Personalized Goals",
-            description: "Custom treatment plans tailored to your specific needs"
-        },
-        {
-            icon: <Heart className="w-6 h-6" />,
-            title: "Holistic Approach",
-            description: "Address the root cause, not just symptoms"
-        },
-        {
-            icon: <Zap className="w-6 h-6" />,
-            title: "Faster Recovery",
-            description: "Evidence-based techniques for optimal results"
-        },
-        {
-            icon: <Award className="w-6 h-6" />,
-            title: "Expert Care",
-            description: "Licensed professionals with years of experience"
-        }
-    ];
+  const benefits = [
+    {
+      icon: <TrackChangesIcon sx={{ fontSize: 40 }} />,
+      title: "Personalized Goals",
+      description: "Custom treatment plans tailored to your specific needs",
+    },
+    {
+      icon: <FavoriteIcon sx={{ fontSize: 40 }} />,
+      title: "Holistic Approach",
+      description: "Address the root cause, not just symptoms",
+    },
+    {
+      icon: <BoltIcon sx={{ fontSize: 40 }} />,
+      title: "Faster Recovery",
+      description: "Evidence-based techniques for optimal results",
+    },
+    {
+      icon: <EmojiEventsIcon sx={{ fontSize: 40 }} />,
+      title: "Expert Care",
+      description: "Licensed professionals with years of experience",
+    },
+  ];
 
-    return (
-        <div className="min-h-screen bg-white">
-            {/* Hero Section */}
-            <div
-                className="relative text-white py-40 px-4 bg-cover bg-center bg-no-repeat"
-                style={{
-                    backgroundImage:
-                        "url('https://media.istockphoto.com/id/2157936561/photo/female-nurse-with-young-patient-in-childrens-hospital-waiting-room.webp?a=1&b=1&s=612x612&w=0&k=20&c=g4CxVizBo_ocCCVZ3D1lBsdxNjxFnjsBQS-lEIVL4Z8=')",
+  return (
+    <Box sx={{ minHeight: "100vh", bgcolor: "white" }}>
+      {/* HERO SECTION */}
+      <Box
+        sx={{
+          position: "relative",
+          py: { xs: 12, md: 20 },
+          textAlign: "center",
+          color: "white",
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1589104759909-e355f8999f7e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHBhdGllbnQlMjBldmVudHN8ZW58MHx8MHx8fDA%3D')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor: "rgba(0,0,0,0.6)",
+          }}
+        />
+
+        <Container sx={{ position: "relative", zIndex: 2 }}>
+          <FitnessCenterIcon
+            sx={{ fontSize: 70, mb: 2, display: "block", mx: "auto" }}
+          />
+
+          <Typography variant="h3" fontWeight={700} gutterBottom>
+            Functional Activities
+          </Typography>
+
+          <Typography variant="h6" maxWidth="700px" mx="auto" color="grey.200">
+            Regain independence and improve your quality of life through targeted
+            functional training
+          </Typography>
+        </Container>
+      </Box>
+
+      {/* INTRODUCTION */}
+      <Container sx={{ py: 8 }}>
+        <Typography
+          variant="h4"
+          fontWeight={700}
+          textAlign="center"
+          color="primary.main"
+          mb={2}
+        >
+          What Are Functional Activities?
+        </Typography>
+
+        <Typography
+          variant="body1"
+          textAlign="center"
+          color="text.secondary"
+          maxWidth="800px"
+          mx="auto"
+          mb={6}
+        >
+          Functional activities focus on exercises and movements that directly
+          relate to your daily life. Our approach helps you regain strength,
+          mobility, and confidence to perform everyday tasks with ease.
+        </Typography>
+
+        {/* BENEFIT CARDS */}
+        <Grid container spacing={3} mb={10}>
+          {benefits.map((b, index) => (
+            <Grid size={{ xs: 12, lg: 3 }} key={index}>
+              <Card
+                elevation={2}
+                sx={{
+                  p: 3,
+                  textAlign: "center",
+                  borderRadius: 3,
                 }}
-            >
-                {/* Overlay for better text visibility */}
-                <div className="absolute inset-0 bg-black/60"></div>
+              >
+                <Box color="primary.main" mb={1}>
+                  {b.icon}
+                </Box>
+                <Typography variant="h6" fontWeight={600} mb={1}>
+                  {b.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {b.description}
+                </Typography>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
 
-                {/* Content */}
-                <div className="relative max-w-6xl mx-auto text-center">
-                    <Activity className="w-16 h-16 mx-auto mb-4" />
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4">Functional Activities</h1>
-                    <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-                        Regain independence and improve your quality of life through targeted functional training
-                    </p>
-                </div>
-            </div>
+        {/* ACTIVITIES SECTION */}
+        <Typography
+          variant="h4"
+          fontWeight={700}
+          textAlign="center"
+          mb={5}
+          color="primary.main"
+        >
+          Our Functional Training Programs
+        </Typography>
 
+        <Grid container spacing={4}>
+          {activities.map((act) => (
+            <Grid size={{ xs: 12, lg: 4 }}  key={act.id}>
+              <Card
+                onClick={() => setSelectedImage(act)}
+                sx={{
+                  cursor: "pointer",
+                  borderRadius: 3,
+                  transition: "0.3s",
+                }}
+                elevation={3}
+              >
+                <CardMedia
+                  component="img"
+                  height="220"
+                  image={act.image}
+                  alt={act.title}
+                  sx={{
+                    transition: "0.3s",
+                    "&:hover": { transform: "scale(1.04)" },
+                  }}
+                />
+                <CardContent>
+                  <Typography variant="h6" fontWeight={600}>
+                    {act.title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {act.description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
 
-            {/* Introduction Section */}
-            <div className="max-w-6xl mx-auto px-4 py-16">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                        What Are Functional Activities?
-                    </h2>
-                    <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                        Functional activities focus on exercises and movements that directly relate to your daily life.
-                        Our approach helps you regain strength, mobility, and confidence to perform everyday tasks with ease.
-                    </p>
-                </div>
+      {/* IMAGE MODAL */}
+      <Dialog
+        open={!!selectedImage}
+        onClose={() => setSelectedImage(null)}
+        maxWidth="md"
+        fullWidth
+      >
+        <DialogContent sx={{ position: "relative", p: 0 }}>
+          <IconButton
+            onClick={() => setSelectedImage(null)}
+            sx={{
+              position: "absolute",
+              top: 10,
+              right: 10,
+              bgcolor: "white",
+              "&:hover": { bgcolor: "grey.200" },
+              zIndex: 10,
+            }}
+          >
+            <CloseIcon />
+          </IconButton>
 
-                {/* Benefits Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                    {benefits.map((benefit, index) => (
-                        <div key={index} className="bg-white p-6 rounded-lg">
-                            <div className="text-blue-600 mb-3">{benefit.icon}</div>
-                            <h3 className="text-xl font-semibold text-gray-800 mb-2">{benefit.title}</h3>
-                            <p className="text-gray-600">{benefit.description}</p>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Activities Gallery */}
-                <div className="mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
-                        Our Functional Training Programs
-                    </h2>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {activities.map((activity) => (
-                            <div
-                                key={activity.id}
-                                className="bg-white rounded-lg overflow-hidden transition-shadow cursor-pointer"
-                                onClick={() => setSelectedImage(activity)}
-                            >
-                                <div className="h-48 overflow-hidden">
-                                    <img
-                                        src={activity.image}
-                                        alt={activity.title}
-                                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                                    />
-                                </div>
-                                <div className="p-6">
-                                    <h3 className="text-xl font-semibold text-gray-800 mb-2">{activity.title}</h3>
-                                    <p className="text-gray-600">{activity.description}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-
-            {/* Image Modal */}
-            {selectedImage && (
-                <div
-                    className="fixed inset-0 bg-black/50 bg-opacity-75 flex items-center justify-center z-50 p-4"
-                    onClick={() => setSelectedImage(null)}
-                >
-                    <div className="relative max-w-4xl w-full bg-white rounded-lg overflow-hidden">
-                        <button
-                            onClick={() => setSelectedImage(null)}
-                            className="absolute top-4 right-4 bg-white rounded-full p-2 hover:bg-gray-100 transition-colors z-10"
-                        >
-                            <X className="w-6 h-6 text-gray-800" />
-                        </button>
-                        <img
-                            src={selectedImage.image}
-                            alt={selectedImage.title}
-                            className="w-full h-96 object-cover"
-                        />
-                        <div className="p-6">
-                            <h3 className="text-2xl font-bold text-gray-800 mb-2">{selectedImage.title}</h3>
-                            <p className="text-gray-600">{selectedImage.description}</p>
-                        </div>
-                    </div>
-                </div>
-            )}
-        </div>
-    );
+          {selectedImage && (
+            <>
+              <Box
+                component="img"
+                src={selectedImage.image}
+                alt={selectedImage.title}
+                sx={{ width: "100%", height: 350, objectFit: "cover" }}
+              />
+              <Box sx={{ p: 3 }}>
+                <Typography variant="h5" fontWeight={700}>
+                  {selectedImage.title}
+                </Typography>
+                <Typography color="text.secondary">
+                  {selectedImage.description}
+                </Typography>
+              </Box>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+    </Box>
+  );
 };
 
 export default FunctionalActivities;
