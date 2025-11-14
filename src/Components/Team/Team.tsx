@@ -1,3 +1,11 @@
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  Chip,
+  Paper
+} from '@mui/material';
 
 const Team = () => {
   const teamMembers = [
@@ -20,55 +28,100 @@ const Team = () => {
       name: 'Dr Deepanshu Khatri',
       role: 'Head Operations',
       image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&fit=crop'
-    },
-    {
-      name: 'Dr Natasha Saleem ',
-      role: 'Head - Clinical Process',
-      image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop'
     }
   ];
 
   return (
-    <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <Box sx={{ bgcolor: "background.section", py: 8, px: 2 }}>
+      <Container maxWidth="xl">
+
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-block bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
-            CB Physiotherapy Team
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-            <span className="text-teal-600">Our Dedicated</span> & Experienced Therapist Team
-          </h1>
-        </div>
+        <Box sx={{ textAlign: "center", mb: 8 }}>
+          <Chip
+            label="CB Physiotherapy Team"
+            sx={{
+              bgcolor: "primary.main",
+              color: "#ffffff",
+              fontWeight: 500,
+              mb: 2,
+              px: 2,
+              py: 1,
+            }}
+          />
+
+          <Typography
+            variant="h2"
+            component="h1"
+            sx={{
+              fontWeight: "bold",
+              fontSize: { xs: "2rem", md: "3rem" },
+              color: "text.primary",
+            }}
+          >
+            <Box component="span" sx={{ color: "primary.main" }}>
+              Our Dedicated
+            </Box>{" "}
+            & Experienced Therapist Team
+          </Typography>
+        </Box>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <Grid container spacing={3}>
           {teamMembers.map((member, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden"
-            >
-              <div className="relative aspect-square">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/20 to-transparent"></div>
-              </div>
-              <div className="p-6 text-center">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
-                  {member.name}
-                </h3>
-                <p className="text-sm text-gray-600">
-                  {member.role}
-                </p>
-              </div>
-            </div>
+            <Grid key={index} size={{ xs: 12, lg: 3 }} >
+              <Paper
+                elevation={3}
+                sx={{
+                  borderRadius: 3,
+                  overflow: "hidden",
+                  transition: "box-shadow 0.3s",
+                  bgcolor: "background.paper",
+                }}
+              >
+                <Box sx={{ position: "relative", paddingTop: "100%" }}>
+                  <Box
+                    component="img"
+                    src={member.image}
+                    alt={member.name}
+                    sx={{
+                      position: "absolute",
+                      borderRadius: 5,
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                </Box>
+
+                <Box sx={{ textAlign: "center", p: 3 }}>
+                  <Typography
+                    variant="h6"
+                    component="h3"
+                    sx={{
+                      fontWeight: "bold",
+                      color: "text.primary",
+                      mb: 1,
+                    }}
+                  >
+                    {member.name}
+                  </Typography>
+
+                  <Typography
+                    variant="body2"
+                    sx={{ color: "text.secondary" }}
+                  >
+                    {member.role}
+                  </Typography>
+                </Box>
+              </Paper>
+            </Grid>
           ))}
-        </div>
-      </div>
-    </div>
+        </Grid>
+
+      </Container>
+    </Box>
   );
 };
 
