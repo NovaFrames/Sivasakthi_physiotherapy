@@ -1,74 +1,72 @@
 import React from "react";
 import {
-    Box,
-    Typography,
-    Grid,
-    Container,
-    useTheme,
-    Paper,
-    Chip,
-    alpha,
+  Box,
+  Typography,
+  Grid,
+  Container,
+  useTheme,
+  Paper,
+  alpha,
 } from "@mui/material";
 import GalleryCard from "../../Components/Card/GalleryCard";
 
 import {
-    Chair,
-    DirectionsRun,
-    FitnessCenter,
-    Accessibility,
-    SelfImprovement,
-    SportsGymnastics,
-    Support,
-    AccessibilityNew,
-    MedicalServices,
-    Person,
-    Hotel,
-    Nightlight,
-    Spa,
+  Chair,
+  DirectionsRun,
+  FitnessCenter,
+  Accessibility,
+  SelfImprovement,
+  SportsGymnastics,
+  Support,
+  AccessibilityNew,
+  MedicalServices,
+  Person,
+  Hotel,
+  Nightlight,
+  Spa,
 } from "@mui/icons-material";
 
 // Type definitions
 interface CategoryItem {
-    name: string;
-    icon: React.ReactElement;
+  name: string;
+  icon: React.ReactElement;
 }
 
 interface Category {
-    title: string;
-    items: CategoryItem[];
+  title: string;
+  items: CategoryItem[];
 }
 
 interface Section {
-    sectionTitle: string;
-    sectionDescription: string;
-    categories: Category[];
+  sectionTitle: string;
+  sectionDescription: string;
+  categories: Category[];
 }
 
 // Reusable Category Section Component
 interface CategorySectionProps {
-    title: string;
-    description: string;
-    categories: Category[];
-    index: number;
+  title: string;
+  description: string;
+  categories: Category[];
+  index: number;
 }
 
 const CategorySection: React.FC<CategorySectionProps> = ({
   title,
   description,
   categories,
-  index,
 }) => {
   const theme = useTheme();
-  
+
   const sectionColors = [
     { primary: theme.palette.primary.main, secondary: alpha(theme.palette.primary.main, 0.1) },
   ];
-  
+
   const currentColor = sectionColors[0];
 
   return (
-    <Box 
-      sx={{ 
+    <Box
+      sx={{
         py: 8,
         position: 'relative',
         overflow: 'hidden',
@@ -86,23 +84,10 @@ const CategorySection: React.FC<CategorySectionProps> = ({
           zIndex: 0,
         }}
       />
-      
+
       <Container maxWidth="lg">
         {/* Section Heading */}
         <Box textAlign="center" mb={6} position="relative">
-          <Chip 
-            label={`0${index + 1}`}
-            sx={{
-              bgcolor: currentColor.primary,
-              color: 'white',
-              fontWeight: 'bold',
-              fontSize: '1rem',
-              width: 60,
-              height: 60,
-              borderRadius: '50%',
-              mb: 3,
-            }}
-          />
           <Typography
             variant="h3"
             component="h2"
@@ -119,9 +104,9 @@ const CategorySection: React.FC<CategorySectionProps> = ({
           <Typography
             variant="h6"
             color="text.secondary"
-            sx={{ 
-              maxWidth: 700, 
-              mx: "auto", 
+            sx={{
+              maxWidth: 700,
+              mx: "auto",
               fontSize: "1.2rem",
               lineHeight: 1.6,
             }}
@@ -133,7 +118,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({
         {/* Category Cards Grid */}
         <Grid container spacing={3}>
           {categories.map((category, catIndex) => (
-            <Grid key={catIndex} size={{xs:12,md:4}}>
+            <Grid key={catIndex} size={{ xs: 12, md: 4 }}>
               <Paper
                 elevation={2}
                 sx={{
@@ -189,8 +174,8 @@ const CategorySection: React.FC<CategorySectionProps> = ({
                         },
                       }}
                     >
-                      <Box 
-                        sx={{ 
+                      <Box
+                        sx={{
                           mr: 2,
                           display: 'flex',
                           alignItems: 'center',
@@ -204,9 +189,9 @@ const CategorySection: React.FC<CategorySectionProps> = ({
                       >
                         {item.icon}
                       </Box>
-                      <Typography 
-                        variant="body1" 
-                        sx={{ 
+                      <Typography
+                        variant="body1"
+                        sx={{
                           fontWeight: 600,
                           fontSize: '1rem',
                         }}
@@ -226,286 +211,276 @@ const CategorySection: React.FC<CategorySectionProps> = ({
 };
 
 const PosturalCorrectionExercise: React.FC = () => {
-    const theme = useTheme();
-    const exerciseData: Section[] = [
+  const theme = useTheme();
+  const exerciseData: Section[] = [
+    {
+      sectionTitle: "Different Type of Sitting",
+      sectionDescription:
+        "Explore various sitting positions designed to improve posture, enhance comfort, and promote proper spinal alignment for better health outcomes.",
+      categories: [
         {
-            sectionTitle: "Different Type of Sitting",
-            sectionDescription:
-                "Explore various sitting positions designed to improve posture, enhance comfort, and promote proper spinal alignment for better health outcomes.",
-            categories: [
-                {
-                    title: "SITTING POSITIONS",
-                    items: [
-                        { name: "Long Sitting", icon: <Chair /> },
-                        { name: "Crook Sitting", icon: <Accessibility /> },
-                        { name: "Side Sitting Both Sides", icon: <DirectionsRun /> },
-                        { name: "Small Stool Sitting", icon: <Chair /> },
-                    ],
-                },
-                {
-                    title: "ADVANCED SITTING",
-                    items: [
-                        { name: "Forward-Bending Sitting", icon: <SelfImprovement /> },
-                        { name: "Backward-Long Sitting", icon: <SportsGymnastics /> },
-                        { name: "High Stool Sitting", icon: <Chair /> },
-                        { name: "Sitting & Upper Limb Activity", icon: <FitnessCenter /> },
-                    ],
-                },
-                {
-                    title: "THERAPEUTIC SITTING",
-                    items: [
-                        { name: "Shoulder wheel", icon: <FitnessCenter /> },
-                        { name: "Erect Sitting", icon: <Accessibility /> },
-                        { name: "Peanut Ball Sitting", icon: <SportsGymnastics /> },
-                    ],
-                },
-            ],
+          title: "SITTING POSITIONS",
+          items: [
+            { name: "Long Sitting", icon: <Chair /> },
+            { name: "Crook Sitting", icon: <Accessibility /> },
+            { name: "Side Sitting Both Sides", icon: <DirectionsRun /> },
+            { name: "Small Stool Sitting", icon: <Chair /> },
+          ],
         },
         {
-            sectionTitle: "Different Type of Standing",
-            sectionDescription:
-                "Master various standing techniques and support methods to build strength, improve balance, and enhance overall mobility and independence.",
-            categories: [
-                {
-                    title: "SUPPORTED STANDING",
-                    items: [
-                        { name: "Titling Board", icon: <Support /> },
-                        { name: "Standing Frame", icon: <AccessibilityNew /> },
-                        { name: "Crutch Support Standing", icon: <MedicalServices /> },
-                        { name: "Manual Support Standing", icon: <Person /> },
-                    ],
-                },
-                {
-                    title: "ASSISTED STANDING",
-                    items: [
-                        { name: "Wall Support", icon: <Support /> },
-                        { name: "Use Lower Limb Splints", icon: <MedicalServices /> },
-                        { name: "Independent Standing", icon: <Person /> },
-                    ],
-                },
-                {
-                    title: "ADAPTIVE STANDING",
-                    items: [
-                        { name: "Use Upper Limb Splints", icon: <MedicalServices /> },
-                        { name: "Walker Support Standing", icon: <Support /> },
-                    ],
-                },
-            ],
+          title: "ADVANCED SITTING",
+          items: [
+            { name: "Forward-Bending Sitting", icon: <SelfImprovement /> },
+            { name: "Backward-Long Sitting", icon: <SportsGymnastics /> },
+            { name: "High Stool Sitting", icon: <Chair /> },
+            { name: "Sitting & Upper Limb Activity", icon: <FitnessCenter /> },
+          ],
         },
         {
-            sectionTitle: "Different Type of Lying",
-            sectionDescription:
-                "Discover therapeutic lying positions that promote relaxation, reduce pressure points, and support proper body alignment during rest.",
-            categories: [
-                {
-                    title: "BASIC LYING",
-                    items: [
-                        { name: "Use Pillow", icon: <Hotel /> },
-                        { name: "Supine Lying", icon: <Nightlight /> },
-                        { name: "Side Lying", icon: <Spa /> },
-                        { name: "Prone Lying", icon: <SelfImprovement /> },
-                    ],
-                },
-                {
-                    title: "SPECIALIZED LYING",
-                    items: [
-                        { name: "Prone Lying Variations", icon: <SelfImprovement /> },
-                        { name: "Peanut Ball Lying", icon: <SportsGymnastics /> },
-                        { name: "Semi-prone Lying", icon: <Spa /> },
-                    ],
-                },
-                {
-                    title: "BALL THERAPY",
-                    items: [
-                        { name: "Pelvic Ball-Sitting / Lying", icon: <SportsGymnastics /> },
-                        { name: "Swiss Ball-Sitting / Lying", icon: <SportsGymnastics /> },
-                    ],
-                },
-            ],
+          title: "THERAPEUTIC SITTING",
+          items: [
+            { name: "Shoulder wheel", icon: <FitnessCenter /> },
+            { name: "Erect Sitting", icon: <Accessibility /> },
+            { name: "Peanut Ball Sitting", icon: <SportsGymnastics /> },
+          ],
+        },
+      ],
+    },
+    {
+      sectionTitle: "Different Type of Standing",
+      sectionDescription:
+        "Master various standing techniques and support methods to build strength, improve balance, and enhance overall mobility and independence.",
+      categories: [
+        {
+          title: "SUPPORTED STANDING",
+          items: [
+            { name: "Titling Board", icon: <Support /> },
+            { name: "Standing Frame", icon: <AccessibilityNew /> },
+            { name: "Crutch Support Standing", icon: <MedicalServices /> },
+            { name: "Manual Support Standing", icon: <Person /> },
+          ],
         },
         {
-            sectionTitle: "Postural Correction Exercise",
-            sectionDescription: "Comprehensive exercise program targeting all major body areas to improve mobility, strength, and postural awareness.",
-            categories: [
-                {
-                    title: "UPPER BODY",
-                    items: [
-                        { name: "Neck Movement", icon: <FitnessCenter /> },
-                        { name: "Shoulder Movement", icon: <FitnessCenter /> },
-                        { name: "Elbow Movement", icon: <FitnessCenter /> },
-                        { name: "Wrist Movement", icon: <FitnessCenter /> },
-                    ],
-                },
-                {
-                    title: "CORE & TRUNK",
-                    items: [
-                        { name: "Spine Movement", icon: <FitnessCenter /> },
-                        { name: "Upper Limb Concentration", icon: <FitnessCenter /> },
-                        { name: "Hip Movement", icon: <FitnessCenter /> },
-                    ],
-                },
-                {
-                    title: "LOWER BODY",
-                    items: [
-                        { name: "Lower Limb Concentration", icon: <FitnessCenter /> },
-                        { name: "Knee Movement", icon: <FitnessCenter /> },
-                        { name: "Ankle Movement", icon: <FitnessCenter /> },
-                    ],
-                },
-            ],
+          title: "ASSISTED STANDING",
+          items: [
+            { name: "Wall Support", icon: <Support /> },
+            { name: "Use Lower Limb Splints", icon: <MedicalServices /> },
+            { name: "Independent Standing", icon: <Person /> },
+          ],
         },
-    ];
+        {
+          title: "ADAPTIVE STANDING",
+          items: [
+            { name: "Use Upper Limb Splints", icon: <MedicalServices /> },
+            { name: "Walker Support Standing", icon: <Support /> },
+          ],
+        },
+      ],
+    },
+    {
+      sectionTitle: "Different Type of Lying",
+      sectionDescription:
+        "Discover therapeutic lying positions that promote relaxation, reduce pressure points, and support proper body alignment during rest.",
+      categories: [
+        {
+          title: "BASIC LYING",
+          items: [
+            { name: "Use Pillow", icon: <Hotel /> },
+            { name: "Supine Lying", icon: <Nightlight /> },
+            { name: "Side Lying", icon: <Spa /> },
+            { name: "Prone Lying", icon: <SelfImprovement /> },
+          ],
+        },
+        {
+          title: "SPECIALIZED LYING",
+          items: [
+            { name: "Prone Lying Variations", icon: <SelfImprovement /> },
+            { name: "Peanut Ball Lying", icon: <SportsGymnastics /> },
+            { name: "Semi-prone Lying", icon: <Spa /> },
+          ],
+        },
+        {
+          title: "BALL THERAPY",
+          items: [
+            { name: "Pelvic Ball-Sitting / Lying", icon: <SportsGymnastics /> },
+            { name: "Swiss Ball-Sitting / Lying", icon: <SportsGymnastics /> },
+          ],
+        },
+      ],
+    },
+    {
+      sectionTitle: "Postural Correction Exercise",
+      sectionDescription: "Comprehensive exercise program targeting all major body areas to improve mobility, strength, and postural awareness.",
+      categories: [
+        {
+          title: "UPPER BODY",
+          items: [
+            { name: "Neck Movement", icon: <FitnessCenter /> },
+            { name: "Shoulder Movement", icon: <FitnessCenter /> },
+            { name: "Elbow Movement", icon: <FitnessCenter /> },
+            { name: "Wrist Movement", icon: <FitnessCenter /> },
+          ],
+        },
+        {
+          title: "CORE & TRUNK",
+          items: [
+            { name: "Spine Movement", icon: <FitnessCenter /> },
+            { name: "Upper Limb Concentration", icon: <FitnessCenter /> },
+            { name: "Hip Movement", icon: <FitnessCenter /> },
+          ],
+        },
+        {
+          title: "LOWER BODY",
+          items: [
+            { name: "Lower Limb Concentration", icon: <FitnessCenter /> },
+            { name: "Knee Movement", icon: <FitnessCenter /> },
+            { name: "Ankle Movement", icon: <FitnessCenter /> },
+          ],
+        },
+      ],
+    },
+  ];
 
-    const gallery = [
-        {
-            id: 1,
-            title: "IFT – Interferential Therapy",
-            description:
-                "Used for deep pain relief and stimulation of soft tissues to promote healing and reduce inflammation.",
-            image:
-                "https://images.pexels.com/photos/6679256/pexels-photo-6679256.jpeg",
-        },
-        {
-            id: 2,
-            title: "Ultrasound Therapy",
-            description:
-                "Utilized to reduce muscle spasms, stiffness, and improve soft tissue healing with sound wave stimulation.",
-            image:
-                "https://images.pexels.com/photos/16823628/pexels-photo-16823628.jpeg",
-        },
-        {
-            id: 3,
-            title: "TENS – Transcutaneous Electrical Nerve Stimulation",
-            description:
-                "Effective for chronic and acute pain management using low-voltage electrical currents.",
-            image:
-                "https://images.pexels.com/photos/4132387/pexels-photo-4132387.jpeg",
-        },
-        {
-            id: 4,
-            title: "Laser Therapy",
-            description:
-                "Laser light used to accelerate tissue repair, reduce inflammation, and provide quick pain relief.",
-            image:
-                "https://images.pexels.com/photos/16278155/pexels-photo-16278155.jpeg",
-        },
-        {
-            id: 5,
-            title: "Traction Machine",
-            description:
-                "Mechanical traction used to gently stretch the spine to relieve pressure and reduce back pain.",
-            image:
-                "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80",
-        },
-        {
-            id: 6,
-            title: "Hot and Cold Therapy",
-            description:
-                "Combines heating pads and cold compressors to treat muscle soreness, inflammation, and joint pain.",
-            image:
-                "https://images.pexels.com/photos/26646944/pexels-photo-26646944.jpeg",
-        },
-    ];
+  const gallery = [
+    {
+      id: 1,
+      title: "IFT – Interferential Therapy",
+      description:
+        "Used for deep pain relief and stimulation of soft tissues to promote healing and reduce inflammation.",
+      image:
+        "https://images.pexels.com/photos/6679256/pexels-photo-6679256.jpeg",
+    },
+    {
+      id: 2,
+      title: "Ultrasound Therapy",
+      description:
+        "Utilized to reduce muscle spasms, stiffness, and improve soft tissue healing with sound wave stimulation.",
+      image:
+        "https://images.pexels.com/photos/16823628/pexels-photo-16823628.jpeg",
+    },
+    {
+      id: 3,
+      title: "TENS – Transcutaneous Electrical Nerve Stimulation",
+      description:
+        "Effective for chronic and acute pain management using low-voltage electrical currents.",
+      image:
+        "https://images.pexels.com/photos/4132387/pexels-photo-4132387.jpeg",
+    },
+    {
+      id: 4,
+      title: "Laser Therapy",
+      description:
+        "Laser light used to accelerate tissue repair, reduce inflammation, and provide quick pain relief.",
+      image:
+        "https://images.pexels.com/photos/16278155/pexels-photo-16278155.jpeg",
+    },
+    {
+      id: 5,
+      title: "Traction Machine",
+      description:
+        "Mechanical traction used to gently stretch the spine to relieve pressure and reduce back pain.",
+      image:
+        "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      id: 6,
+      title: "Hot and Cold Therapy",
+      description:
+        "Combines heating pads and cold compressors to treat muscle soreness, inflammation, and joint pain.",
+      image:
+        "https://images.pexels.com/photos/26646944/pexels-photo-26646944.jpeg",
+    },
+  ];
 
-    return (
-        <Box sx={{ bgcolor: 'background.default' }}>
-            {/* Hero Section */}
-            <Box
-                sx={{
-                    background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
-                    color: 'white',
-                    py: 12,
-                    textAlign: 'center',
-                    position: 'relative',
-                    overflow: 'hidden',
-                }}
+  return (
+    <Box sx={{ bgcolor: 'background.default' }}>
+      {/* Hero Section */}
+      <Box
+        sx={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://images.pexels.com/photos/296301/pexels-photo-296301.jpeg")`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          color: 'white', // Make sure text is visible over the image
+          py: 12,
+          textAlign: 'center',
+          position: 'relative',
+          overflow: 'hidden',
+        }}
+      >
+        <Container maxWidth="lg">
+          <Typography
+            variant="h2"
+            component="h1"
+            sx={{
+              fontWeight: 800,
+              mb: 3,
+              fontSize: { xs: '2.5rem', md: '3.5rem' },
+            }}
+          >
+            Postural Correction Exercises
+          </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: 400,
+              maxWidth: 600,
+              mx: 'auto',
+              opacity: 0.9,
+              lineHeight: 1.6,
+            }}
+          >
+            Comprehensive guide to proper body alignment and therapeutic positions for enhanced mobility and well-being
+          </Typography>
+        </Container>
+      </Box>
+
+      {/* Exercise Sections */}
+      {exerciseData.map((section, index) => (
+        <CategorySection
+          key={index}
+          title={section.sectionTitle}
+          description={section.sectionDescription}
+          categories={section.categories}
+          index={index}
+        />
+      ))}
+
+      {/* Gallery Section */}
+      <Box
+        sx={{
+          py: 10,
+        }}
+      >
+        <Container maxWidth="lg">
+          <Box textAlign="center" mb={6}>
+            <Typography
+              variant="h3"
+              component="h2"
+              sx={{
+                fontWeight: 800,
+                color: theme.palette.primary.main,
+                mb: 2,
+              }}
             >
-                <Container maxWidth="lg">
-                    <Typography
-                        variant="h2"
-                        component="h1"
-                        sx={{
-                            fontWeight: 800,
-                            mb: 3,
-                            fontSize: { xs: '2.5rem', md: '3.5rem' },
-                        }}
-                    >
-                        Postural Correction Exercises
-                    </Typography>
-                    <Typography
-                        variant="h5"
-                        sx={{
-                            fontWeight: 400,
-                            maxWidth: 600,
-                            mx: 'auto',
-                            opacity: 0.9,
-                            lineHeight: 1.6,
-                        }}
-                    >
-                        Comprehensive guide to proper body alignment and therapeutic positions for enhanced mobility and well-being
-                    </Typography>
-                </Container>
-            </Box>
-
-            {/* Exercise Sections */}
-            {exerciseData.map((section, index) => (
-                <CategorySection
-                    key={index}
-                    title={section.sectionTitle}
-                    description={section.sectionDescription}
-                    categories={section.categories}
-                    index={index}
-                />
-            ))}
-
-            {/* Gallery Section */}
-            <Box 
-                sx={{ 
-                    py: 10,
-                }}
+              Therapeutic Equipment & Modalities
+            </Typography>
+            <Typography
+              variant="h6"
+              color="text.secondary"
+              sx={{
+                maxWidth: 600,
+                mx: "auto",
+                lineHeight: 1.6,
+              }}
             >
-                <Container maxWidth="lg">
-                    <Box textAlign="center" mb={6}>
-                        <Chip 
-                            label="Gallery"
-                            sx={{
-                                bgcolor: theme.palette.primary.main,
-                                color: 'white',
-                                fontWeight: 'bold',
-                                fontSize: '1rem',
-                                px: 3,
-                                py: 1,
-                                mb: 2,
-                            }}
-                        />
-                        <Typography
-                            variant="h3"
-                            component="h2"
-                            sx={{
-                                fontWeight: 800,
-                                color: theme.palette.primary.main,
-                                mb: 2,
-                            }}
-                        >
-                            Therapeutic Equipment & Modalities
-                        </Typography>
-                        <Typography
-                            variant="h6"
-                            color="text.secondary"
-                            sx={{ 
-                                maxWidth: 600, 
-                                mx: "auto",
-                                lineHeight: 1.6,
-                            }}
-                        >
-                            Explore the advanced equipment and techniques used in modern physical therapy and rehabilitation
-                        </Typography>
-                    </Box>
-                    <GalleryCard activities={gallery} />
-                </Container>
-            </Box>
-        </Box>
-    );
+              Explore the advanced equipment and techniques used in modern physical therapy and rehabilitation
+            </Typography>
+          </Box>
+          <GalleryCard activities={gallery} />
+        </Container>
+      </Box>
+    </Box>
+  );
 };
 
 export default PosturalCorrectionExercise;
