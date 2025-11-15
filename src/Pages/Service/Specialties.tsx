@@ -4,57 +4,13 @@ import {
     Grid,
     Typography,
     Paper,
-    Divider,
-
 } from "@mui/material";
 import {
-    Healing,
-    FitnessCenter,
-    WbSunny,
-    SportsHandball,
-    Favorite,
-    DirectionsRun,
+
     CheckCircle,
 } from "@mui/icons-material";
 
-const specialties = [
-    {
-        icon: <Healing fontSize="large" color="primary" />,
-        title: "Manual Therapy",
-        description:
-            "Hands-on techniques to reduce pain, improve mobility, and restore muscle balance.",
-    },
-    {
-        icon: <FitnessCenter fontSize="large" color="primary" />,
-        title: "Strength Rehabilitation",
-        description:
-            "Targeted strengthening programs for post-injury recovery and long-term stability.",
-    },
-    {
-        icon: <SportsHandball fontSize="large" color="primary" />,
-        title: "Sports Physiotherapy",
-        description:
-            "Performance enhancement, injury prevention, and return-to-sport treatment plans.",
-    },
-    {
-        icon: <DirectionsRun fontSize="large" color="primary" />,
-        title: "Gait & Posture Correction",
-        description:
-            "Advanced analysis to correct walking patterns and improve posture alignment.",
-    },
-    {
-        icon: <WbSunny fontSize="large" color="primary" />,
-        title: "Chronic Pain Management",
-        description:
-            "Evidence-based treatments for long-standing pain including neck, back, and joint issues.",
-    },
-    {
-        icon: <Favorite fontSize="large" color="primary" />,
-        title: "Cardio-Pulmonary Rehab",
-        description:
-            "Breathing therapy, endurance training, and recovery programs for heart & lung conditions.",
-    },
-];
+
 
 const inpatientItems = [
     "In-Patients Facility",

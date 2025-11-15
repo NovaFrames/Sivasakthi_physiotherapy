@@ -10,6 +10,9 @@ import Instruments from "./Pages/Service/Instruments";
 import Physiotheraphy from "./Pages/Physiotherapy/Physiotherapy";
 import Specialties from "./Pages/Service/Specialties";
 import PosturalCorrectionExercise from "./Pages/Service/PosturalCorrectionExercise";
+import Contact from "./Pages/Contact/Contact";
+import BookAppoitment from "./Pages/BookAppoitment/BookAppoitment";
+import Gallery from "./Pages/Gallery/Gallery";
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
         <Route path="/physiotheraphy" element={<Physiotheraphy />} />
         <Route path="/service/specialties" element={<Specialties />} />
         <Route path="/service/postural-correction-exercise" element={<PosturalCorrectionExercise />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/book-appointment" element={<BookAppoitment />} />
       </Routes>
       <Footer/>
     </>

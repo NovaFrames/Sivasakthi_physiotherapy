@@ -39,8 +39,6 @@ export default function Navbar() {
         { label: "Instruments", path: "/service/instruments" },
         { label: "Specialties", path: "/service/specialties" },
         { label: "Postural correction exercise", path: "/service/postural-correction-exercise" },
-        { label: "Playing activities", path: "/service/playing-activities" },
-        { label: "Lab testing", path: "/service/lab-testing" },
       ],
     },
     { label: "Physiotheraphy", path: "/physiotheraphy" },
