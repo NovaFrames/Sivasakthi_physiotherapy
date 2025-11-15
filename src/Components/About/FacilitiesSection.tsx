@@ -190,7 +190,7 @@ const FacilitiesPage = () => {
             <Grid key={i} size={{ xs: 12, sm: 6, md: 4 }}>
               <ListItem>
                 <ListItemIcon>
-                  <CheckCircleIcon sx={{ color: "#2E7D32" }} />
+                  <CheckCircleIcon sx={{ color: "#1a4d4d" }} />
                 </ListItemIcon>
                 <ListItemText primary={s} />
               </ListItem>
