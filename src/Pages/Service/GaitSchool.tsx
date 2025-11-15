@@ -56,43 +56,34 @@ const GaitSchool = () => {
 
   return (
     <Box>
-
       {/* HERO SECTION */}
       <Box
         sx={{
           position: "relative",
-          py: 20,
-          color: "#fff",
+          py: { xs: 12, md: 20 },
           textAlign: "center",
+          color: "white",
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1645005513713-9e2b92a687d3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBoeXNpb3RoZXJhcHl8ZW58MHx8MHx8fDA%3D')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         <Box
           sx={{
             position: "absolute",
             inset: 0,
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920&q=80')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            zIndex: -2,
-          }}
-        />
-        <Box
-          sx={{
-            position: "absolute",
-            inset: 0,
-            backgroundColor: "rgba(0,0,0,0.55)",
-            zIndex: -1,
+            backgroundColor: "rgba(0,0,0,0.6)",
           }}
         />
 
-        <Container maxWidth="md">
-          <Typography variant="h2" fontWeight="bold" mb={3}>
+        <Container sx={{ position: "relative", zIndex: 2 }}>
+          <Typography variant="h3" fontWeight={700} gutterBottom>
             Gait School
           </Typography>
-          <Typography variant="h5">
-            Master the art of walking. Transform your mobility, reduce pain, and
-            enhance your movement quality.
+
+          <Typography variant="h6" maxWidth="700px" mx="auto" color="grey.200">
+            Master the art of walking. Transform your mobility, reduce pain, and enhance your movement quality.
           </Typography>
         </Container>
       </Box>

@@ -5,10 +5,7 @@ import {
   Typography,
   Paper,
   Stack,
-  Divider,
-  Card,
-  CardMedia,
-  CardContent,
+  Divider
 } from "@mui/material";
 
 import {
@@ -19,6 +16,7 @@ import {
   HealthAndSafety,
   Star,
 } from "@mui/icons-material";
+import GalleryCard from "../../Components/Card/GalleryCard";
 
 const Walking = () => {
   const activities = [
@@ -86,10 +84,41 @@ const gallery = [
     },
   ];
   return (
-    <Box sx={{ pt: 10, pb: 12, backgroundColor: "#fff" }}>
+    <Box sx={{ pb: 12, backgroundColor: "#fff" }}>
+      <Box
+        sx={{
+          position: "relative",
+          py: { xs: 12, md: 20 },
+          textAlign: "center",
+          color: "white",
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1589104759909-e355f8999f7e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHBhdGllbnQlMjBldmVudHN8ZW58MHx8MHx8fDA%3D')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor: "rgba(0,0,0,0.6)",
+          }}
+        />
+
+        <Container sx={{ position: "relative", zIndex: 2 }}>
+          <Typography variant="h3" fontWeight={700} gutterBottom>
+            Walking Activities
+          </Typography>
+
+          <Typography variant="h6" maxWidth="700px" mx="auto" color="grey.200">
+            Regain independence and improve your quality of life through targeted
+            functional training
+          </Typography>
+        </Container>
+      </Box>
       <Container maxWidth="lg">
         {/* ===================== HERO SECTION ===================== */}
-        <Grid container spacing={6} alignItems="center">
+        <Grid container spacing={6} pt={10} alignItems="center">
           <Grid size={{ xs: 12, lg: 6 }}>
             <Typography
               variant="h3"
@@ -122,7 +151,6 @@ const gallery = [
           </Grid>
         </Grid>
 
-        {/* ===================== ACTIVITY CARDS ===================== */}
         <Box sx={{ mt: 10 }}>
           <Typography
             variant="h4"
@@ -210,7 +238,6 @@ const gallery = [
           </Grid>
         </Box>
 
-        {/* ===================== SECTION DIVIDER ===================== */}
         <Divider sx={{ my: 8 }} />
 
         <Box>
@@ -225,37 +252,7 @@ const gallery = [
         </Typography>
 
         <Grid container spacing={4}>
-          {gallery.map((act) => (
-            <Grid size={{ xs: 12, lg: 4 }}  key={act.id}>
-              <Card
-                sx={{
-                  cursor: "pointer",
-                  borderRadius: 3,
-                  transition: "0.3s",
-                }}
-                elevation={3}
-              >
-                <CardMedia
-                  component="img"
-                  height="220"
-                  image={act.image}
-                  alt={act.title}
-                  sx={{
-                    transition: "0.3s",
-                    "&:hover": { transform: "scale(1.04)" },
-                  }}
-                />
-                <CardContent>
-                  <Typography variant="h6" fontWeight={600}>
-                    {act.title}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {act.description}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
+          <GalleryCard activities={gallery} />
         </Grid>
         </Box>
       </Container>

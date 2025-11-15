@@ -27,10 +27,12 @@ const GalleryCard: React.FC<GalleryCardProps> = ({ activities }) => {
                     >
                         <CardMedia
                             component="img"
-                            height="220"
                             image={act.image}
                             alt={act.title}
                             sx={{
+                                height: 220,          // fixed height for all images
+                                width: "100%",        // full width of the card
+                                objectFit: "cover",   // keeps aspect ratio while filling the box
                                 transition: "0.3s",
                                 "&:hover": { transform: "scale(1.04)" },
                             }}

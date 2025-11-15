@@ -8,6 +8,8 @@ import FunctionalActivities from "./Pages/Service/FunctionalActivities";
 import Walking from "./Pages/Service/Walking";
 import Instruments from "./Pages/Service/Instruments";
 import Physiotheraphy from "./Pages/Physiotherapy/Physiotherapy";
+import Specialties from "./Pages/Service/Specialties";
+import PosturalCorrectionExercise from "./Pages/Service/PosturalCorrectionExercise";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/service/walking" element={<Walking />} />
         <Route path="/service/instruments" element={<Instruments />} />
         <Route path="/physiotheraphy" element={<Physiotheraphy />} />
+        <Route path="/service/specialties" element={<Specialties />} />
+        <Route path="/service/postural-correction-exercise" element={<PosturalCorrectionExercise />} />
       </Routes>
       <Footer/>
     </>
