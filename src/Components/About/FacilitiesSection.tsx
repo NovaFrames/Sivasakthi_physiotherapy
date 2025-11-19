@@ -5,11 +5,9 @@ import {
   Typography,
   Card,
   CardContent,
-  List,
   ListItem,
   ListItemIcon,
   ListItemText,
-  Divider,
 } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import GalleryCard from "../Card/GalleryCard";

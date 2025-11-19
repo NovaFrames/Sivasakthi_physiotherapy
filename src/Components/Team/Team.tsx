@@ -4,7 +4,6 @@ import {
   Typography,
   Grid,
   Chip,
-  Paper
 } from '@mui/material';
 import TeamCard from '../Card/TeamCard';
 

@@ -237,13 +237,13 @@ const HeroSection = () => {
             {
               title: "Our Vision",
               icon: <VisibilityIcon />,
-              desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              desc: "To prepare competent professionals with sound knowledge, moral values, and excellent skills through quality education while providing global health services for rural communities.",
               dark: false,
             },
             {
               title: "Our Mission",
               icon: <TrackChangesIcon />,
-              desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              desc: "To prepare competent professionals with sound knowledge, moral values, and excellent skills through quality education while providing global health services for rural communities.",
               dark: false,
             },
           ].map((card, index) => (

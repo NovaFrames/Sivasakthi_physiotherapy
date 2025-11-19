@@ -2,9 +2,6 @@ import {
   Box,
   Container,
   Grid,
-  Typography,
-  Card,
-  CardContent,
 } from "@mui/material";
 import TeamCard from "../Card/TeamCard";
 import Header from "../Header/Header";
