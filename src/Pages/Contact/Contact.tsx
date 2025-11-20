@@ -1,4 +1,4 @@
-import { LocationCity, Phone } from "@mui/icons-material";
+import { LocationCity, Phone, Email } from "@mui/icons-material";
 import {
   Box,
   Container,
@@ -7,67 +7,125 @@ import {
   Typography,
   Button,
   Stack,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
   Card,
   CardContent,
 } from "@mui/material";
 
 const colors = {
   primary: "#1a4d4d",
-  cardLight: "#FFFFFF",
   white: "#FFFFFF",
+  softBg: "#f7fafa",
 };
 
 const Contact = () => {
   return (
-   <Box sx={{ py: { xs: 6, md: 8 } ,background: "linear-gradient(180deg,#fff 0%, #fbfdfd 100%)" }}>
-    <Container maxWidth="lg">
-      <Grid container spacing={4}>
-        <Grid size={{xs:12,md:6}}>
-          <Stack spacing={2}>
-            <Typography variant="subtitle1" sx={{ color: colors.primary, fontWeight: 700 }}>
-              Contact Us
-            </Typography>
-            <Typography variant="h6" sx={{ fontWeight: 700 }}>
-              Make an appointment or ask a question
-            </Typography>
+    <Box
+      sx={{
+        py: { xs: 6, md: 10 },
+        background: colors.softBg,
+      }}
+    >
+      <Container maxWidth="lg">
+        <Grid container spacing={5} alignItems="center">
+          {/* LEFT SIDE — IMAGE + CONTACT DETAILS */}
+          <Grid size={{xs:12,md:6}}>
+            <Card
+              sx={{
+                height: "100%",
+                borderRadius: 4,
+                overflow: "hidden",
+              }}
+            >
+              {/* Image Section */}
+              <Box
+                sx={{
+                  height: 260,
+                  backgroundImage:
+                    "url('https://images.pexels.com/photos/8460042/pexels-photo-8460042.jpeg')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              />
 
-            <List>
-              <ListItem>
-                <ListItemIcon>
-                  <Phone sx={{ color: colors.primary }} />
-                </ListItemIcon>
-                <ListItemText primary="Phone" secondary="+91 8675834077" />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <LocationCity sx={{ color: colors.primary }} />
-                </ListItemIcon>
-                <ListItemText primary="Address" secondary="Sivasakthi Physiotherapy Hospital — Shree Venkateshwara Arts & Science College area" />
-              </ListItem>
-            </List>
-          </Stack>
-        </Grid>
+              {/* Contact Details */}
+              <CardContent sx={{ p: 3 }}>
+                <Stack spacing={2}>
+                  <Typography
+                    variant="subtitle2"
+                    sx={{ fontWeight: 700, color: colors.primary }}
+                  >
+                    Contact Information
+                  </Typography>
 
-        <Grid size={{xs:12,md:6}}>
-          <Card sx={{ p: 2 }}>
-            <CardContent>
-              <Stack spacing={2}>
-                <Typography variant="subtitle2" sx={{ color: colors.primary, fontWeight: 700 }}>Send us a message</Typography>
-                <TextField fullWidth label="Full name" />
+                  <Stack direction="row" spacing={2} alignItems="center">
+                    <Phone sx={{ color: colors.primary }} />
+                    <Typography>+91 86758 34077</Typography>
+                  </Stack>
+
+                  <Stack direction="row" spacing={2} alignItems="center">
+                    <LocationCity sx={{ color: colors.primary }} />
+                    <Typography>
+                      Sivasakthi Physiotherapy Hospital,<br />
+                      Shree Venkateshwara Arts & Science College Area
+                    </Typography>
+                  </Stack>
+
+                  <Stack direction="row" spacing={2} alignItems="center">
+                    <Email sx={{ color: colors.primary }} />
+                    <Typography>sivasakthiphysio@gmail.com</Typography>
+                  </Stack>
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
+
+          {/* RIGHT SIDE — FORM */}
+          <Grid size={{xs:12,md:6}}>
+            <Card
+              sx={{
+                p: 3,
+                borderRadius: 4,
+              }}
+            >
+              <Typography
+                variant="h6"
+                sx={{ mb: 1, fontWeight: 700, color: colors.primary }}
+              >
+                Send Us a Message
+              </Typography>
+
+              <Typography sx={{ mb: 3, color: "#555" }}>
+                Our team will get back to you within 24 hours.
+              </Typography>
+
+              <Stack spacing={3}>
+                <TextField fullWidth label="Full Name" />
                 <TextField fullWidth label="Phone or Email" />
-                <TextField fullWidth label="Brief message" multiline minRows={3} />
-                <Button variant="contained" sx={{ backgroundColor: colors.primary }}>Send Message</Button>
+                <TextField
+                  fullWidth
+                  label="Your Message"
+                  multiline
+                  minRows={3}
+                />
+
+                <Button
+                  variant="contained"
+                  sx={{
+                    backgroundColor: colors.primary,
+                    py: 1.2,
+                    fontWeight: 600,
+                    borderRadius: 2,
+                    "&:hover": { backgroundColor: "#0d3a3a" },
+                  }}
+                >
+                  Send Message
+                </Button>
               </Stack>
-            </CardContent>
-          </Card>
+            </Card>
+          </Grid>
         </Grid>
-      </Grid>
-    </Container>
-  </Box>
+      </Container>
+    </Box>
   );
 };
 
