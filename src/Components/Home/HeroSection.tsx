@@ -7,7 +7,6 @@ import {
     useMediaQuery,
     useTheme,
     Card,
-    CardContent,
 } from "@mui/material";
 import image from "./../../assets/image.png"
 import { useNavigate } from "react-router-dom";
@@ -70,9 +69,9 @@ const HeroSection = () => {
                                 textTransform: "none",
                                 "&:hover": { backgroundColor: "#1F5A44" },
                             }}
-                            
+
                         >
-                            Book an Appointment    
+                            Book an Appointment
                         </Button>
                     </Grid>
 
@@ -93,49 +92,54 @@ const HeroSection = () => {
                 {/* --- STATS BOX --- */}
                 <Card
                     sx={{
-                        mt: 8,
-                        p: 3,
+                        mt: 6,
+                        py: 4,
+                        px: { xs: 2, md: 4 },
                         borderRadius: 3,
-                        boxShadow: "none",
-                        border: "1px solid #EEE",
-                        backgroundColor: "#fff",
+                        border: "1px solid #E6E6E6",
+                        backgroundColor: "#f9fafb",
                     }}
                 >
-                    <Grid container spacing={3} textAlign="center">
-                        <Grid size={{ xs: 12, md: 4 }}>
-                            <CardContent>
-                                <Typography variant="h5" fontWeight={700}>
-                                    3500+
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    Patients
-                                </Typography>
-                            </CardContent>
-                        </Grid>
+                    <Grid container spacing={3} justifyContent="center">
+                        {[
+                            { value: "+3.500", label: "Pacientes atendidos" },
+                            { value: "+15", label: "Especialistas disponíveis" },
+                            { value: "+10", label: "Anos no mercado" }
+                        ].map((item, index) => (
+                            <Grid size={{ xs: 12, md: 4 }} key={index}>
+                                <Box
+                                    sx={{
+                                        textAlign: "center",
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        gap: 1,
+                                    }}
+                                >
+                                    {/* Big Number */}
+                                    <Typography
+                                        variant="h4"
+                                        fontWeight="700"
+                                        sx={{ color: "#1A3C34" }}
+                                    >
+                                        {item.value}
+                                    </Typography>
 
-                        <Grid size={{ xs: 12, md: 4 }}>
-                            <CardContent>
-                                <Typography variant="h5" fontWeight={700}>
-                                    25+
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                   Doctors
-                                </Typography>
-                            </CardContent>
-                        </Grid>
+                                    {/* Label */}
+                                    <Typography
+                                        variant="body2"
+                                        color="text.secondary"
+                                        sx={{ fontSize: "15px" }}
+                                    >
+                                        {item.label}
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                        ))}
 
-                        <Grid size={{ xs: 12, md: 4 }}>
-                            <CardContent>
-                                <Typography variant="h5" fontWeight={700}>
-                                    30+
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    Years of experience
-                                </Typography>
-                            </CardContent>
-                        </Grid>
                     </Grid>
                 </Card>
+
+
             </Container>
         </Box>
     );

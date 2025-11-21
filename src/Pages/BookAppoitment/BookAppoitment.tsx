@@ -9,6 +9,8 @@ import {
   Button,
   MenuItem,
   InputAdornment,
+  CircularProgress,
+  Alert,
 } from "@mui/material";
 
 import PersonIcon from "@mui/icons-material/Person";
@@ -19,7 +21,6 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import RoomIcon from "@mui/icons-material/Room";
 import ScheduleIcon from "@mui/icons-material/Schedule";
-
 
 const BookAppointment = () => {
   const [form, setForm] = useState({
@@ -32,36 +33,70 @@ const BookAppointment = () => {
     notes: "",
   });
 
-  const whatsappNumber = "+919715768735"; // <-- Change to your clinic number
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState({ type: '', text: '' });
 
   const handleChange = (e: any) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const sendToWhatsApp = () => {
+  const sendWhatsAppMessage = async () => {
     if (!form.name || !form.phone || !form.service || !form.date || !form.time) {
-      alert("Please fill all required fields!");
+      setMessage({ type: 'error', text: 'Please fill all required fields!' });
       return;
     }
 
-    const message = `
-*New Appointment Request*
+    setLoading(true);
+    setMessage({ type: '', text: '' });
 
-👤 Name: ${form.name}
-📞 Phone: ${form.phone}
-✉️ Email: ${form.email || "Not Provided"}
-🏥 Service: ${form.service}
-📅 Date: ${form.date}
-⏰ Time: ${form.time}
-📝 Notes: ${form.notes || "No Notes"}
-`;
+    try {
+      const response = await fetch('/api/send-whatsapp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.phone,
+          email: form.email,
+          service: form.service,
+          date: form.date,
+          time: form.time,
+          notes: form.notes,
+        }),
+      });
 
-    const url = `https://wa.me/${whatsappNumber.replace(
-      /\D/g,
-      ""
-    )}?text=${encodeURIComponent(message)}`;
+      const data = await response.json();
 
-    window.open(url, "_blank");
+      if (data.success) {
+        setMessage({ 
+          type: 'success', 
+          text: 'Appointment request sent successfully! We will contact you soon.' 
+        });
+        // Reset form
+        setForm({
+          name: "",
+          phone: "",
+          email: "",
+          service: "",
+          date: "",
+          time: "",
+          notes: "",
+        });
+      } else {
+        setMessage({ 
+          type: 'error', 
+          text: data.error || 'Failed to send appointment request. Please try again.' 
+        });
+      }
+    } catch (error) {
+      setMessage({ 
+        type: 'error', 
+        text: 'Network error. Please check your connection and try again.' 
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -84,6 +119,16 @@ const BookAppointment = () => {
               <Typography variant="h6" fontWeight={600} color="primary.main" mb={3}>
                 Fill Your Details
               </Typography>
+
+              {message.text && (
+                <Alert 
+                  severity={message.type as any} 
+                  sx={{ mb: 3 }}
+                  onClose={() => setMessage({ type: '', text: '' })}
+                >
+                  {message.text}
+                </Alert>
+              )}
 
               <Grid container spacing={3}>
                 <Grid size={{ xs: 12, sm: 6 }}>
@@ -225,9 +270,11 @@ const BookAppointment = () => {
                     fullWidth
                     size="large"
                     sx={{ py: 1.4, fontSize: "1rem" }}
-                    onClick={sendToWhatsApp}
+                    onClick={sendWhatsAppMessage}
+                    disabled={loading}
+                    startIcon={loading ? <CircularProgress size={20} /> : null}
                   >
-                    Book Appointment & Send on WhatsApp
+                    {loading ? 'Sending...' : 'Book Appointment'}
                   </Button>
                 </Grid>
               </Grid>
@@ -247,7 +294,7 @@ const BookAppointment = () => {
                   <Typography variant="subtitle1" fontWeight={600}>
                     Phone
                   </Typography>
-                  <Typography color="text.secondary">{whatsappNumber}</Typography>
+                  <Typography color="text.secondary">+919715768735</Typography>
                 </Box>
               </Box>
 
