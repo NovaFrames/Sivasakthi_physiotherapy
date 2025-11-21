@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Box,
   Container,
@@ -19,7 +20,50 @@ import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import RoomIcon from "@mui/icons-material/Room";
 import ScheduleIcon from "@mui/icons-material/Schedule";
 
+
 const BookAppointment = () => {
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    service: "",
+    date: "",
+    time: "",
+    notes: "",
+  });
+
+  const whatsappNumber = "+919715768735"; // <-- Change to your clinic number
+
+  const handleChange = (e: any) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const sendToWhatsApp = () => {
+    if (!form.name || !form.phone || !form.service || !form.date || !form.time) {
+      alert("Please fill all required fields!");
+      return;
+    }
+
+    const message = `
+*New Appointment Request*
+
+👤 Name: ${form.name}
+📞 Phone: ${form.phone}
+✉️ Email: ${form.email || "Not Provided"}
+🏥 Service: ${form.service}
+📅 Date: ${form.date}
+⏰ Time: ${form.time}
+📝 Notes: ${form.notes || "No Notes"}
+`;
+
+    const url = `https://wa.me/${whatsappNumber.replace(
+      /\D/g,
+      ""
+    )}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, "_blank");
+  };
+
   return (
     <Box sx={{ py: 5, backgroundColor: "#f5f7fb" }}>
       <Container maxWidth="lg">
@@ -37,12 +81,7 @@ const BookAppointment = () => {
           {/* LEFT FORM */}
           <Grid size={{ xs: 12, md: 7 }}>
             <Paper sx={{ p: 4, borderRadius: 3 }} elevation={3}>
-              <Typography
-                variant="h6"
-                fontWeight={600}
-                color="primary.main"
-                mb={3}
-              >
+              <Typography variant="h6" fontWeight={600} color="primary.main" mb={3}>
                 Fill Your Details
               </Typography>
 
@@ -50,8 +89,11 @@ const BookAppointment = () => {
                 <Grid size={{ xs: 12, sm: 6 }}>
                   <TextField
                     fullWidth
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
                     variant="outlined"
-                    label="Full Name"
+                    label="Full Name *"
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">
@@ -65,8 +107,11 @@ const BookAppointment = () => {
                 <Grid size={{ xs: 12, sm: 6 }}>
                   <TextField
                     fullWidth
+                    name="phone"
+                    value={form.phone}
+                    onChange={handleChange}
                     variant="outlined"
-                    label="Phone Number"
+                    label="Phone Number *"
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">
@@ -77,9 +122,12 @@ const BookAppointment = () => {
                   />
                 </Grid>
 
-                <Grid size={{ xs: 12 }}>
+                <Grid size={{ xs: 12}}>
                   <TextField
                     fullWidth
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
                     variant="outlined"
                     label="Email Address"
                     InputProps={{
@@ -92,11 +140,14 @@ const BookAppointment = () => {
                   />
                 </Grid>
 
-                <Grid size={{ xs: 12 }}>
+                <Grid size={{ xs: 12}}>
                   <TextField
                     fullWidth
+                    name="service"
+                    value={form.service}
+                    onChange={handleChange}
                     select
-                    label="Select Service"
+                    label="Select Service *"
                     variant="outlined"
                     InputProps={{
                       startAdornment: (
@@ -110,15 +161,20 @@ const BookAppointment = () => {
                     <MenuItem value="Sports Rehab">Sports Rehab</MenuItem>
                     <MenuItem value="Neuro Rehab">Neuro Rehab</MenuItem>
                     <MenuItem value="Orthopedic Rehab">Orthopedic Rehab</MenuItem>
-                    <MenuItem value="Pediatric Physiotherapy">Pediatric Physiotherapy</MenuItem>
+                    <MenuItem value="Pediatric Physiotherapy">
+                      Pediatric Physiotherapy
+                    </MenuItem>
                   </TextField>
                 </Grid>
 
                 <Grid size={{ xs: 12, sm: 6 }}>
                   <TextField
                     fullWidth
+                    name="date"
+                    value={form.date}
+                    onChange={handleChange}
                     type="date"
-                    label="Appointment Date"
+                    label="Appointment Date *"
                     InputLabelProps={{ shrink: true }}
                     InputProps={{
                       startAdornment: (
@@ -133,8 +189,11 @@ const BookAppointment = () => {
                 <Grid size={{ xs: 12, sm: 6 }}>
                   <TextField
                     fullWidth
+                    name="time"
+                    value={form.time}
+                    onChange={handleChange}
                     type="time"
-                    label="Preferred Time"
+                    label="Preferred Time *"
                     InputLabelProps={{ shrink: true }}
                     InputProps={{
                       startAdornment: (
@@ -146,9 +205,12 @@ const BookAppointment = () => {
                   />
                 </Grid>
 
-                <Grid size={{ xs: 12 }}>
+                <Grid size={{ xs: 12}}>
                   <TextField
                     fullWidth
+                    name="notes"
+                    value={form.notes}
+                    onChange={handleChange}
                     multiline
                     rows={3}
                     label="Additional Notes"
@@ -163,8 +225,9 @@ const BookAppointment = () => {
                     fullWidth
                     size="large"
                     sx={{ py: 1.4, fontSize: "1rem" }}
+                    onClick={sendToWhatsApp}
                   >
-                    Book Appointment
+                    Book Appointment & Send on WhatsApp
                   </Button>
                 </Grid>
               </Grid>
@@ -173,20 +236,8 @@ const BookAppointment = () => {
 
           {/* RIGHT INFO PANEL */}
           <Grid size={{ xs: 12, md: 5 }}>
-            <Paper
-              elevation={3}
-              sx={{
-                p: 4,
-                borderRadius: 3,
-                height: "100%",
-              }}
-            >
-              <Typography
-                variant="h6"
-                fontWeight={600}
-                color="primary.main"
-                mb={3}
-              >
+            <Paper elevation={3} sx={{ p: 4, borderRadius: 3, height: "100%" }}>
+              <Typography variant="h6" fontWeight={600} color="primary.main" mb={3}>
                 Clinic Information
               </Typography>
 
@@ -196,7 +247,7 @@ const BookAppointment = () => {
                   <Typography variant="subtitle1" fontWeight={600}>
                     Phone
                   </Typography>
-                  <Typography color="text.secondary">+91 98765 43210</Typography>
+                  <Typography color="text.secondary">{whatsappNumber}</Typography>
                 </Box>
               </Box>
 
@@ -206,7 +257,9 @@ const BookAppointment = () => {
                   <Typography variant="subtitle1" fontWeight={600}>
                     Email
                   </Typography>
-                  <Typography color="text.secondary">example@gmail.com</Typography>
+                  <Typography color="text.secondary">
+                    example@gmail.com
+                  </Typography>
                 </Box>
               </Box>
 
