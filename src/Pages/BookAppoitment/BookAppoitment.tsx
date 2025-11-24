@@ -49,30 +49,54 @@ const BookAppointment = () => {
     setLoading(true);
     setMessage({ type: '', text: '' });
 
+    // Your credentials (temporary test token only!)
+    const WHATSAPP_TOKEN = "EAARAdiREqMsBQKx8jgJH7FTpl1wvd2dvxt9GeSBALg3WKpRw34WjdI0WvtUasINByjgwYvgUpNpX5is19tBoX4zYZApZCD6LXgUqQzCmUbBgPudAKG4nqBv5xzrrSpjh2jG4XzvNZB4ZCdxJ4IiqaOmh0VLbhZClYbtj2xVmxtZAhDL5EVJCNRAhB0xAHaBjOscJfXs8ZCV73Qrht3axvpi0dXg9VZCpSIvFsPP4oVZBSZBVef1IZBLq2HKzcEzPtWMX6qZAB9tACmd0qIGx7ZCZCoVwe7N2EznQZDZD";
+    const PHONE_NUMBER_ID = "805113832692020";
+    const BUSINESS_NUMBER = "919715768735"; // without +
+
     try {
-      const response = await fetch('/api/send-whatsapp', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: form.name,
-          phone: form.phone,
-          email: form.email,
-          service: form.service,
-          date: form.date,
-          time: form.time,
-          notes: form.notes,
-        }),
-      });
+      // console.log("Sending WhatsApp message...", form);
+      const response = await fetch(
+        `https://graph.facebook.com/v20.0/${PHONE_NUMBER_ID}/messages`,
+        {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${WHATSAPP_TOKEN}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            messaging_product: "whatsapp",
+            to: BUSINESS_NUMBER,
+            type: "template",
+            template: {
+              name: "sivasakthi",
+              language: { code: "en_US" },
+              components: [
+                {
+                  type: "body",
+                  parameters: [
+                    { type: "text", text: form.name },
+                    { type: "text", text: form.phone },
+                    { type: "text", text: form.service },
+                    { type: "text", text: form.date },
+                    { type: "text", text: form.time },
+                    { type: "text", text: form.notes || "No Notes" },
+                  ],
+                },
+              ],
+            },
+          }),
+        }
+      );
 
       const data = await response.json();
 
-      if (data.success) {
-        setMessage({ 
-          type: 'success', 
-          text: 'Appointment request sent successfully! We will contact you soon.' 
+      if (data.messages) {
+        setMessage({
+          type: "success",
+          text: "WhatsApp message sent successfully!"
         });
+
         // Reset form
         setForm({
           name: "",
@@ -83,21 +107,24 @@ const BookAppointment = () => {
           time: "",
           notes: "",
         });
+
       } else {
-        setMessage({ 
-          type: 'error', 
-          text: data.error || 'Failed to send appointment request. Please try again.' 
+        setMessage({
+          type: "error",
+          text: data.error?.message || "Failed to send. Please try again."
         });
       }
+
     } catch (error) {
-      setMessage({ 
-        type: 'error', 
-        text: 'Network error. Please check your connection and try again.' 
+      setMessage({
+        type: "error",
+        text: "Network error. Check connection and try again."
       });
     } finally {
       setLoading(false);
     }
   };
+
 
   return (
     <Box sx={{ py: 5, backgroundColor: "#f5f7fb" }}>
@@ -121,8 +148,8 @@ const BookAppointment = () => {
               </Typography>
 
               {message.text && (
-                <Alert 
-                  severity={message.type as any} 
+                <Alert
+                  severity={message.type as any}
                   sx={{ mb: 3 }}
                   onClose={() => setMessage({ type: '', text: '' })}
                 >
@@ -167,7 +194,7 @@ const BookAppointment = () => {
                   />
                 </Grid>
 
-                <Grid size={{ xs: 12}}>
+                <Grid size={{ xs: 12 }}>
                   <TextField
                     fullWidth
                     name="email"
@@ -185,7 +212,7 @@ const BookAppointment = () => {
                   />
                 </Grid>
 
-                <Grid size={{ xs: 12}}>
+                <Grid size={{ xs: 12 }}>
                   <TextField
                     fullWidth
                     name="service"
@@ -250,7 +277,7 @@ const BookAppointment = () => {
                   />
                 </Grid>
 
-                <Grid size={{ xs: 12}}>
+                <Grid size={{ xs: 12 }}>
                   <TextField
                     fullWidth
                     name="notes"

@@ -17,128 +17,118 @@ const WhyChooseUs = () => {
   return (
     <Box
       sx={{
-        minHeight: "60vh",
+        minHeight: "50vh",
         bgcolor: "background.section",
         display: "flex",
         justifyContent: "center",
-        px: { xs: 2, md: 6 },
-        py: { xs: 4, md: 8 },
+        px: { xs: 2, md: 4 },
+        py: { xs: 3, md: 5 },
       }}
     >
-      <Box sx={{ maxWidth: "1200px", width: "100%" }}>
-        <Grid container>
+      <Box sx={{ maxWidth: "1000px", width: "100%" }}>
+        <Grid container spacing={3}>
 
           {/* LEFT SIDE */}
-          <Grid size={{ xs: 12, lg: 6 }} sx={{ p: { xs: 3, md: 6 } }}>
-            {/* Heading Block */}
-            <Box sx={{ mb: 3 }}>
-              <Typography
-                variant="subtitle2"
-                sx={{
-                  color: "navbar.main",
-                  letterSpacing: 1,
-                  fontWeight: 700,
-                }}
-              >
-                WHY CHOOSE US
-              </Typography>
+          <Grid size={{ xs: 12, lg: 6 }} sx={{ p: { xs: 2, md: 4 } }}>
+            
+            {/* Heading */}
+            <Typography
+              variant="subtitle2"
+              sx={{
+                color: "navbar.main",
+                letterSpacing: 1,
+                fontWeight: 600,
+                mb: 1,
+                fontSize: "0.8rem",
+              }}
+            >
+              WHY CHOOSE US
+            </Typography>
 
-              <Box
-                sx={{
-                  width: "80px",
-                  height: "3px",
-                  bgcolor: "navbar.main",
-                  mt: 1,
-                }}
-              />
-            </Box>
+            <Box sx={{ width: "60px", height: "3px", bgcolor: "navbar.main", mb: 2 }} />
 
             {/* Title */}
             <Typography
-              variant="h4"
+              variant="h6"
               sx={{
-                fontWeight: "bold",
+                fontWeight: 700,
                 color: "primary.main",
-                mb: 2,
+                mb: 1.5,
+                lineHeight: 1.3,
               }}
             >
-              Individually Tailored Treatment:
+              Individually Tailored Treatment
               <br />
-              Your Path to Wellness
+              For Better Wellness
             </Typography>
 
             {/* Description */}
             <Typography
               sx={{
                 color: "text.secondary",
-                mb: 4,
-                lineHeight: 1.7,
+                mb: 3,
+                lineHeight: 1.5,
+                fontSize: "0.85rem",
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Typography>
 
-            {/* Stats Section */}
-            <Box>
-              {stats.map((stat, index) => (
-                <Box key={index} sx={{ mb: 4 }}>
-                  <Box
+            {/* Stats */}
+            {stats.map((stat, index) => (
+              <Box key={index} sx={{ mb: 3 }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    mb: 0.5,
+                  }}
+                >
+                  <Typography sx={{ fontWeight: 600, fontSize: "0.85rem" }}>
+                    {stat.label}
+                  </Typography>
+
+                  <Avatar
                     sx={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      mb: 1,
+                      width: 32,
+                      height: 32,
+                      bgcolor: "primary.main",
+                      fontSize: "0.75rem",
+                      fontWeight: 600,
                     }}
                   >
-                    <Typography
-                      sx={{ fontWeight: 600, color: "text.primary" }}
-                    >
-                      {stat.label}
-                    </Typography>
-
-                    <Avatar
-                      sx={{
-                        width: 40,
-                        height: 40,
-                        bgcolor: "primary.main",
-                        color: "#fff",
-                        fontSize: "0.8rem",
-                        fontWeight: 600,
-                      }}
-                    >
-                      {stat.percentage}%
-                    </Avatar>
-                  </Box>
-
-                  <LinearProgress
-                    variant="determinate"
-                    value={stat.percentage}
-                    sx={{
-                      height: 10,
-                      borderRadius: 5,
-                      bgcolor: "background.paper",
-
-                      "& .MuiLinearProgress-bar": {
-                        bgcolor: "primary.main",
-                      },
-                    }}
-                  />
+                    {stat.percentage}%
+                  </Avatar>
                 </Box>
-              ))}
-            </Box>
+
+                <LinearProgress
+                  variant="determinate"
+                  value={stat.percentage}
+                  sx={{
+                    height: 8,
+                    borderRadius: 5,
+                    "& .MuiLinearProgress-bar": {
+                      bgcolor: "primary.main",
+                    },
+                  }}
+                />
+              </Box>
+            ))}
           </Grid>
 
-          {/* RIGHT SIDE */}
-          <Grid size={{ xs: 12, lg: 6 }} sx={{ position: "relative" }}>
+          {/* RIGHT SIDE IMAGE */}
+          <Grid size={{ xs: 12, lg: 6 }}>
             <Box
               component="img"
               src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&h=1000&fit=crop"
               alt="Healthcare Professional"
               sx={{
                 width: "100%",
-                height: "100%",
+                height: { xs: "280px", md: "460px" },
                 objectFit: "cover",
+                borderRadius: 2,
               }}
             />
           </Grid>
