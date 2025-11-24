@@ -13,6 +13,7 @@ import PosturalCorrectionExercise from "./Pages/Service/PosturalCorrectionExerci
 import Contact from "./Pages/Contact/Contact";
 import BookAppoitment from "./Pages/BookAppoitment/BookAppoitment";
 import Gallery from "./Pages/Gallery/Gallery";
+import ChatWidget from "./chatbot/ChatWidget";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/book-appointment" element={<BookAppoitment />} />
       </Routes>
+      <ChatWidget />
       <Footer/>
     </>
   );
