@@ -85,17 +85,17 @@ const FacilitiesPage = () => {
             },
             {
               title: "Advanced Physiotherapy Gym",
-              img: "https://images.pexels.com/photos/3823029/pexels-photo-3823029.jpeg",
+              img: "https://images.unsplash.com/photo-1649751361457-01d3a696c7e6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTJ8fHBoeXNpb3RoZXJhcHklMjBjbGluaWN8ZW58MHx8MHx8fDA%3D",
               desc: "Equipped with modern rehabilitation machines for strength and mobility training.",
             },
             {
               title: "24/7 Emergency Physiotherapy Care",
-              img: "https://images.pexels.com/photos/6129682/pexels-photo-6129682.jpeg",
+              img: "https://plus.unsplash.com/premium_photo-1661374820636-35f204935945?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fHBoeXNpb3RoZXJhcHklMjBjbGluaWN8ZW58MHx8MHx8fDA%3D",
               desc: "Round-the-clock physiotherapy and nursing support for urgent conditions.",
             },
             {
               title: "Expert Medical Professionals",
-              img: "https://images.pexels.com/photos/7659579/pexels-photo-7659579.jpeg",
+              img: "https://plus.unsplash.com/premium_photo-1661767448598-f42428886f1c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fHBoeXNpb3RoZXJhcHklMjBjbGluaWN8ZW58MHx8MHx8fDA%3D",
               desc: "Highly trained physiotherapists, specialists, and rehabilitation doctors.",
             },
           ].map((item, i) => (

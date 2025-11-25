@@ -4,20 +4,26 @@ import Faq from "../../Components/Faq/Faq";
 import ServiceHome from "../../Components/ServiceHome/ServiceHome";
 // import Welcome from "../../Components/Welcome/Welcome";
 import WhyChooseUs from "../../Components/WhyChooseUs/WhyChooseUs";
-import Homepage from "../../Components/Home/HomePage";
+import HeroSection from "../../Components/Home/HeroSection";
+import AboutSection from "../../Components/Home/AboutSection";
+import MissionVisionSection from "../../Components/Home/MissionAndVision";
+import FacilitiesSection from "../../Components/Home/FacilitiesSection";
 
 const Home = () => {
- 
+
 
     return (
         <div>
-            <Homepage />
+            <HeroSection />
+            <AboutSection />
+            <MissionVisionSection />
+            <FacilitiesSection />
             {/* <Welcome /> */}
-            <ServiceHome/>
-            <Team/>
-            <WhyChooseUs/>
-            <Testimonials/>
-            <Faq/>
+            <ServiceHome />
+            <Team />
+            <WhyChooseUs />
+            <Testimonials />
+            <Faq />
         </div>
     );
 };

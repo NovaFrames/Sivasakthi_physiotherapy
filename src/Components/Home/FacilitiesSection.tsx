@@ -64,7 +64,7 @@ const FacilitiesSection = () => {
             {
               title: "Senior Care Home",
               desc: "Peaceful environment with full-time medical and nursing care for elderly.",
-              img: "https://images.pexels.com/photos/7328829/pexels-photo-7328829.jpeg",
+              img: "https://plus.unsplash.com/premium_photo-1683133816393-b04d94c65872?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGh5c2lvdGhlcmFweSUyMGNsaW5pY3xlbnwwfHwwfHx8MA%3D%3D",
             },
             {
               title: "Sports Rehabilitation",

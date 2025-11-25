@@ -28,7 +28,7 @@ const FoundersSection = () => {
                 sx={{
                   height: 280,
                   backgroundImage:
-                    "url('https://images.pexels.com/photos/5327655/pexels-photo-5327655.jpeg')",
+                    "url('https://media.istockphoto.com/id/483952192/photo/physical-therapist-series-leg-exercise.webp?a=1&b=1&s=612x612&w=0&k=20&c=i-OiNIel43hkEYd5Sn6o_efk-V7hQj74T-ZUtrIDi6Y=')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
@@ -71,7 +71,7 @@ const FoundersSection = () => {
                 sx={{
                   height: 280,
                   backgroundImage:
-                    "url('https://images.pexels.com/photos/8460040/pexels-photo-8460040.jpeg')",
+                    "url('https://images.unsplash.com/photo-1659353887804-fc7f9313021a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGh5c2lvdGhlcmFweSUyMGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}

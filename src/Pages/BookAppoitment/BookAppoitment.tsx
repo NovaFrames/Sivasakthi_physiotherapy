@@ -50,14 +50,14 @@ const BookAppointment = () => {
     setMessage({ type: '', text: '' });
 
     // Your credentials (temporary test token only!)
-    const WHATSAPP_TOKEN = "EAARAdiREqMsBQKx8jgJH7FTpl1wvd2dvxt9GeSBALg3WKpRw34WjdI0WvtUasINByjgwYvgUpNpX5is19tBoX4zYZApZCD6LXgUqQzCmUbBgPudAKG4nqBv5xzrrSpjh2jG4XzvNZB4ZCdxJ4IiqaOmh0VLbhZClYbtj2xVmxtZAhDL5EVJCNRAhB0xAHaBjOscJfXs8ZCV73Qrht3axvpi0dXg9VZCpSIvFsPP4oVZBSZBVef1IZBLq2HKzcEzPtWMX6qZAB9tACmd0qIGx7ZCZCoVwe7N2EznQZDZD";
+    const WHATSAPP_TOKEN = "EAARAdiREqMsBQPkhxciY9fQOfRSc0kCzjcQ6Bk4186MVlAAeLoTus0aH6wlusnOrMl2MRcpHBaPNmsWo7dhgYgKFAohsiU6X2InCZCnxtfiypyHKtl7i6Shd08FG2sbZCa1F21vmlweChEZA4J9D4ewkZCmPtJMZBoEwZB4KVAVSJniIAbxSXTYE2XbBeirsGtjTQ8EUG3AtDKv8SSxAFRQl6cgdpGFPQM0vxhBVb3CO3AXzbwQuK8PevRu7U0baZBtZAkuzlS0IlnloyblrGNi2LItk";
     const PHONE_NUMBER_ID = "805113832692020";
     const BUSINESS_NUMBER = "919715768735"; // without +
 
     try {
       // console.log("Sending WhatsApp message...", form);
       const response = await fetch(
-        `https://graph.facebook.com/v20.0/${PHONE_NUMBER_ID}/messages`,
+        `https://graph.facebook.com/v22.0/${PHONE_NUMBER_ID}/messages`,
         {
           method: "POST",
           headers: {
@@ -69,7 +69,7 @@ const BookAppointment = () => {
             to: BUSINESS_NUMBER,
             type: "template",
             template: {
-              name: "sivasakthi",
+              name: "booking_appointment",
               language: { code: "en_US" },
               components: [
                 {
