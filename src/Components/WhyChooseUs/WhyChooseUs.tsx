@@ -126,7 +126,7 @@ const WhyChooseUs = () => {
               alt="Healthcare Professional"
               sx={{
                 width: "100%",
-                height: { xs: "280px", md: "460px" },
+                height: { xs: "460px", md: "460px" },
                 objectFit: "cover",
                 borderRadius: 2,
               }}
