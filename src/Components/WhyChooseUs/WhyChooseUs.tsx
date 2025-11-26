@@ -71,8 +71,7 @@ const WhyChooseUs = () => {
                 fontSize: "0.85rem",
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Experience compassionate care, modern facilities, and a dedicated team working with you to regain strength, improve flexibility, and return to a healthier, active lifestyle.
             </Typography>
 
             {/* Stats */}
@@ -122,7 +121,7 @@ const WhyChooseUs = () => {
           <Grid size={{ xs: 12, lg: 6 }}>
             <Box
               component="img"
-              src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&h=1000&fit=crop"
+              src="https://plus.unsplash.com/premium_photo-1681966826227-d008a1cfe9c7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZG9jdG9yc3xlbnwwfHwwfHx8MA%3D%3D"
               alt="Healthcare Professional"
               sx={{
                 width: "100%",

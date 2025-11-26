@@ -31,8 +31,7 @@ const AboutClinic: React.FC = () => {
         <Header
           title="✤ What Makes Us Different"
           subtitle=" More than therapy - it’s about trust, warmth, and real recovery."
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+          description="Our physiotherapy centre is dedicated to helping patients overcome pain and regain strength through expert care and personalized treatments" />
 
         {/* Main Content Section */}
         <Grid container spacing={4}>
@@ -80,8 +79,7 @@ const AboutClinic: React.FC = () => {
                   variant="body2"
                   sx={{ color: "#E0E0E0", lineHeight: 1.7 }}
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna.
+                  Our physiotherapy centre is dedicated to helping patients overcome pain and regain strength through expert care and personalized treatments
                 </Typography>
               </Box>
             </Box>
@@ -123,15 +121,13 @@ const AboutClinic: React.FC = () => {
                       </Stack>
 
                       <Typography variant="body2" sx={{ lineHeight: 1.8 }}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna.
+                        Our physiotherapy centre is dedicated to helping patients overcome pain and regain strength through expert care and personalized treatments
                       </Typography>
 
                       <Box component="ul" sx={{ pl: 3, mb: 0 }}>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Consectetur adipiscing elit.</li>
-                        <li>Tempor incididunt ut labore.</li>
+                        <li>Comprehensive physiotherapy treatments for faster recovery.</li>
+                        <li>Personalized care plans tailored to each patient's needs.</li>
+                        <li>Advanced equipment and expert therapists for effective results.</li>
                       </Box>
                     </Stack>
                   </CardContent>
@@ -168,8 +164,7 @@ const AboutClinic: React.FC = () => {
                       </Typography>
                     </Stack>
                     <Typography variant="body2" sx={{ lineHeight: 1.8 }}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna.
+                      Our physiotherapy centre is dedicated to helping patients overcome pain and regain strength through expert care and personalized treatments
                     </Typography>
                   </CardContent>
                 </Card>
@@ -204,8 +199,7 @@ const AboutClinic: React.FC = () => {
                       </Typography>
                     </Stack>
                     <Typography variant="body2" sx={{ lineHeight: 1.8 }}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna.
+                      Our physiotherapy centre is dedicated to helping patients overcome pain and regain strength through expert care and personalized treatments
                     </Typography>
                   </CardContent>
                 </Paper>

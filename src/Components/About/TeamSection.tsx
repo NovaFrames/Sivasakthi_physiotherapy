@@ -54,8 +54,7 @@ const TeamSection = () => {
         <Header
           title="✤ Our Professional Therapist"
           subtitle="Meet Our Caring Therapists"
-          description=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna." />
+          description=" Our physiotherapy centre is dedicated to helping patients overcome pain and regain strength through expert care and personalized treatments" />
 
 
         {/* Therapist Cards */}

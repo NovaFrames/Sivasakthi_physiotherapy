@@ -47,19 +47,16 @@ const HeroSection = () => {
 
               {/* Paragraph */}
               <Typography variant="body1" sx={{ color: "#555", mt: 1, mb: 2 }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat.
+                At Sivasakthi Physiotherapy Clinic, we are committed to restoring mobility, reducing pain, and enhancing the overall quality of life for our patients. With advanced therapeutic techniques and personalized care plans, our experienced physiotherapists help individuals recover from injuries, surgeries, and chronic conditions.
               </Typography>
 
               {/* Bullet Points */}
               <Stack spacing={1.2}>
                 {[
-                  "Lorem ipsum dolor sit amet.",
-                  "Lorem ipsum dolor sit amet.",
-                  "Lorem ipsum dolor sit amet.",
-                  "Lorem ipsum dolor sit amet.",
+                  "Personalized treatment plans for faster recovery.",
+                  "Advanced pain management and rehabilitation therapies.",
+                  "Experienced physiotherapists dedicated to your care.",
+                  "Modern equipment and a friendly healing environment."
                 ].map((text, index) => (
                   <Stack key={index} direction="row" alignItems="center" spacing={1}>
                     <CheckCircleIcon sx={{ color: colors.primary, fontSize: 18 }} />
@@ -192,7 +189,7 @@ const HeroSection = () => {
             {
               title: "Our Commitment",
               icon: <CheckCircleIcon />,
-              desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              desc: "We focus on treating the root cause of discomfort through evidence-based therapies, guided exercises, and hands-on rehabilitation. Whether you're dealing with back pain, sports injuries, neurological challenges, or post-surgical recovery — we are here to support your healing journey every step of the way.",
               dark: true,
             }
           ].map((card, index) => (
