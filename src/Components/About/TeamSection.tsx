@@ -11,37 +11,37 @@ const therapists = [
     name: "Jenny Wilson",
     role: "Therapist A",
     image:
-      "https://images.pexels.com/photos/8460046/pexels-photo-8460046.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://plus.unsplash.com/premium_photo-1661580574627-9211124e5c3f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZG9jdG9yfGVufDB8fDB8fHww",
   },
   {
     name: "Darrell Steward",
     role: "Therapist C",
     image:
-      "https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZG9jdG9yfGVufDB8fDB8fHww",
   },
   {
     name: "Cameron Williamson",
     role: "Therapist C",
     image:
-      "https://images.pexels.com/photos/5452203/pexels-photo-5452203.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     name: "Jacob Jones",
     role: "Therapist B",
     image:
-      "https://images.pexels.com/photos/8460040/pexels-photo-8460040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.unsplash.com/photo-1712215544003-af10130f8eb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     name: "Savannah Nguyen",
     role: "Therapist A",
     image:
-      "https://images.pexels.com/photos/8460045/pexels-photo-8460045.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://plus.unsplash.com/premium_photo-1723514536306-26fe5c4adeb7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     name: "Robert Fox",
     role: "Therapist B",
     image:
-      "https://images.pexels.com/photos/6951672/pexels-photo-6951672.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://plus.unsplash.com/premium_photo-1681966907271-1e350ec3bb95?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D",
   },
 ];
 

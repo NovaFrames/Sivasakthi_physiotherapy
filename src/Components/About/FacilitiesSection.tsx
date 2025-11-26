@@ -28,37 +28,37 @@ const FacilitiesPage = () => {
       id: 1,
       title: "Balance Training",
       description: "Improve stability and prevent falls through targeted exercises",
-      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop",
+      image: "https://images.unsplash.com/photo-1669316714681-5fe047de58b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGh5c2lvdGhlcmFwaHklMjBlcXVpcG1lbnRzfGVufDB8fDB8fHww",
     },
     {
       id: 2,
       title: "Strength Building",
       description: "Progressive resistance training for functional movement",
-      image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop",
+      image: "https://images.unsplash.com/photo-1717500251997-80b234166d00?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGh5c2lvdGhlcmFwaHklMjBlcXVpcG1lbnRzfGVufDB8fDB8fHww",
     },
     {
       id: 3,
       title: "Mobility Exercises",
       description: "Enhance range of motion and flexibility for daily activities",
-      image: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&h=600&fit=crop",
+      image: "https://images.unsplash.com/photo-1627257058769-0a99529e4312?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGh5c2lvdGhlcmFwaHklMjBlcXVpcG1lbnRzfGVufDB8fDB8fHww",
     },
     {
       id: 4,
       title: "Gait Training",
       description: "Restore normal walking patterns and improve coordination",
-      image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&h=600&fit=crop",
+      image: "https://images.unsplash.com/photo-1669930605340-801a0be1f5a3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBoeXNpb3RoZXJhcGh5JTIwZXF1aXBtZW50c3xlbnwwfHwwfHx8MA%3D%3D",
     },
     {
       id: 5,
       title: "Core Stabilization",
       description: "Strengthen your core for better posture and movement control",
-      image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=600&fit=crop",
+      image: "https://images.unsplash.com/photo-1622878327584-40ac62f6a97b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHBoeXNpb3RoZXJhcGh5JTIwZXF1aXBtZW50c3xlbnwwfHwwfHx8MA%3D%3D",
     },
     {
       id: 6,
       title: "Sport-Specific Training",
       description: "Return to your favorite activities with confidence",
-      image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&h=600&fit=crop",
+      image: "https://images.unsplash.com/photo-1580281657702-257584239a55?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHBoeXNpb3RoZXJhcGh5JTIwZXF1aXBtZW50c3xlbnwwfHwwfHx8MA%3D%3D",
     },
   ];
 

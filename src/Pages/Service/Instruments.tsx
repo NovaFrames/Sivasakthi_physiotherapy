@@ -13,51 +13,39 @@ const Instruments = () => {
   const instruments = [
     {
       id: 1,
-      title: "IFT – Interferential Therapy",
-      description:
-        "Used for deep pain relief and stimulation of soft tissues to promote healing and reduce inflammation.",
-      image:
-        "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&q=80",
+      title: "Balance Training",
+      description: "Improve stability and prevent falls through targeted exercises",
+      image: "https://images.unsplash.com/photo-1669316714681-5fe047de58b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGh5c2lvdGhlcmFwaHklMjBlcXVpcG1lbnRzfGVufDB8fDB8fHww",
     },
     {
       id: 2,
-      title: "Ultrasound Therapy",
-      description:
-        "Promotes tissue healing, reduces swelling, and improves blood flow using high-frequency sound waves.",
-      image:
-        "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80",
+      title: "Strength Building",
+      description: "Progressive resistance training for functional movement",
+      image: "https://images.unsplash.com/photo-1717500251997-80b234166d00?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGh5c2lvdGhlcmFwaHklMjBlcXVpcG1lbnRzfGVufDB8fDB8fHww",
     },
     {
       id: 3,
-      title: "TENS – Nerve Stimulation",
-      description:
-        "Used to relieve chronic and acute pain by sending gentle electrical impulses to nerves.",
-      image:
-        "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=800&q=80",
+      title: "Mobility Exercises",
+      description: "Enhance range of motion and flexibility for daily activities",
+      image: "https://images.unsplash.com/photo-1627257058769-0a99529e4312?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGh5c2lvdGhlcmFwaHklMjBlcXVpcG1lbnRzfGVufDB8fDB8fHww",
     },
     {
       id: 4,
-      title: "Heat Therapy",
-      description:
-        "Effective for muscle relaxation, improving flexibility, and reducing stiffness in joints.",
-      image:
-        "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80",
+      title: "Gait Training",
+      description: "Restore normal walking patterns and improve coordination",
+      image: "https://images.unsplash.com/photo-1669930605340-801a0be1f5a3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBoeXNpb3RoZXJhcGh5JTIwZXF1aXBtZW50c3xlbnwwfHwwfHx8MA%3D%3D",
     },
     {
       id: 5,
-      title: "Laser Therapy",
-      description:
-        "Accelerates healing, reduces inflammation, and promotes tissue regeneration using focused laser energy.",
-      image:
-        "https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?w=800&q=80",
+      title: "Core Stabilization",
+      description: "Strengthen your core for better posture and movement control",
+      image: "https://images.unsplash.com/photo-1622878327584-40ac62f6a97b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHBoeXNpb3RoZXJhcGh5JTIwZXF1aXBtZW50c3xlbnwwfHwwfHx8MA%3D%3D",
     },
     {
       id: 6,
-      title: "Traction Unit",
-      description:
-        "Used for spinal decompression therapy to relieve pressure from spinal discs.",
-      image:
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
+      title: "Sport-Specific Training",
+      description: "Return to your favorite activities with confidence",
+      image: "https://images.unsplash.com/photo-1580281657702-257584239a55?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHBoeXNpb3RoZXJhcGh5JTIwZXF1aXBtZW50c3xlbnwwfHwwfHx8MA%3D%3D",
     },
   ];
 

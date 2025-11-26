@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { LocationCity, Phone, Email } from "@mui/icons-material";
 import {
   Box,
@@ -18,6 +19,23 @@ const colors = {
 };
 
 const Contact = () => {
+  // 🔹 Form state
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    message: "",
+  });
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const value = e.target.value.replace(/\D/g, "");
+  setForm({ ...form, phone: value });
+};
+
+  const handleSubmit = () => {
+    console.log("Form Submitted:", form);
+    // Add API call / Firebase logic here
+  };
+
   return (
     <Box
       sx={{
@@ -27,8 +45,8 @@ const Contact = () => {
     >
       <Container maxWidth="lg">
         <Grid container spacing={5} alignItems="center">
-          {/* LEFT SIDE — IMAGE + CONTACT DETAILS */}
-          <Grid size={{xs:12,md:6}}>
+          {/* LEFT SIDE */}
+          <Grid size={{ xs: 12, md: 6 }}>
             <Card
               sx={{
                 height: "100%",
@@ -36,18 +54,16 @@ const Contact = () => {
                 overflow: "hidden",
               }}
             >
-              {/* Image Section */}
               <Box
                 sx={{
                   height: 260,
                   backgroundImage:
-                    "url('https://images.pexels.com/photos/8460042/pexels-photo-8460042.jpeg')",
+                    "url('https://plus.unsplash.com/premium_photo-1661779394380-e372d6a1f198?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGh5c2lvdGhlcmFweXxlbnwwfHwwfHx8MA%3D%3D')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
               />
 
-              {/* Contact Details */}
               <CardContent sx={{ p: 3 }}>
                 <Stack spacing={2}>
                   <Typography
@@ -80,13 +96,8 @@ const Contact = () => {
           </Grid>
 
           {/* RIGHT SIDE — FORM */}
-          <Grid size={{xs:12,md:6}}>
-            <Card
-              sx={{
-                p: 3,
-                borderRadius: 4,
-              }}
-            >
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Card sx={{ p: 3, borderRadius: 4 }}>
               <Typography
                 variant="h6"
                 sx={{ mb: 1, fontWeight: 700, color: colors.primary }}
@@ -99,13 +110,32 @@ const Contact = () => {
               </Typography>
 
               <Stack spacing={3}>
-                <TextField fullWidth label="Full Name" />
-                <TextField fullWidth label="Phone or Email" />
+                <TextField
+                  fullWidth
+                  label="Full Name"
+                  value={form.name}
+                  onChange={(e) =>
+                    setForm({ ...form, name: e.target.value })
+                  }
+                />
+
+                <TextField
+                  fullWidth
+                  label="Phone"
+                  value={form.phone}
+                  onChange={handlePhoneChange}
+                  inputProps={{ maxLength: 10 }}
+                />
+
                 <TextField
                   fullWidth
                   label="Your Message"
                   multiline
                   minRows={3}
+                  value={form.message}
+                  onChange={(e) =>
+                    setForm({ ...form, message: e.target.value })
+                  }
                 />
 
                 <Button
@@ -117,6 +147,7 @@ const Contact = () => {
                     borderRadius: 2,
                     "&:hover": { backgroundColor: "#0d3a3a" },
                   }}
+                  onClick={handleSubmit}
                 >
                   Send Message
                 </Button>

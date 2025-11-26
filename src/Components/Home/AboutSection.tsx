@@ -117,7 +117,7 @@ const AboutSection = () => {
                   }}
                 >
                   <img
-                    src="https://images.pexels.com/photos/8460091/pexels-photo-8460091.jpeg"
+                    src="https://images.unsplash.com/photo-1645005513713-9e2b92a687d3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBoeXNpb3RoZXJhcHl8ZW58MHx8MHx8fDA%3D"
                     alt="Therapy Session"
                     style={{
                       width: "100%",

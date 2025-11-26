@@ -118,7 +118,7 @@ const Physiotheraphy = () => {
                                 sx={{
                                     height: 350,
                                     backgroundImage:
-                                        "url('https://images.pexels.com/photos/4506141/pexels-photo-4506141.jpeg')",
+                                        "url('https://plus.unsplash.com/premium_photo-1683133816393-b04d94c65872?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fHBoeXNpb3RoZXJhcHl8ZW58MHx8MHx8fDA%3D')",
                                     backgroundSize: "cover",
                                     backgroundPosition: "center",
                                     borderRadius: 4,
@@ -142,17 +142,17 @@ const Physiotheraphy = () => {
                             {
                                 title: "Sports Physiotherapy",
                                 icon: <SportsMartialArtsIcon />,
-                                img: "https://images.pexels.com/photos/5327569/pexels-photo-5327569.jpeg",
+                                img: "https://images.unsplash.com/photo-1609113160023-4e31f3765fd7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fHBoeXNpb3RoZXJhcHl8ZW58MHx8MHx8fDA%3D",
                             },
                             {
                                 title: "Neurological Physiotherapy",
                                 icon: <PsychologyIcon />,
-                                img: "https://images.pexels.com/photos/8369773/pexels-photo-8369773.jpeg",
+                                img: "https://plus.unsplash.com/premium_photo-1663047572047-6c576fe76ae8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fHBoeXNpb3RoZXJhcHl8ZW58MHx8MHx8fDA%3D",
                             },
                             {
                                 title: "Cardio Respiratory Physiotherapy",
                                 icon: <FitnessCenterIcon />,
-                                img: "https://images.pexels.com/photos/3845761/pexels-photo-3845761.jpeg",
+                                img: "https://plus.unsplash.com/premium_photo-1661767448598-f42428886f1c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fHBoeXNpb3RoZXJhcHl8ZW58MHx8MHx8fDA%3D",
                             },
                             {
                                 title: "Gynaecological Physiotherapy",
@@ -162,7 +162,7 @@ const Physiotheraphy = () => {
                             {
                                 title: "Geriatric Physiotherapy",
                                 icon: <ElderlyIcon />,
-                                img: "https://images.pexels.com/photos/7989029/pexels-photo-7989029.jpeg",
+                                img: "https://images.unsplash.com/photo-1709880754472-be89c13abc52?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fHBoeXNpb3RoZXJhcHl8ZW58MHx8MHx8fDA%3D",
                             },
                         ].map((s, i) => (
                             <Grid key={i} size={{ xs: 12, sm: 6, md: 4 }}>
@@ -251,19 +251,19 @@ const Physiotheraphy = () => {
                                 step: "1",
                                 title: "Consultation",
                                 subtitle: "Initial evaluation with diagnosis",
-                                img: "https://images.pexels.com/photos/3845755/pexels-photo-3845755.jpeg",
+                                img: "https://images.unsplash.com/photo-1708687045030-26702e62fc65?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fHBoeXNpb3RoZXJhcHklMjBDb25zdWx0YXRpb258ZW58MHx8MHx8fDA%3D",
                             },
                             {
                                 step: "2",
                                 title: "Treatment Plan",
                                 subtitle: "Personalized treatment program",
-                                img: "https://images.pexels.com/photos/4506100/pexels-photo-4506100.jpeg",
+                                img: "https://images.unsplash.com/photo-1691935444011-6dc287f96586?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fHBoeXNpb3RoZXJhcHklMjBDb25zdWx0YXRpb258ZW58MHx8MHx8fDA%3D",
                             },
                             {
                                 step: "3",
                                 title: "Recovery",
                                 subtitle: "Exercise and rehabilitation routines",
-                                img: "https://images.pexels.com/photos/4506107/pexels-photo-4506107.jpeg",
+                                img: "https://plus.unsplash.com/premium_photo-1661963554665-67c3f9538c9d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                             },
                         ].map((item, i) => (
                             <Grid key={i} size={{ xs: 12, md: 4 }}>
@@ -343,49 +343,49 @@ const Physiotheraphy = () => {
                                 title: "Musculoskeletal / Orthopaedic Physiotherapy",
                                 content:
                                     "Specially trained in manual therapy and postural corrections. Focuses on mechanical diagnosis and correcting pain-producing structures while breaking the pain-spasm cycle.",
-                                image: "https://images.pexels.com/photos/7189776/pexels-photo-7189776.jpeg",
+                                image: "https://plus.unsplash.com/premium_photo-1664298669573-307774b8161f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fHBoeXNpb3RoZXJhcHklMjBDb25zdWx0YXRpb258ZW58MHx8MHx8fDA%3D",
                             },
                             {
                                 title: "Joint Replacement Physiotherapy",
                                 content:
                                     "After knee, hip, or shoulder joint replacement surgeries, physiotherapy helps improve mobility and strength using tailored exercises and CPM equipment.",
-                                image: "https://images.pexels.com/photos/4506103/pexels-photo-4506103.jpeg",
+                                image: "https://plus.unsplash.com/premium_photo-1661724706652-92a34496cac1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTd8fHBoeXNpb3RoZXJhcHklMjBDb25zdWx0YXRpb258ZW58MHx8MHx8fDA%3D",
                             },
                             {
                                 title: "Sports Physiotherapy",
                                 content:
                                     "Sports physiotherapists are trained in field management, kinesio taping, functional rehabilitation, and returning athletes to their sport safely.",
-                                image: "https://images.pexels.com/photos/4324020/pexels-photo-4324020.jpeg",
+                                image: "https://plus.unsplash.com/premium_photo-1683133808231-cf6b6bba73d2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njd8fHBoeXNpb3RoZXJhcHklMjBDb25zdWx0YXRpb258ZW58MHx8MHx8fDA%3D",
                             },
                             {
                                 title: "Rheumatologic Physiotherapy",
                                 content:
                                     "Focuses on arthritis and chronic pain management. Aims at joint protection, break pain cycle, deformity prevention, and functional correction.",
-                                image: "https://images.pexels.com/photos/4056921/pexels-photo-4056921.jpeg",
+                                image: "https://plus.unsplash.com/premium_photo-1661698068272-987480c4074d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzF8fHBoeXNpb3RoZXJhcHklMjBDb25zdWx0YXRpb258ZW58MHx8MHx8fDA%3D",
                             },
                             {
                                 title: "Neurological Physiotherapy",
                                 content:
                                     "Targets neurological issues with functional re-education, task-oriented therapy, and spinal injury care to maximize recovery.",
-                                image: "https://images.pexels.com/photos/4505724/pexels-photo-4505724.jpeg",
+                                image: "https://plus.unsplash.com/premium_photo-1661962399003-d2feebf8cf4d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzl8fHBoeXNpb3RoZXJhcHklMjBDb25zdWx0YXRpb258ZW58MHx8MHx8fDA%3D",
                             },
                             {
                                 title: "Cardio-Respiratory Physiotherapy",
                                 content:
                                     "Helps manage ICU, post-surgical, and respiratory care with bronchial hygiene, postural drainage and rehabilitation routines.",
-                                image: "https://images.pexels.com/photos/4498193/pexels-photo-4498193.jpeg",
+                                image: "https://plus.unsplash.com/premium_photo-1733306487434-e0438608dd10?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI4fHxwaHlzaW90aGVyYXB5JTIwQ29uc3VsdGF0aW9ufGVufDB8fDB8fHww",
                             },
                             {
                                 title: "Gynaecological Physiotherapy",
                                 content:
                                     "Deals with issues related to pregnancy, PCOS, dysmenorrhea, and pelvic health using targeted exercise programs.",
-                                image: "https://images.pexels.com/photos/7619999/pexels-photo-7619999.jpeg",
+                                image: "https://media.istockphoto.com/id/857090084/photo/back-problems.webp?a=1&b=1&s=612x612&w=0&k=20&c=ek71kzvkNwnQlbj4Dd3cPBAXsPw3SNRJvuUw5VJTTYQ=",
                             },
                             {
                                 title: "Geriatric Physiotherapy",
                                 content:
                                     "Addresses age-related issues such as fall risk, arthritis, posture, and mobility through tailored supervised exercises.",
-                                image: "https://images.pexels.com/photos/5698104/pexels-photo-5698104.jpeg",
+                                image: "https://media.istockphoto.com/id/805089584/photo/just-relax-ill-take-care-of-the-rest.webp?a=1&b=1&s=612x612&w=0&k=20&c=lqIQfL6uY4LtawFxZoIQ58BIgehXBLuHnhavIkw67zY=",
                             },
                         ].map((spec, i) => (
                             <Grid size={{ xs: 12, md: 6 }} key={i}>

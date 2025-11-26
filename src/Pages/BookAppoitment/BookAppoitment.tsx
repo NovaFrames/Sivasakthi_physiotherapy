@@ -50,7 +50,7 @@ const BookAppointment = () => {
     setMessage({ type: '', text: '' });
 
     // Your credentials (temporary test token only!)
-    const WHATSAPP_TOKEN = "EAARAdiREqMsBQPkhxciY9fQOfRSc0kCzjcQ6Bk4186MVlAAeLoTus0aH6wlusnOrMl2MRcpHBaPNmsWo7dhgYgKFAohsiU6X2InCZCnxtfiypyHKtl7i6Shd08FG2sbZCa1F21vmlweChEZA4J9D4ewkZCmPtJMZBoEwZB4KVAVSJniIAbxSXTYE2XbBeirsGtjTQ8EUG3AtDKv8SSxAFRQl6cgdpGFPQM0vxhBVb3CO3AXzbwQuK8PevRu7U0baZBtZAkuzlS0IlnloyblrGNi2LItk";
+    const WHATSAPP_TOKEN = "EAARAdiREqMsBQBZCOPmhZALlzzHVWum4X1diaSfxkg7n5mZBsnw0KaRuTxjm7ucG59PggR2rmSQnYan36crRLWSTQIPgtmFhZCk8z1MfMTF1Yv5ZBob3CtmKZAHBRStnGS3XRRjShWANT37fAmrNK4UJ2zd63ZAqjRVoM6sQSJIhwi21b2Ok1MU2dGY7ZBo7ObJ4wURcCeA44fZCJ4q3FkIWZCXuB3mZAjSW2VZAEyFHEFgr9pSXEdUDtZA8VKfAiZAEWcqrzV9E1ZCaaMKXHjSxrCHPmHhyS0u";
     const PHONE_NUMBER_ID = "805113832692020";
     const BUSINESS_NUMBER = "919715768735"; // without +
 
@@ -69,7 +69,7 @@ const BookAppointment = () => {
             to: BUSINESS_NUMBER,
             type: "template",
             template: {
-              name: "booking_appointment",
+              name: "book_appoinment",
               language: { code: "en_US" },
               components: [
                 {

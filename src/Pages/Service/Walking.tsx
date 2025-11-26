@@ -10,9 +10,6 @@ import {
 
 import {
   DirectionsWalk,
-  Favorite,
-  SelfImprovement,
-  Timeline,
   HealthAndSafety,
   Star,
 } from "@mui/icons-material";
@@ -21,28 +18,40 @@ import GalleryCard from "../../Components/Card/GalleryCard";
 const Walking = () => {
   const activities = [
     {
-      icon: <DirectionsWalk fontSize="large" color="primary" />,
-      title: "Gait Enhancement Training",
-      description:
-        "Improve your walking pattern, stride length, and overall balance with guided physiotherapy exercises.",
+      id: 1,
+      title: "Balance Training",
+      description: "Improve stability and prevent falls through targeted exercises",
+      image: "https://images.unsplash.com/photo-1669316714681-5fe047de58b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGh5c2lvdGhlcmFwaHklMjBlcXVpcG1lbnRzfGVufDB8fDB8fHww",
     },
     {
-      icon: <Favorite fontSize="large" color="primary" />,
-      title: "Endurance Walking",
-      description:
-        "Build cardiovascular endurance safely with progressive walking routines tailored to your condition.",
+      id: 2,
+      title: "Strength Building",
+      description: "Progressive resistance training for functional movement",
+      image: "https://images.unsplash.com/photo-1717500251997-80b234166d00?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGh5c2lvdGhlcmFwaHklMjBlcXVpcG1lbnRzfGVufDB8fDB8fHww",
     },
     {
-      icon: <SelfImprovement fontSize="large" color="primary" />,
-      title: "Posture & Core Stability",
-      description:
-        "Correct walking posture and strengthen your core to prevent future injuries and imbalance.",
+      id: 3,
+      title: "Mobility Exercises",
+      description: "Enhance range of motion and flexibility for daily activities",
+      image: "https://images.unsplash.com/photo-1627257058769-0a99529e4312?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGh5c2lvdGhlcmFwaHklMjBlcXVpcG1lbnRzfGVufDB8fDB8fHww",
     },
     {
-      icon: <Timeline fontSize="large" color="primary" />,
-      title: "Progress Monitoring",
-      description:
-        "Track improvements in walking speed, step frequency, and control through regular assessments.",
+      id: 4,
+      title: "Gait Training",
+      description: "Restore normal walking patterns and improve coordination",
+      image: "https://images.unsplash.com/photo-1669930605340-801a0be1f5a3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBoeXNpb3RoZXJhcGh5JTIwZXF1aXBtZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+    },
+    {
+      id: 5,
+      title: "Core Stabilization",
+      description: "Strengthen your core for better posture and movement control",
+      image: "https://images.unsplash.com/photo-1622878327584-40ac62f6a97b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHBoeXNpb3RoZXJhcGh5JTIwZXF1aXBtZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+    },
+    {
+      id: 6,
+      title: "Sport-Specific Training",
+      description: "Return to your favorite activities with confidence",
+      image: "https://images.unsplash.com/photo-1580281657702-257584239a55?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHBoeXNpb3RoZXJhcGh5JTIwZXF1aXBtZW50c3xlbnwwfHwwfHx8MA%3D%3D",
     },
   ];
 const gallery = [
@@ -174,7 +183,6 @@ const gallery = [
                   }}
                 >
                   <Stack direction="row" spacing={3} alignItems="flex-start">
-                    {item.icon}
                     <Box>
                       <Typography variant="h6" fontWeight={700} mb={1}>
                         {item.title}

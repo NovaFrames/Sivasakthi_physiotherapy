@@ -141,7 +141,7 @@ const Specialties = () => {
                                 }}
                             >
                                 <img
-                                    src="https://images.unsplash.com/photo-1682663947090-b35e4f2c23cc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBoeXNpb3RoZXJhcHklMjBpbnN0cnVtZW50c3xlbnwwfHwwfHx8MA%3D%3D"
+                                    src="https://plus.unsplash.com/premium_photo-1661698068272-987480c4074d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fHBoeXNpb3RoZXJhcGh5fGVufDB8fDB8fHww"
                                     alt="Facility"
                                     style={{
                                         position: "absolute",
@@ -174,7 +174,7 @@ const Specialties = () => {
                                 }}
                             >
                                 <img
-                                    src="https://images.unsplash.com/photo-1527236438218-d82077ae1f85?w=1200"
+                                    src="https://plus.unsplash.com/premium_photo-1661373532072-bff795f9b1ea?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBoeXNpb3RoZXJhcGh5fGVufDB8fDB8fHww"
                                     alt="De-Addiction Center"
                                     style={{
                                         position: "absolute",
@@ -250,7 +250,7 @@ const Specialties = () => {
                                 }}
                             >
                                 <img
-                                    src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200"
+                                    src="https://images.unsplash.com/photo-1758599880788-e49f6ee77bc7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGh5c2lvdGhlcmFwaHl8ZW58MHx8MHx8fDA%3D"
                                     alt="Old Age Home"
                                     style={{
                                         position: "absolute",

@@ -348,7 +348,7 @@ const PosturalCorrectionExercise: React.FC = () => {
       description:
         "Used for deep pain relief and stimulation of soft tissues to promote healing and reduce inflammation.",
       image:
-        "https://images.pexels.com/photos/6679256/pexels-photo-6679256.jpeg",
+        "https://images.unsplash.com/photo-1669316714681-5fe047de58b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGh5c2lvdGhlcmFweSUyMGVxdWlwbWVudHN8ZW58MHx8MHx8fDA%3D",
     },
     {
       id: 2,
@@ -356,7 +356,7 @@ const PosturalCorrectionExercise: React.FC = () => {
       description:
         "Utilized to reduce muscle spasms, stiffness, and improve soft tissue healing with sound wave stimulation.",
       image:
-        "https://images.pexels.com/photos/16823628/pexels-photo-16823628.jpeg",
+        "https://images.unsplash.com/photo-1717500252010-d708ec89a0a2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGh5c2lvdGhlcmFweSUyMGVxdWlwbWVudHN8ZW58MHx8MHx8fDA%3D",
     },
     {
       id: 3,
@@ -364,7 +364,7 @@ const PosturalCorrectionExercise: React.FC = () => {
       description:
         "Effective for chronic and acute pain management using low-voltage electrical currents.",
       image:
-        "https://images.pexels.com/photos/4132387/pexels-photo-4132387.jpeg",
+        "https://images.unsplash.com/photo-1669930605340-801a0be1f5a3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBoeXNpb3RoZXJhcHklMjBlcXVpcG1lbnRzfGVufDB8fDB8fHww",
     },
     {
       id: 4,
@@ -372,7 +372,7 @@ const PosturalCorrectionExercise: React.FC = () => {
       description:
         "Laser light used to accelerate tissue repair, reduce inflammation, and provide quick pain relief.",
       image:
-        "https://images.pexels.com/photos/16278155/pexels-photo-16278155.jpeg",
+        "https://images.unsplash.com/photo-1580420768674-7078c2bebec6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHBoeXNpb3RoZXJhcHklMjBlcXVpcG1lbnRzfGVufDB8fDB8fHww",
     },
     {
       id: 5,
@@ -380,7 +380,7 @@ const PosturalCorrectionExercise: React.FC = () => {
       description:
         "Mechanical traction used to gently stretch the spine to relieve pressure and reduce back pain.",
       image:
-        "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1529420681125-2878126af4a9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fHBoeXNpb3RoZXJhcHklMjBlcXVpcG1lbnRzfGVufDB8fDB8fHww",
     },
     {
       id: 6,
@@ -388,7 +388,7 @@ const PosturalCorrectionExercise: React.FC = () => {
       description:
         "Combines heating pads and cold compressors to treat muscle soreness, inflammation, and joint pain.",
       image:
-        "https://images.pexels.com/photos/26646944/pexels-photo-26646944.jpeg",
+        "https://images.unsplash.com/photo-1580281657702-257584239a55?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHBoeXNpb3RoZXJhcHklMjBlcXVpcG1lbnRzfGVufDB8fDB8fHww",
     },
   ];
 

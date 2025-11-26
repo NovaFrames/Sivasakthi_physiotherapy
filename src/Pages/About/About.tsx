@@ -16,12 +16,6 @@ const PhysioClinicWebsite = () => {
       <TeamSection />
       <FacilitiesSection />
       <Testimonials />
-      {/* <MissionVisionValues /> */}
-      {/* <TreatmentApproach /> */}
-      {/* <ConditionsSection /> */}
-      {/* <AchievementsSection /> */}
-      {/* <JourneySection /> */}
-      {/* <GallerySection /> */}
     </Box>
   );
 };
