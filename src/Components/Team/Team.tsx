@@ -6,23 +6,36 @@ import {
   Chip,
 } from '@mui/material';
 import TeamCard from '../Card/TeamCard';
+import doctorFemale1 from '../../assets/teams/doctor_female_1.png';
+import doctorMale1 from '../../assets/teams/doctor_male_1.png';
+import doctorFemale2 from '../../assets/teams/doctor_female_2.png';
+import doctorMale2 from '../../assets/teams/doctor_male_2.png';
 
 const Team = () => {
   const teamMembers = [
     {
-      name: 'Dr. Soumyendro',
-      role: 'Clinical Advisor / Consultant',
-      image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop'
+      name: 'Dr. Priya Sharma',
+      role: 'Senior Physiotherapist',
+      image: doctorFemale1,
+      description: 'Specialized in orthopedic rehabilitation with 15+ years of experience in patient care.'
     },
     {
-      name: 'Ankit Mathur',
-      role: 'Advisor / Investor',
-      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop'
+      name: 'Dr. Rajesh Kumar',
+      role: 'Chief Physiotherapist',
+      image: doctorMale1,
+      description: 'Expert in sports injury rehabilitation and advanced manual therapy techniques.'
     },
     {
-      name: 'Dr Deepanshu Khatri',
-      role: 'Head Operations',
-      image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&fit=crop'
+      name: 'Dr. Ananya Patel',
+      role: 'Pediatric Specialist',
+      image: doctorFemale2,
+      description: 'Dedicated to pediatric physiotherapy and developmental disorder treatment.'
+    },
+    {
+      name: 'Dr. Vikram Singh',
+      role: 'Neurological Specialist',
+      image: doctorMale2,
+      description: 'Specialized in neurological rehabilitation and stroke recovery programs.'
     }
   ];
 
@@ -62,7 +75,7 @@ const Team = () => {
 
         {/* Team Grid */}
         <Grid container spacing={3}>
-          <TeamCard therapists={teamMembers}/>
+          <TeamCard therapists={teamMembers} />
         </Grid>
 
       </Container>
