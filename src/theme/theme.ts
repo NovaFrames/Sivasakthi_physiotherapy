@@ -46,8 +46,9 @@ export const theme = createTheme({
   },
 
   typography: {
-    fontFamily: '"Darker Grotesque", sans-serif',
-  },
+  fontFamily: '"DM Sans", sans-serif',
+},
+
 
   components: {
     // CUSTOM BUTTON VARIANTS

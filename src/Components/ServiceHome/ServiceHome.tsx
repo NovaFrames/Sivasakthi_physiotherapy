@@ -50,7 +50,7 @@ const  ServiceHome = () => {
                 </Avatar>
 
                 <Box>
-                  <Typography variant="h3" fontWeight="bold" color="text.primary">
+                  <Typography variant="h4" fontWeight="bold" color="text.primary">
                     15+
                   </Typography>
 
@@ -104,13 +104,6 @@ const  ServiceHome = () => {
                 <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8 }}>
                   Rather than transactional engagement with patients, we are committed to partner
                   with our patients in their journey of healing.
-                </Typography>
-
-                <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8 }}>
-                  We work with you through your healing from start to finish providing a robust
-                  program involving combination of multiple therapies / modalities. Also, after
-                  treatment is over, we provide support / guidance to prevent injury from repeating /
-                  pain from returning. The happiness on our patient's faces is what keeps us going.
                 </Typography>
               </Box>
             </Box>

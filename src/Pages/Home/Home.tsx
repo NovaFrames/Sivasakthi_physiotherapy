@@ -7,21 +7,22 @@ import WhyChooseUs from "../../Components/WhyChooseUs/WhyChooseUs";
 import HeroSection from "../../Components/Home/HeroSection";
 import AboutSection from "../../Components/Home/AboutSection";
 import MissionVisionSection from "../../Components/Home/MissionAndVision";
-import FacilitiesSection from "../../Components/Home/FacilitiesSection";
+// import FacilitiesSection from "../../Components/Home/FacilitiesSection";
+import TheraphyList from "../../Components/Home/TheraphyList";
 
 const Home = () => {
 
 
     return (
-        <div>
+        <div style={{ marginTop: '-110px' }}>
             <HeroSection />
             <AboutSection />
             <MissionVisionSection />
-            <FacilitiesSection />
-            {/* <Welcome /> */}
+            <TheraphyList />
+            <WhyChooseUs />
+            {/* <FacilitiesSection /> */}
             <ServiceHome />
             <Team />
-            <WhyChooseUs />
             <Testimonials />
             <Faq />
         </div>

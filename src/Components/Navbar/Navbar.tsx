@@ -17,7 +17,7 @@ import {
 } from "@mui/material";
 import { Menu as MenuIcon, Close, ExpandMore } from "@mui/icons-material";
 import { ChevronDown } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null); // desktop submenu
@@ -25,6 +25,7 @@ export default function Navbar() {
   const [mobileServiceOpen, setMobileServiceOpen] = useState(false);
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   const navItems = [
     { label: "Home", path: "/" },
@@ -51,10 +52,9 @@ export default function Navbar() {
       <Box
         sx={{
           position: "sticky",
-          top: 20,
+          top: 26,
           zIndex: 1100,
           px: { xs: 2, md: 4 },
-          py: 2,
         }}
       >
         <AppBar
@@ -163,7 +163,7 @@ export default function Navbar() {
                         alignItems: "center",
                         gap: 0.5,
                         cursor: "pointer",
-                        color: "text.primary",
+                        color: location.pathname.startsWith("/service") ? "primary.main" : "text.primary",
                         fontWeight: 500,
                         fontSize: "15px",
                         position: "relative",
@@ -177,7 +177,7 @@ export default function Navbar() {
                           position: "absolute",
                           bottom: 0,
                           left: 0,
-                          width: "0%",
+                          width: location.pathname.startsWith("/service") ? "100%" : "0%",
                           height: "2px",
                           bgcolor: "primary.main",
                           transition: "width 0.3s ease",
@@ -235,7 +235,7 @@ export default function Navbar() {
                     onClick={() => navigate(item.path)}
                     sx={{
                       cursor: "pointer",
-                      color: "text.primary",
+                      color: location.pathname === item.path ? "primary.main" : "text.primary",
                       fontWeight: 500,
                       fontSize: "15px",
                       position: "relative",
@@ -249,7 +249,7 @@ export default function Navbar() {
                         position: "absolute",
                         bottom: 0,
                         left: 0,
-                        width: "0%",
+                        width: location.pathname === item.path ? "100%" : "0%",
                         height: "2px",
                         bgcolor: "primary.main",
                         transition: "width 0.3s ease",

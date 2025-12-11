@@ -128,9 +128,9 @@ const Faq = () => {
 
               {/* Answer */}
               <Collapse in={openIndex === index} timeout={300}>
-                <Box sx={{ px: 3, pb: 3, color: "text.secondary", lineHeight: 1.7 }}>
+                <Typography sx={{ px: 3, pb: 3, color: "text.secondary", lineHeight: 1.7 }}>
                   {faq.answer}
-                </Box>
+                </Typography>
               </Collapse>
             </Paper>
           ))}

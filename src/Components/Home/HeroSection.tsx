@@ -2,88 +2,24 @@ import {
     Box,
     Container,
     Typography,
+    Button,
     Grid,
     useTheme,
-    Card,
     Avatar,
-    AvatarGroup,
-    IconButton,
 } from "@mui/material";
-import { useState, useEffect } from "react";
-import StarIcon from '@mui/icons-material/Star';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import VerifiedIcon from '@mui/icons-material/Verified';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-
-// Import generated images - replace these paths with your actual image imports
-import mainPhysio from "./../../assets/main_physiotherapist.png";
-import secondPhysio from "./../../assets/second_physiotherapist.png";
-import therapy1 from "./../../assets/therapy_session_1.png";
-import therapy2 from "./../../assets/therapy_session_2.png";
-import therapy3 from "./../../assets/therapy_session_3.png";
-import therapy4 from "./../../assets/therapy_session_4.png";
-import therapy5 from "./../../assets/therapy_session_5.png";
-import therapy6 from "./../../assets/therapy_session_6.png";
+import { useNavigate } from "react-router-dom";
+import doctorHero from "./../../assets/doctor_hero.png";
 
 const HeroSection = () => {
     const theme = useTheme();
-    const [currentDoctor, setCurrentDoctor] = useState(0);
-
-    // Doctors data
-    const doctors = [
-        {
-            image: mainPhysio,
-            name: "Dr. Juliana",
-            title: "Senior Physio",
-            initials: "DJ",
-            color: theme.palette.primary.main,
-        },
-        {
-            image: secondPhysio,
-            name: "Dr. Marcus",
-            title: "Lead Therapist",
-            initials: "DM",
-            color: theme.palette.secondary.main,
-        },
-    ];
-
-    // Auto-slide effect
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentDoctor((prev) => (prev + 1) % doctors.length);
-        }, 4000); // Change every 4 seconds
-
-        return () => clearInterval(interval);
-    }, [doctors.length]);
-
-    // Therapy images carousel state
-    const [currentTherapyIndex, setCurrentTherapyIndex] = useState(0);
-
-    // Therapy session images array
-    const therapyImages = [therapy1, therapy2, therapy3, therapy4, therapy5, therapy6];
-
-    // Navigation functions for therapy images
-    const handlePrevTherapy = () => {
-        setCurrentTherapyIndex((prev) => (prev - 1 + therapyImages.length) % therapyImages.length);
-    };
-
-    const handleNextTherapy = () => {
-        setCurrentTherapyIndex((prev) => (prev + 1) % therapyImages.length);
-    };
-
-    // Team member avatars (you can replace with actual team photos)
-    const teamMembers = [
-        { name: "Dr. Sarah", color: "#FF6B6B" },
-        { name: "Dr. John", color: "#4ECDC4" },
-        { name: "Dr. Lisa", color: "#45B7D1" },
-    ];
+    const navigate = useNavigate();
 
     return (
         <Box
             sx={{
-                backgroundColor: "white",
-                pt: { xs: 6, md: 10 },
+                backgroundColor: theme.palette.background.default,
+                pt: { xs: 20, md: 30 },
                 pb: { xs: 6, md: 12 },
                 minHeight: { md: "90vh" },
                 display: "flex",
@@ -92,463 +28,454 @@ const HeroSection = () => {
                 overflow: "hidden",
             }}
         >
-            <Container maxWidth="xl">
-                <Grid container alignItems="center" spacing={{ xs: 2, md: 2 }}>
+            <Container maxWidth="lg">
+                <Grid container alignItems="center" spacing={{ xs: 4, md: 6 }}>
                     {/* --- LEFT SECTION --- */}
-                    <Grid size={{ xs: 12, md: 4 }}>
-                        <Box
-                            sx={{
-                                display: "flex",
-                                flexDirection: "column",
-                                alignItems: "center",
-                                textAlign: "center",
-                                width: "100%",
-                            }}
-                        >
-                            {/* Welcome Text */}
-                            <Typography
-                                variant="h4"
-                                sx={{
-                                    fontWeight: 400,
-                                    lineHeight: 1.3,
-                                    color: theme.palette.text.primary,
-                                    mb: 2,
-                                    fontSize: { xs: "1.8rem", md: "2rem" },
-                                    textAlign: "center",
-                                }}
-                            >
-                                Welcome To
-                                <br />
-                                <Box component="span" sx={{ fontWeight: 700 }}>
-                                    Sivasakthi Physiotherapy
-                                </Box>
-                            </Typography>
-
-                            {/* Star Rating */}
-                            <Box sx={{ display: "flex", gap: 0.5, mb: 1.5, justifyContent: "center" }}>
-                                {[1, 2, 3, 4, 5].map((star) => (
-                                    <StarIcon
-                                        key={star}
-                                        sx={{
-                                            fontSize: 20,
-                                            color: "#FFB800",
-                                        }}
-                                    />
-                                ))}
-                            </Box>
-
-                            {/* Description */}
-                            <Typography
-                                variant="body2"
-                                sx={{
-                                    color: theme.palette.text.secondary,
-                                    lineHeight: 1.6,
-                                    mb: 3,
-                                    maxWidth: 460,
-                                    fontSize: "18px",
-                                    textAlign: "center",
-                                }}
-                            >
-                                The Sivasakthi Physiotherapy Hospital established by well qualified health professionals, includes Physicians, surgeons, Physiotherapist etc. It has all types of Govt. Permissions
-
-                                We have in fact given life to stroke, paraplegia etc, and made them to lead normal life only with a small scar of the disease or accident. It’s being managed with qualified physiotherapy doctors of dedication round the clock.
-                            </Typography>
-
-                            {/* Team Avatars */}
-                            <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 4, justifyContent: "center" }}>
-                                <AvatarGroup max={4} sx={{ "& .MuiAvatar-root": { width: 40, height: 40, border: "2px solid white" } }}>
-                                    {teamMembers.map((member, index) => (
-                                        <Avatar
-                                            key={index}
-                                            sx={{
-                                                bgcolor: member.color,
-                                                fontSize: "14px",
-                                                fontWeight: 600,
-                                            }}
-                                        >
-                                            {member.name.charAt(4)}
-                                        </Avatar>
-                                    ))}
-                                </AvatarGroup>
-                                <Typography
-                                    variant="body2"
-                                    sx={{
-                                        fontSize: "20px",
-                                        fontWeight: 600,
-                                        color: theme.palette.text.primary,
-                                    }}
-                                >
-                                    +
-                                </Typography>
-                            </Box>
-
-                            {/* Healing Badge */}
-                            <Card
-                                sx={{
-                                    display: "inline-flex",
-                                    alignItems: "center",
-                                    gap: 1.5,
-                                    px: 3,
-                                    py: 2,
-                                    borderRadius: "16px",
-                                    backgroundColor: "white",
-                                    border: "1px solid #E8E8E8",
-                                    boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
-                                }}
-                            >
-                                <Box
-                                    sx={{
-                                        width: 40,
-                                        height: 40,
-                                        borderRadius: "50%",
-                                        backgroundColor: theme.palette.primary.main,
-                                        display: "flex",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                        color: "white",
-                                    }}
-                                >
-                                    <VerifiedIcon sx={{ fontSize: 24 }} />
-                                </Box>
-                                <Box>
-                                    <Typography
-                                        variant="h5"
-                                        sx={{
-                                            fontWeight: 700,
-                                            color: theme.palette.text.primary,
-                                            lineHeight: 1.2,
-                                        }}
-                                    >
-                                        25+
-                                    </Typography>
-                                    <Typography
-                                        variant="h2"
-                                        sx={{
-                                            color: theme.palette.text.secondary,
-                                            fontSize: "14px",
-                                            lineHeight: 1.3,
-                                            display: "block",
-                                        }}
-                                    >
-                                        Years of Experience
-                                        
-                                    </Typography>
-                                </Box>
-                            </Card>
-                        </Box>
-                    </Grid>
-
-                    {/* --- CENTER: MAIN IMAGE SECTION --- */}
-                    <Grid size={{ xs: 12, md: 4 }} display="flex" justifyContent="center">
-                        <Box
-                            sx={{
-                                position: "relative",
-                                width: "100%",
-                                maxWidth: { xs: 320, md: 400 },
-                            }}
-                        >
-                            {/* Doctor Carousel */}
-                            <Box
-                                sx={{
-                                    position: "relative",
-                                    backgroundColor: "white",
-                                    borderRadius: "24px",
-                                    p: 2,
-                                    boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
-                                }}
-                            >
-                                <Box sx={{ position: "relative", overflow: "hidden", borderRadius: "16px" }}>
-                                    {doctors.map((doctor, index) => (
-                                        <Box
-                                            key={index}
-                                            sx={{
-                                                position: index === 0 ? "relative" : "absolute",
-                                                top: 0,
-                                                left: 0,
-                                                width: "100%",
-                                                transform: currentDoctor === index
-                                                    ? "translateX(0)"
-                                                    : currentDoctor > index
-                                                        ? "translateX(-100%)"
-                                                        : "translateX(100%)",
-                                                transition: "transform 0.8s ease-in-out",
-                                                pointerEvents: currentDoctor === index ? "auto" : "none",
-                                            }}
-                                        >
-                                            <Box
-                                                component="img"
-                                                src={doctor.image}
-                                                alt={`${doctor.name} - Professional Physiotherapist`}
-                                                sx={{
-                                                    width: "100%",
-                                                    height: "auto",
-                                                    aspectRatio: "3/4",
-                                                    objectFit: "cover",
-                                                    display: "block",
-                                                    backgroundColor: "#1A3A52",
-                                                }}
-                                            />
-                                        </Box>
-                                    ))}
-                                </Box>
-                            </Box>
-
-                            {/* Doctor Name Tag */}
-                            <Card
-                                sx={{
-                                    position: "absolute",
-                                    bottom: { xs: 30, md: 40 },
-                                    left: { xs: -20, md: -30 },
-                                    display: "flex",
-                                    alignItems: "center",
-                                    gap: 1.5,
-                                    px: 2.5,
-                                    py: 1.5,
-                                    borderRadius: "50px",
-                                    backgroundColor: doctors[currentDoctor].color,
-                                    boxShadow: `0 8px 24px ${doctors[currentDoctor].color}50`,
-                                    transition: "all 0.8s ease-in-out",
-                                }}
-                            >
-                                <Avatar
-                                    sx={{
-                                        width: 36,
-                                        height: 36,
-                                        bgcolor: "white",
-                                        color: doctors[currentDoctor].color,
-                                        fontSize: "14px",
-                                        fontWeight: 700,
-                                    }}
-                                >
-                                    {doctors[currentDoctor].initials}
-                                </Avatar>
-                                <Box>
-                                    <Typography
-                                        variant="body2"
-                                        sx={{
-                                            color: "white",
-                                            fontWeight: 700,
-                                            fontSize: "14px",
-                                            lineHeight: 1.2,
-                                        }}
-                                    >
-                                        {doctors[currentDoctor].name}
-                                    </Typography>
-                                    <Typography
-                                        variant="caption"
-                                        sx={{
-                                            color: "rgba(255,255,255,0.8)",
-                                            fontSize: "11px",
-                                        }}
-                                    >
-                                        {doctors[currentDoctor].title}
-                                    </Typography>
-                                </Box>
-                            </Card>
-
-                            {/* Navigation Dots */}
-                            <Box
-                                sx={{
-                                    position: "absolute",
-                                    bottom: { xs: 10, md: 15 },
-                                    right: { xs: 15, md: 20 },
-                                    display: "flex",
-                                    gap: 1,
-                                }}
-                            >
-                                {doctors.map((_, index) => (
-                                    <Box
-                                        key={index}
-                                        onClick={() => setCurrentDoctor(index)}
-                                        sx={{
-                                            width: currentDoctor === index ? 24 : 8,
-                                            height: 8,
-                                            borderRadius: "4px",
-                                            backgroundColor: currentDoctor === index
-                                                ? "white"
-                                                : "rgba(255,255,255,0.5)",
-                                            cursor: "pointer",
-                                            transition: "all 0.3s ease",
-                                            "&:hover": {
-                                                backgroundColor: "white",
-                                            },
-                                        }}
-                                    />
-                                ))}
-                            </Box>
-                        </Box>
-                    </Grid>
-
-                    {/* --- RIGHT SECTION --- */}
-                    <Grid size={{ xs: 12, md: 4 }}>
+                    <Grid size={{ xs: 12, md: 6 }}>
                         <Box>
-
                             {/* Main Heading */}
                             <Typography
-                                variant="h3"
+                                variant="h2"
                                 sx={{
                                     fontWeight: 400,
                                     lineHeight: 1.3,
-                                    mb: 4,
+                                    mb: 3,
                                     color: theme.palette.text.primary,
-                                    fontSize: { xs: "2rem", md: "2.5rem" },
+                                    fontSize: { xs: "2.5rem", md: "3.5rem" },
                                 }}
                             >
-                                See Your Path
-                                <br />
-                                To Recovery
-                                <br />
-                                <Box component="span" sx={{ fontWeight: 700 }}>
-                                    Begins.
-                                </Box>{" "}
                                 <Box
                                     component="span"
                                     sx={{
-                                        display: "inline-flex",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                        width: 44,
-                                        height: 44,
-                                        borderRadius: "50%",
-                                        backgroundColor: theme.palette.primary.main,
-                                        color: "white",
-                                        ml: 1,
-                                        verticalAlign: "middle",
+                                        color: theme.palette.primary.main,
+                                        fontWeight: 500,
                                     }}
                                 >
-                                    <ArrowForwardIcon sx={{ fontSize: 20 }} />
+                                    Destination
+                                </Box>{" "}
+                                For
+                                <br />
+                                <Box component="span" sx={{ fontWeight: 700 }}>
+                                    Relief & Wellness
                                 </Box>
                             </Typography>
 
-                            {/* Therapy Session Images Carousel */}
-                            <Box sx={{ position: "relative", mb: 2 }}>
-                                {/* Images Container */}
-                                <Box
+                            {/* Description */}
+                            <Typography
+                                variant="body1"
+                                sx={{
+                                    color: theme.palette.text.secondary,
+                                    lineHeight: 1.8,
+                                    mb: 4,
+                                    maxWidth: 520,
+                                    fontSize: "16px",
+                                }}
+                            >
+                                It is a long established fact that a reader will be distracted by the
+                                readable content of a page when looking at its layout the point of
+                                using lorem the ipsum less normal distribution of letters.
+                            </Typography>
+
+                            {/* Buttons */}
+                            <Box sx={{ display: "flex", gap: 2, mb: 5, flexWrap: "wrap" }}>
+                                <Button
+                                    variant="contained"
+                                    endIcon={<ArrowForwardIcon />}
+                                    onClick={() => navigate("/service")}
                                     sx={{
-                                        display: "flex",
-                                        gap: 2,
-                                        position: "relative",
-                                        alignItems: "center",
+                                        bgcolor: theme.palette.primary.main,
+                                        color: "white",
+                                        textTransform: "none",
+                                        fontWeight: 600,
+                                        fontSize: "15px",
+                                        px: 4,
+                                        py: 1.5,
+                                        borderRadius: "50px",
+                                        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+                                        transition: "all 0.3s ease",
+                                        "&:hover": {
+                                            bgcolor: theme.palette.primary.dark,
+                                            transform: "translateY(-2px)",
+                                            boxShadow: "0 6px 20px rgba(0, 0, 0, 0.2)",
+                                        },
                                     }}
                                 >
-                                    {/* Previous Button */}
-                                    <IconButton
-                                        onClick={handlePrevTherapy}
+                                    Explore Services
+                                </Button>
+                                <Button
+                                    variant="outlined"
+                                    endIcon={<ArrowForwardIcon />}
+                                    onClick={() => navigate("/book-appointment")}
+                                    sx={{
+                                        color: theme.palette.text.primary,
+                                        borderColor: theme.palette.primary.main,
+                                        textTransform: "none",
+                                        fontWeight: 600,
+                                        fontSize: "15px",
+                                        px: 4,
+                                        py: 1.5,
+                                        borderRadius: "50px",
+                                        borderWidth: "2px",
+                                        transition: "all 0.3s ease",
+                                        "&:hover": {
+                                            borderWidth: "2px",
+                                            bgcolor: theme.palette.primary.main,
+                                            color: "white",
+                                            transform: "translateY(-2px)",
+                                        },
+                                    }}
+                                >
+                                    Book Appointment
+                                </Button>
+                            </Box>
+
+                            {/* Stats Section */}
+                            <Box sx={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
+                                {/* 24/7 Emergency Care */}
+                                <Box>
+                                    <Typography
+                                        variant="h4"
                                         sx={{
-                                            position: "absolute",
-                                            left: -15,
-                                            top: "50%",
-                                            transform: "translateY(-50%)",
-                                            zIndex: 2,
-                                            backgroundColor: "white",
-                                            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-                                            width: 36,
-                                            height: 36,
-                                            "&:hover": {
-                                                backgroundColor: theme.palette.primary.main,
-                                                color: "white",
-                                            },
+                                            fontWeight: 700,
+                                            color: theme.palette.primary.main,
+                                            fontSize: { xs: "2rem", md: "2.5rem" },
+                                            lineHeight: 1.2,
                                         }}
                                     >
-                                        <ChevronLeftIcon />
-                                    </IconButton>
-
-                                    {/* Current Image Pair */}
-                                    <Box
-                                        component="img"
-                                        src={therapyImages[currentTherapyIndex]}
-                                        alt={`Therapy Session ${currentTherapyIndex + 1}`}
+                                        24/7
+                                    </Typography>
+                                    <Typography
+                                        variant="body2"
                                         sx={{
-                                            width: "48%",
-                                            height: 140,
-                                            objectFit: "cover",
-                                            borderRadius: "16px",
-                                            boxShadow: "0 8px 24px rgba(0,0,0,0.1)",
-                                            transition: "all 0.3s ease",
-                                        }}
-                                    />
-                                    <Box
-                                        component="img"
-                                        src={therapyImages[(currentTherapyIndex + 1) % therapyImages.length]}
-                                        alt={`Therapy Session ${((currentTherapyIndex + 1) % therapyImages.length) + 1}`}
-                                        sx={{
-                                            width: "48%",
-                                            height: 140,
-                                            objectFit: "cover",
-                                            borderRadius: "16px",
-                                            boxShadow: "0 8px 24px rgba(0,0,0,0.1)",
-                                            transition: "all 0.3s ease",
-                                        }}
-                                    />
-
-                                    {/* Next Button */}
-                                    <IconButton
-                                        onClick={handleNextTherapy}
-                                        sx={{
-                                            position: "absolute",
-                                            right: -15,
-                                            top: "50%",
-                                            transform: "translateY(-50%)",
-                                            zIndex: 2,
-                                            backgroundColor: "white",
-                                            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-                                            width: 36,
-                                            height: 36,
-                                            "&:hover": {
-                                                backgroundColor: theme.palette.primary.main,
-                                                color: "white",
-                                            },
+                                            color: theme.palette.text.secondary,
+                                            fontSize: "14px",
+                                            fontWeight: 500,
                                         }}
                                     >
-                                        <ChevronRightIcon />
-                                    </IconButton>
+                                        Emergency Care
+                                    </Typography>
                                 </Box>
 
-                                {/* Image Counter */}
-                                <Box
+                                {/* 80+ Doctors */}
+                                <Box>
+                                    <Typography
+                                        variant="h4"
+                                        sx={{
+                                            fontWeight: 700,
+                                            color: theme.palette.primary.main,
+                                            fontSize: { xs: "2rem", md: "2.5rem" },
+                                            lineHeight: 1.2,
+                                        }}
+                                    >
+                                        80+
+                                    </Typography>
+                                    <Typography
+                                        variant="body2"
+                                        sx={{
+                                            color: theme.palette.text.secondary,
+                                            fontSize: "14px",
+                                            fontWeight: 500,
+                                        }}
+                                    >
+                                        Doctors
+                                    </Typography>
+                                </Box>
+
+                                {/* 100k+ Customer */}
+                                <Box>
+                                    <Typography
+                                        variant="h4"
+                                        sx={{
+                                            fontWeight: 700,
+                                            color: theme.palette.primary.main,
+                                            fontSize: { xs: "2rem", md: "2.5rem" },
+                                            lineHeight: 1.2,
+                                        }}
+                                    >
+                                        100k+
+                                    </Typography>
+                                    <Typography
+                                        variant="body2"
+                                        sx={{
+                                            color: theme.palette.text.secondary,
+                                            fontSize: "14px",
+                                            fontWeight: 500,
+                                        }}
+                                    >
+                                        Customer
+                                    </Typography>
+                                </Box>
+                            </Box>
+                        </Box>
+                    </Grid>
+
+                    {/* --- RIGHT SECTION: DOCTOR IMAGE --- */}
+                    <Grid size={{ xs: 12, md: 6 }}>
+                        <Box
+                            sx={{
+                                position: "relative",
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                            }}
+                        >
+                            {/* Circular Background */}
+                            <Box
+                                sx={{
+                                    position: "absolute",
+                                    width: { xs: 300, md: 420 },
+                                    height: { xs: 300, md: 420 },
+                                    borderRadius: "50%",
+                                    backgroundColor: theme.palette.primary.main,
+                                    opacity: 0.9,
+                                    top: "45%",
+                                    right: { xs: "10%", md: "5%" },
+                                    transform: "translateY(-50%)",
+                                    zIndex: 0,
+                                }}
+                            />
+
+                            {/* Doctor Image */}
+                            <Box
+                                component="img"
+                                src={doctorHero}
+                                alt="Professional Doctor"
+                                sx={{
+                                    position: "relative",
+                                    width: { xs: 320, md: 480 },
+                                    height: "auto",
+                                    zIndex: 1,
+                                    objectFit: "contain",
+                                    marginRight: { xs: 0, md: -4 },
+                                }}
+                            />
+
+                            {/* Doctor Info Card */}
+                            <Box
+                                sx={{
+                                    position: "absolute",
+                                    bottom: { xs: 20, md: 40 },
+                                    left: { xs: "10%", md: "15%" },
+                                    backgroundColor: "white",
+                                    borderRadius: "16px",
+                                    boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
+                                    px: 2.5,
+                                    py: 2,
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: 1.5,
+                                    zIndex: 2,
+                                }}
+                            >
+                                <Avatar
+                                    src={doctorHero}
                                     sx={{
-                                        textAlign: "center",
-                                        mt: 1.5,
+                                        width: 48,
+                                        height: 48,
+                                        border: `3px solid ${theme.palette.primary.main}`,
                                     }}
-                                >
+                                />
+                                <Box>
+                                    <Typography
+                                        variant="body1"
+                                        sx={{
+                                            fontWeight: 700,
+                                            color: theme.palette.text.primary,
+                                            fontSize: "15px",
+                                            lineHeight: 1.2,
+                                        }}
+                                    >
+                                        Dr. Jamie Smith
+                                    </Typography>
                                     <Typography
                                         variant="caption"
                                         sx={{
                                             color: theme.palette.text.secondary,
-                                            fontSize: "12px",
-                                            fontWeight: 600,
+                                            fontSize: "13px",
                                         }}
                                     >
-                                        {currentTherapyIndex + 1} / {therapyImages.length}
+                                        Physiotherapy
                                     </Typography>
                                 </Box>
-                            </Box>
-
-                            {/* Pagination Dots */}
-                            <Box sx={{ display: "flex", gap: 1, justifyContent: "center" }}>
-                                {therapyImages.map((_, index) => (
-                                    <Box
-                                        key={index}
-                                        onClick={() => setCurrentTherapyIndex(index)}
-                                        sx={{
-                                            width: currentTherapyIndex === index ? 24 : 8,
-                                            height: 8,
-                                            borderRadius: "4px",
-                                            backgroundColor: currentTherapyIndex === index
-                                                ? theme.palette.primary.main
-                                                : "#D9D9D9",
-                                            cursor: "pointer",
-                                            transition: "all 0.3s ease",
-                                            "&:hover": {
-                                                backgroundColor: theme.palette.primary.main,
-                                            },
-                                        }}
-                                    />
-                                ))}
                             </Box>
                         </Box>
                     </Grid>
                 </Grid>
+
+                {/* --- FEATURES SECTION --- */}
+                <Box
+                    sx={{
+                        mt: { xs: 6, md: 10 },
+                        backgroundColor: theme.palette.primary.dark,
+                        borderRadius: "16px",
+                        py: 4,
+                        px: { xs: 3, md: 6 },
+                    }}
+                >
+                    <Grid container spacing={4}>
+                        {/* Expert Therapists */}
+                        <Grid size={{ xs: 12, md: 4 }}>
+                            <Box sx={{ display: "flex", gap: 2, alignItems: "flex-start" }}>
+                                <Box
+                                    sx={{
+                                        width: 56,
+                                        height: 56,
+                                        backgroundColor: "rgba(255, 255, 255, 0.1)",
+                                        borderRadius: "12px",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        flexShrink: 0,
+                                    }}
+                                >
+                                    <Box
+                                        component="svg"
+                                        width="28"
+                                        height="28"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="white"
+                                        strokeWidth="2"
+                                    >
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                        <circle cx="9" cy="7" r="4" />
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                    </Box>
+                                </Box>
+                                <Box>
+                                    <Typography
+                                        variant="h6"
+                                        sx={{
+                                            color: "white",
+                                            fontWeight: 700,
+                                            fontSize: "18px",
+                                            mb: 1,
+                                        }}
+                                    >
+                                        Expert Therapists
+                                    </Typography>
+                                    <Typography
+                                        variant="body2"
+                                        sx={{
+                                            color: "rgba(255, 255, 255, 0.8)",
+                                            fontSize: "14px",
+                                            lineHeight: 1.6,
+                                        }}
+                                    >
+                                        Our team of licensed and certified physiotherapists
+                                    </Typography>
+                                </Box>
+                            </Box>
+                        </Grid>
+
+                        {/* Emergency Service */}
+                        <Grid size={{ xs: 12, md: 4 }}>
+                            <Box sx={{ display: "flex", gap: 2, alignItems: "flex-start" }}>
+                                <Box
+                                    sx={{
+                                        width: 56,
+                                        height: 56,
+                                        backgroundColor: "rgba(255, 255, 255, 0.1)",
+                                        borderRadius: "12px",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        flexShrink: 0,
+                                    }}
+                                >
+                                    <Box
+                                        component="svg"
+                                        width="28"
+                                        height="28"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="white"
+                                        strokeWidth="2"
+                                    >
+                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                                    </Box>
+                                </Box>
+                                <Box>
+                                    <Typography
+                                        variant="h6"
+                                        sx={{
+                                            color: "white",
+                                            fontWeight: 700,
+                                            fontSize: "18px",
+                                            mb: 1,
+                                        }}
+                                    >
+                                        Emergency Service
+                                    </Typography>
+                                    <Typography
+                                        variant="body2"
+                                        sx={{
+                                            color: "rgba(255, 255, 255, 0.8)",
+                                            fontSize: "14px",
+                                            lineHeight: 1.6,
+                                        }}
+                                    >
+                                        Our emergency physiotherapy services are designed to address
+                                    </Typography>
+                                </Box>
+                            </Box>
+                        </Grid>
+
+                        {/* Free Consultant */}
+                        <Grid size={{ xs: 12, md: 4 }}>
+                            <Box sx={{ display: "flex", gap: 2, alignItems: "flex-start" }}>
+                                <Box
+                                    sx={{
+                                        width: 56,
+                                        height: 56,
+                                        backgroundColor: "rgba(255, 255, 255, 0.1)",
+                                        borderRadius: "12px",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        flexShrink: 0,
+                                    }}
+                                >
+                                    <Box
+                                        component="svg"
+                                        width="28"
+                                        height="28"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="white"
+                                        strokeWidth="2"
+                                    >
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                    </Box>
+                                </Box>
+                                <Box>
+                                    <Typography
+                                        variant="h6"
+                                        sx={{
+                                            color: "white",
+                                            fontWeight: 700,
+                                            fontSize: "18px",
+                                            mb: 1,
+                                        }}
+                                    >
+                                        Free Consultant
+                                    </Typography>
+                                    <Typography
+                                        variant="body2"
+                                        sx={{
+                                            color: "rgba(255, 255, 255, 0.8)",
+                                            fontSize: "14px",
+                                            lineHeight: 1.6,
+                                        }}
+                                    >
+                                        Our mission is to enhance the quality of life of our patients
+                                    </Typography>
+                                </Box>
+                            </Box>
+                        </Grid>
+                    </Grid>
+                </Box>
             </Container>
         </Box>
     );

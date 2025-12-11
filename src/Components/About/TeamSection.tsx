@@ -43,6 +43,18 @@ const therapists = [
     image:
       "https://plus.unsplash.com/premium_photo-1681966907271-1e350ec3bb95?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D",
   },
+  {
+    name: "Savannah Nguyen",
+    role: "Therapist A",
+    image:
+      "https://plus.unsplash.com/premium_photo-1723514536306-26fe5c4adeb7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D",
+  },
+  {
+    name: "Robert Fox",
+    role: "Therapist B",
+    image:
+      "https://plus.unsplash.com/premium_photo-1681966907271-1e350ec3bb95?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D",
+  },
 ];
 
 const TeamSection = () => {
