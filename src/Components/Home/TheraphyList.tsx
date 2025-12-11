@@ -189,10 +189,43 @@ const TheraphyList = () => {
                                     border: "1px solid #E8E8E8",
                                     display: "flex",
                                     flexDirection: "column",
+                                    transition: "all 0.3s ease",
+                                    cursor: "pointer",
+                                    position: "relative",
+                                    overflow: "hidden",
+                                    zIndex: 1,
+                                    "&::before": {
+                                        content: '""',
+                                        position: "absolute",
+                                        bottom: 0,
+                                        left: 0,
+                                        right: 0,
+                                        height: "0%",
+                                        backgroundColor: theme.palette.primary.light,
+                                        transition: "height 0.4s ease",
+                                        zIndex: -1,
+                                        borderRadius: "16px",
+                                    },
+                                    "&:hover::before": {
+                                        height: "100%",
+                                    },
+                                    "&:hover": {
+                                        "& .service-title": {
+                                            color: "white",
+                                        },
+                                        "& .service-description": {
+                                            color: "rgba(255, 255, 255, 0.9)",
+                                        },
+                                        "& .service-icon": {
+                                            backgroundColor: "white",
+                                            color: theme.palette.primary.main,
+                                        },
+                                    },
                                 }}
                             >
                                 {/* Icon */}
                                 <Box
+                                    className="service-icon"
                                     sx={{
                                         width: 64,
                                         height: 64,
@@ -203,6 +236,7 @@ const TheraphyList = () => {
                                         alignItems: "center",
                                         justifyContent: "center",
                                         mb: 3,
+                                        transition: "all 0.3s ease",
                                     }}
                                 >
                                     {service.icon}
@@ -211,11 +245,13 @@ const TheraphyList = () => {
                                 {/* Title */}
                                 <Typography
                                     variant="h6"
+                                    className="service-title"
                                     sx={{
                                         fontWeight: 700,
                                         fontSize: "20px",
                                         mb: 2,
                                         color: theme.palette.text.primary,
+                                        transition: "color 0.3s ease",
                                     }}
                                 >
                                     {service.title}
@@ -224,12 +260,14 @@ const TheraphyList = () => {
                                 {/* Description */}
                                 <Typography
                                     variant="body2"
+                                    className="service-description"
                                     sx={{
                                         color: theme.palette.text.secondary,
                                         fontSize: "14px",
                                         lineHeight: 1.7,
                                         mb: 3,
                                         flexGrow: 1,
+                                        transition: "color 0.3s ease",
                                     }}
                                 >
                                     {service.description}

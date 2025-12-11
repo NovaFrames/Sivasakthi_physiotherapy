@@ -51,12 +51,11 @@ const HeroSection = () => {
                                         fontWeight: 500,
                                     }}
                                 >
-                                    Destination
-                                </Box>{" "}
-                                For
+                                    Sivasakthi
+                                </Box>
                                 <br />
                                 <Box component="span" sx={{ fontWeight: 700 }}>
-                                    Relief & Wellness
+                                    Physiotherapy
                                 </Box>
                             </Typography>
 
