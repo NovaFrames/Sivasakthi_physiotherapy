@@ -393,7 +393,7 @@ const PosturalCorrectionExercise: React.FC = () => {
   ];
 
   return (
-    <Box sx={{ bgcolor: 'background.default' }}>
+    <Box sx={{ bgcolor: 'background.default', mt: { xs: -12, md: -14 } }}>
       {/* Hero Section */}
       <Box
         sx={{
@@ -401,7 +401,8 @@ const PosturalCorrectionExercise: React.FC = () => {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           color: 'white', // Make sure text is visible over the image
-          py: 12,
+          pt: { xs: 20, md: 24 },
+          pb: { xs: 12, md: 12 },
           textAlign: 'center',
           position: 'relative',
           overflow: 'hidden',

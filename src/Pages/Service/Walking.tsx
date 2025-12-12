@@ -54,7 +54,7 @@ const Walking = () => {
       image: "https://images.unsplash.com/photo-1580281657702-257584239a55?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHBoeXNpb3RoZXJhcGh5JTIwZXF1aXBtZW50c3xlbnwwfHwwfHx8MA%3D%3D",
     },
   ];
-const gallery = [
+  const gallery = [
     {
       id: 1,
       title: "Balance Training",
@@ -93,11 +93,12 @@ const gallery = [
     },
   ];
   return (
-    <Box sx={{ pb: 12, backgroundColor: "#fff" }}>
+    <Box sx={{ pb: 12, backgroundColor: "#fff", mt: { xs: -12, md: -14 } }}>
       <Box
         sx={{
           position: "relative",
-          py: { xs: 12, md: 20 },
+          pt: { xs: 20, md: 24 },
+          pb: { xs: 12, md: 20 },
           textAlign: "center",
           color: "white",
           backgroundImage:
@@ -250,18 +251,18 @@ const gallery = [
 
         <Box>
           <Typography
-          variant="h4"
-          fontWeight={700}
-          textAlign="center"
-          mb={5}
-          color="primary.main"
-        >
-          Our Walking Gallery
-        </Typography>
+            variant="h4"
+            fontWeight={700}
+            textAlign="center"
+            mb={5}
+            color="primary.main"
+          >
+            Our Walking Gallery
+          </Typography>
 
-        <Grid container spacing={4}>
-          <GalleryCard activities={gallery} />
-        </Grid>
+          <Grid container spacing={4}>
+            <GalleryCard activities={gallery} />
+          </Grid>
         </Box>
       </Container>
     </Box>

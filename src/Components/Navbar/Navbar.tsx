@@ -52,9 +52,9 @@ export default function Navbar() {
       <Box
         sx={{
           position: "sticky",
-          top: 26,
+          top: { xs: 10, md: 26 },
           zIndex: 1100,
-          px: { xs: 2, md: 4 },
+          px: { xs: 1, md: 4 },
         }}
       >
         <AppBar
@@ -76,9 +76,9 @@ export default function Navbar() {
           <Toolbar
             sx={{
               justifyContent: "space-between",
-              px: { xs: 2, md: 4 },
-              py: 1,
-              minHeight: { xs: "64px", md: "70px" },
+              px: { xs: 1.5, md: 4 },
+              py: { xs: 0.5, md: 1 },
+              minHeight: { xs: "50px", md: "70px" },
             }}
           >
             {/* Logo */}
@@ -94,8 +94,8 @@ export default function Navbar() {
               <Box
                 sx={{
                   bgcolor: "primary.main",
-                  p: 1.2,
-                  borderRadius: "12px",
+                  p: { xs: 0.8, md: 1.2 },
+                  borderRadius: { xs: "8px", md: "12px" },
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -105,7 +105,7 @@ export default function Navbar() {
                   },
                 }}
               >
-                <svg width="28" height="28" fill="white" viewBox="0 0 24 24">
+                <svg width="28" height="28" fill="white" viewBox="0 0 24 24" style={{ width: '100%', height: '100%', maxWidth: '24px', maxHeight: '24px' }}>
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 
                   10 10 10 10-4.48 10-10S17.52 2 
                   12 2zm0 3c1.66 0 3 1.34 3 
@@ -124,7 +124,7 @@ export default function Navbar() {
                   sx={{
                     color: "text.primary",
                     fontWeight: 700,
-                    fontSize: "16px",
+                    fontSize: { xs: "13px", md: "16px" },
                     lineHeight: 1.2,
                   }}
                 >
@@ -133,7 +133,7 @@ export default function Navbar() {
                 <Typography
                   sx={{
                     color: "text.secondary",
-                    fontSize: "10px",
+                    fontSize: { xs: "8px", md: "10px" },
                     letterSpacing: "1px",
                   }}
                 >

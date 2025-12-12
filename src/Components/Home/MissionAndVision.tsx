@@ -32,18 +32,18 @@ const MissionVisionSection = () => {
     return (
         <Box sx={{ py: 10, backgroundColor: theme.palette.background.default }}>
             <Container maxWidth="lg">
-                
+
                 {/* Section Header */}
                 <Box sx={{ textAlign: "center", mb: 8 }}>
                     <Typography variant="h4" sx={{ fontWeight: 800, color: theme.palette.text.primary }}>
                         Our Guiding Principles
                     </Typography>
 
-                    <Typography 
-                        variant="body1" 
+                    <Typography
+                        variant="body1"
                         sx={{ mt: 2, color: theme.palette.text.secondary, maxWidth: 600, mx: "auto" }}
                     >
-                        Driven by compassion and excellence, we strive to make a meaningful difference 
+                        Driven by compassion and excellence, we strive to make a meaningful difference
                         in every life we touch.
                     </Typography>
                 </Box>

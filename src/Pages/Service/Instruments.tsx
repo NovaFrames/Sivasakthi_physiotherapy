@@ -50,11 +50,12 @@ const Instruments = () => {
   ];
 
   return (
-    <Box sx={{ pb: 12, backgroundColor: "#fff" }}>
+    <Box sx={{ pb: 12, backgroundColor: "#fff", mt: { xs: -12, md: -14 } }}>
       <Box
         sx={{
           position: "relative",
-          py: { xs: 12, md: 20 },
+          pt: { xs: 20, md: 24 },
+          pb: { xs: 12, md: 20 },
           textAlign: "center",
           color: "white",
           backgroundImage:

@@ -124,7 +124,7 @@ const AboutSection = () => {
                       letterSpacing="3"
                     >
                       <textPath href="#circlePath" startOffset="0%">
-                         YEARS OF EXPERIENCE • YEARS OF EXPERIENCE •
+                        YEARS OF EXPERIENCE • YEARS OF EXPERIENCE •
                       </textPath>
                     </text>
                   </g>

@@ -50,11 +50,11 @@ const Section: React.FC<SectionProps> = ({ title, children }) => (
 
 const Physiotheraphy = () => {
     return (
-        <Box>
+        <Box sx={{ mt: { xs: -12, md: -14 } }}>
             {/* ================= HERO ================= */}
             <Box
                 sx={{
-                    height: { xs: 350, md: 450 },
+                    height: { xs: 550, md: 550 },
                     backgroundImage:
                         "url('https://images.pexels.com/photos/4506109/pexels-photo-4506109.jpeg')",
                     backgroundSize: "cover",

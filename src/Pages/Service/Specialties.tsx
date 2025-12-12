@@ -27,11 +27,12 @@ const inpatientItems = [
 
 const Specialties = () => {
     return (
-        <Box mb={10}>
+        <Box mb={10} sx={{ mt: { xs: -12, md: -14 } }}>
             <Box
                 sx={{
                     position: "relative",
-                    py: { xs: 12, md: 20 },
+                    pt: { xs: 20, md: 24 },
+                    pb: { xs: 12, md: 20 },
                     textAlign: "center",
                     color: "white",
                     backgroundImage:
@@ -63,7 +64,7 @@ const Specialties = () => {
 
 
                 {/* ---------------------- IN-PATIENT FACILITY ---------------------- */}
-                <Paper elevation={3} sx={{ mb: 10, p: 4,mt:10 }}>
+                <Paper elevation={3} sx={{ mb: 10, p: 4, mt: 10 }}>
                     <Typography
                         variant="h4"
                         fontWeight={700}

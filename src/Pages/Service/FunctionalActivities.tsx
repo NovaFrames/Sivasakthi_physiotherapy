@@ -88,12 +88,13 @@ const FunctionalActivities = () => {
   ];
 
   return (
-    <Box sx={{ minHeight: "100vh", bgcolor: "white" }}>
+    <Box sx={{ minHeight: "100vh", bgcolor: "white", mt: { xs: -12, md: -14 } }}>
       {/* HERO SECTION */}
       <Box
         sx={{
           position: "relative",
-          py: { xs: 12, md: 20 },
+          pt: { xs: 20, md: 24 },
+          pb: { xs: 12, md: 20 },
           textAlign: "center",
           color: "white",
           backgroundImage:
@@ -189,7 +190,7 @@ const FunctionalActivities = () => {
         </Typography>
 
         <Grid container spacing={4}>
-          <GalleryCard activities={activities}/>
+          <GalleryCard activities={activities} />
         </Grid>
       </Container>
     </Box>

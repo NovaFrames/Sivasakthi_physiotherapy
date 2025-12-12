@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
@@ -15,9 +16,21 @@ import BookAppoitment from "./Pages/BookAppoitment/BookAppoitment";
 import Gallery from "./Pages/Gallery/Gallery";
 import ChatWidget from "./chatbot/ChatWidget";
 
+// ScrollToTop component to scroll to top on route change
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -34,7 +47,7 @@ function App() {
         <Route path="/book-appointment" element={<BookAppoitment />} />
       </Routes>
       <ChatWidget />
-      <Footer/>
+      <Footer />
     </>
   );
 }
