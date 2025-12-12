@@ -15,6 +15,7 @@ import Contact from "./Pages/Contact/Contact";
 import BookAppoitment from "./Pages/BookAppoitment/BookAppoitment";
 import Gallery from "./Pages/Gallery/Gallery";
 import ChatWidget from "./chatbot/ChatWidget";
+import Teamspage from "./Pages/TeamsPage/Teamspage";
 
 // ScrollToTop component to scroll to top on route change
 function ScrollToTop() {
@@ -43,6 +44,7 @@ function App() {
         <Route path="/service/specialties" element={<Specialties />} />
         <Route path="/service/postural-correction-exercise" element={<PosturalCorrectionExercise />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/team" element={<Teamspage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/book-appointment" element={<BookAppoitment />} />
       </Routes>

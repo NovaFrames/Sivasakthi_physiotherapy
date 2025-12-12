@@ -6,9 +6,11 @@ import {
   Button,
   useTheme,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const AboutSection = () => {
   const theme = useTheme();
+  const navigate = useNavigate();
 
   return (
     <Box sx={{ py: 10, backgroundColor: theme.palette.background.default }}>
@@ -199,6 +201,7 @@ const AboutSection = () => {
               {/* Discover More Button */}
               <Button
                 variant="contained"
+                onClick={() => navigate("/about")}
                 sx={{
                   backgroundColor: theme.palette.primary.main,
                   color: theme.palette.primary.contrastText,

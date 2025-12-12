@@ -149,7 +149,7 @@ const TheraphyList = () => {
                     <Button
                         variant="contained"
                         endIcon={<ArrowForwardIcon />}
-                        onClick={() => navigate("/service")}
+                        onClick={() => navigate("/physiotheraphy")}
                         sx={{
                             bgcolor: theme.palette.primary.main,
                             color: "white",
@@ -168,7 +168,7 @@ const TheraphyList = () => {
                             },
                         }}
                     >
-                        View All Services
+                        View More
                     </Button>
                 </Box>
 
